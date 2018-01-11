@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+	<meta charset="UTF-8">
+	<title>Le Château de Milan</title>
+    <meta name="keywords" content="maintenance, réparation, assistance, service, dépannage, informatique, ordinateur, carladez, aveyron, à domicile">
+    <meta name="description" content="Dépannage et maintenance informatique à domicile autour du Carladez.">
+    <meta name="author" content="Joévin SOULENQ">
+    <link rel="icon" href="img/favicon.ico">
+  	<link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+  	<header>
+        <nav><a href="index.html" class="logo">Le Château de Milan</a>
+            <a href="tarifs.html" class="liens">Tarifs</a>
+            <a href="liens-utiles.html" class="liens">Liens utiles</a>
+            <a href="contact.html" class="actif">Contact</a>
+        </nav>
+    </header>
+	<section>
+        <header>
+          <h1>Contact</h1><hr/>
+        </header>
+      <form action="contact.php" accept-charset="UTF-8" method="POST">
+        <label for="email">Émail :</label>
+        <input type="email" id="email" placeholder="Émail">
+          
+        <label for="tel">Tél. :</label>
+        <input type="tel" id="tel" placeholder="Téléphone" name="tel">
+          
+        <label for="mess">Message :</label>
+        <textarea id="mess" rows="3" placeholder="Décrivez ici brèvement votre problème ainsi que votre adresse."></textarea>
+          
+        <label for="formule">Formule :</label>
+        <select id="formule">
+            <option>Nettoyage logiciel</option>
+            <option>Nettoyage physique</option>
+            <option>Installation d'un périphérique</option>
+            <option>Réinstallation</option>
+            <option>Réinstallation et sauvegarde</option>
+            <option>Problème matériel</option>
+        </select>
+          
+        <div class="boutons">
+          <button type="reset">Annuler</button>
+          <button type="submit">Envoyer</button>
+        </div>  
+      </form>
+	</section>
+    <footer>Créé par Margaux SARTIEAUX et Joévin SOULENQ.
+    </footer>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

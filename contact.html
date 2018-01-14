@@ -11,44 +11,54 @@
   </head>
   <body>
   	<header>
-        <nav><a href="index.html" class="logo">Le Château de Milan</a>
+        <nav class="menu-horisontal">
+			<a href="#" onclick="ouvrirMenu()" class="btn-ouvrir"><img src="/img/menu.svg"/></a>
+			<a href="index.html" class="logo">Le Château de Milan</a>
             <a href="tarifs.html" class="liens">Tarifs</a>
             <a href="liens-utiles.html" class="liens">Liens utiles</a>
             <a href="contact.html" class="actif">Contact</a>
         </nav>
+		<nav id="menu-vertical" class="menu-vertical">
+			<a href="#" onclick="fermerMenu()" class="btn-fermer">&times;</a>
+			<a href="index.html">Accueil</a>
+			<a href="tarifs.html">Tarifs</a>
+            <a href="liens-utiles.html">Liens utiles</a>
+            <a href="contact.html">Contact</a>
+		</nav>
     </header>
-	<section>
-        <header>
-          <h1>Contact</h1><hr/>
-        </header>
-      <form action="contact.php" accept-charset="UTF-8" method="POST">
-        <label for="email">Émail :</label>
-        <input type="email" id="email" placeholder="Émail">
-          
-        <label for="tel">Tél. :</label>
-        <input type="tel" id="tel" placeholder="Téléphone" name="tel">
-          
-        <label for="mess">Message :</label>
-        <textarea id="mess" rows="3" placeholder="Décrivez ici brèvement votre problème ainsi que votre adresse."></textarea>
-          
-        <label for="formule">Formule :</label>
-        <select id="formule">
-            <option>Nettoyage logiciel</option>
-            <option>Nettoyage physique</option>
-            <option>Installation d'un périphérique</option>
-            <option>Réinstallation</option>
-            <option>Réinstallation et sauvegarde</option>
-            <option>Problème matériel</option>
-        </select>
-          
-        <div class="boutons">
-          <button type="reset">Annuler</button>
-          <button type="submit">Envoyer</button>
-        </div>  
-      </form>
-	</section>
-    <footer>Créé par Margaux SARTIEAUX et Joévin SOULENQ.
-    </footer>
+	<div id="contenu">
+		<section>
+			<header>
+			  <h1>Contact</h1><hr/>
+			</header>
+		  <form action="contact.php" accept-charset="UTF-8" method="POST">
+			<label for="email">Émail :</label>
+			<input type="email" id="email" placeholder="Émail">
+
+			<label for="tel">Tél. :</label>
+			<input type="tel" id="tel" placeholder="Téléphone" name="tel">
+
+			<label for="mess">Message :</label>
+			<textarea id="mess" rows="3" placeholder="Décrivez ici brèvement votre problème ainsi que votre adresse."></textarea>
+
+			<label for="formule">Formule :</label>
+			<select id="formule">
+				<option>Nettoyage logiciel</option>
+				<option>Nettoyage physique</option>
+				<option>Installation d'un périphérique</option>
+				<option>Réinstallation</option>
+				<option>Réinstallation et sauvegarde</option>
+				<option>Problème matériel</option>
+			</select>
+
+			<div class="boutons">
+			  <button type="reset">Annuler</button>
+			  <button type="submit">Envoyer</button>
+			</div>  
+		  </form>
+		</section>
+		<footer>Créé par Margaux SARTIEAUX et Joévin SOULENQ.</footer>
+	  </div>
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/script.js"></script>
   </body>

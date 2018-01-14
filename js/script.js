@@ -22,3 +22,15 @@ $(function() {
     $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
   });
 });
+
+// Gestion du menu vertical
+function ouvrirMenu(){
+	document.getElementById("menu-vertical").style.width = '240px';
+	document.getElementById("contenu").style.marginLeft = '240px';
+	document.getElementsByClassName("logo")[0].style.marginLeft = '200px';
+}
+function fermerMenu(){
+	document.getElementById("menu-vertical").style.width = '0';
+	document.getElementById("contenu").style.marginLeft = '0';
+	document.getElementsByClassName("logo")[0].style.marginLeft = '0';
+}

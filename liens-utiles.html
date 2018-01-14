@@ -11,43 +11,53 @@
   </head>
   <body>
   	<header>
-        <nav><a href="index.html" class="logo">Le Château de Milan</a>
+        <nav class="menu-horisontal">
+			<a href="#" onclick="ouvrirMenu()" class="btn-ouvrir"><img src="/img/menu.svg"/></a>
+			<a href="index.html" class="logo">Le Château de Milan</a>
             <a href="tarifs.html" class="liens">Tarifs</a>
             <a href="liens-utiles.html" class="actif">Liens utiles</a>
             <a href="contact.html" class="liens">Contact</a>
         </nav>
+		<nav id="menu-vertical" class="menu-vertical">
+			<a href="#" onclick="fermerMenu()" class="btn-fermer">&times;</a>
+			<a href="index.html">Accueil</a>
+			<a href="tarifs.html">Tarifs</a>
+            <a href="liens-utiles.html">Liens utiles</a>
+            <a href="contact.html">Contact</a>
+		</nav>
     </header>
-	<section>
-        <header>
-          <h1>Maintenance informatique</h1><hr/>
-        </header>
-          <li>
-            <b>Carousel :</b>
-            <p>Faire un carousel sur la page d'accueil (jquery ?).</p>
-          </li>
-          <li>
-            <b>Flèche :</b>
-            <p>Scroll animé vers le bas.</p>
-          </li>
-          <li>
-              <b>Menu responsive :</b>
-              <p>Menu responsive + Bandeau qui disparait au scroll.</p>
-          </li>
-          <li>
-              <b>Blog :</b>
-              <p>Le rendre efficace et magnifique.</p>
-          </li>
-          <li>
-              <b>Réservation :</b>
-              <p>Le rendre efficace et magnifique.</p>
-          </li>
-          <li>
-              <b>Footer :</b>
-              <p>Le rendre efficace et magnifique.</p>
-          </li>
-	</section>
-    <footer>Créé par Margaux SARTIEAUX et Joévin SOULENQ.
-    </footer>
+	<div id="contenu">
+		<section>
+			<header>
+			  <h1>Maintenance informatique</h1><hr/>
+			</header>
+			  <li>
+				<b>Carousel :</b>
+				<p>Faire un carousel sur la page d'accueil (jquery ?).</p>
+			  </li>
+			  <li>
+				<b>Flèche :</b>
+				<p>Scroll animé vers le bas.</p>
+			  </li>
+			  <li>
+				  <b>Menu responsive :</b>
+				  <p>Menu responsive + Bandeau qui disparait au scroll.</p>
+			  </li>
+			  <li>
+				  <b>Blog :</b>
+				  <p>Le rendre efficace et magnifique.</p>
+			  </li>
+			  <li>
+				  <b>Réservation :</b>
+				  <p>Le rendre efficace et magnifique.</p>
+			  </li>
+			  <li>
+				  <b>Footer :</b>
+				  <p>Le rendre efficace et magnifique.</p>
+			  </li>
+		</section>
+		<footer>Créé par Margaux SARTIEAUX et Joévin SOULENQ.</footer>
+	  </div>
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/script.js"></script>
   </body>

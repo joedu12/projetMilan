@@ -11,16 +11,26 @@
   </head>
   <body>
   	<header>
-        <nav><a href="index.html" class="logo">Le Château de Milan</a>
+        <nav class="menu-horisontal">
+			<a href="#" onclick="ouvrirMenu()" class="btn-ouvrir"><img src="/img/menu.svg"/></a>
+			<a href="index.html" class="logo">Le Château de Milan</a>
             <a href="tarifs.html" class="liens">Tarifs</a>
             <a href="liens-utiles.html" class="liens">Liens utiles</a>
             <a href="contact.html" class="actif">Contact</a>
         </nav>
+		<nav id="menu-vertical" class="menu-vertical">
+			<a href="#" onclick="fermerMenu()" class="btn-fermer">&times;</a>
+			<a href="index.html">Accueil</a>
+			<a href="tarifs.html">Tarifs</a>
+            <a href="liens-utiles.html">Liens utiles</a>
+            <a href="contact.html">Contact</a>
+		</nav>
     </header>
-	<section>
-        <header>
-          <h1>Contact</h1><hr/>
-        </header>
+	<div id="contenu">
+		<section>
+			<header>
+			  <h1>Contact</h1><hr/>
+			</header>
 <?php
 if(isset($_POST) && isset($_POST['email']) && isset($_POST['tel']) && isset($_POST['mess']) && isset($_POST['formule'])){
   extract($_POST);
@@ -46,9 +56,9 @@ Message : $mess";
   }
 }
 ?>
-	</section>
-    <footer>Créé par Margaux SARTIEAUX et Joévin SOULENQ.
-    </footer>
+		</section>
+		<footer>Créé par Margaux SARTIEAUX et Joévin SOULENQ.</footer>
+	  </div>
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/script.js"></script>
   </body>

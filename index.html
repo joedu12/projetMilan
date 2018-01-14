@@ -11,37 +11,48 @@
   </head>
   <body>
   	<header>
-        <nav><a href="index.html" class="logo">Le Château de Milan</a>
+        <nav class="menu-horisontal"><span>.</span>
+			<a href="#" onclick="ouvrirMenu()" class="btn-ouvrir"><img src="/img/menu.svg"/></a>
+			<a href="index.html" class="logo">Le Château de Milan</a>
             <a href="tarifs.html" class="liens">Tarifs</a>
             <a href="liens-utiles.html" class="liens">Liens utiles</a>
             <a href="contact.html" class="liens">Contact</a>
         </nav>
+		<nav id="menu-vertical" class="menu-vertical">
+			<a href="#" onclick="fermerMenu()" class="btn-fermer">&times;</a>
+			<a href="index.html">Accueil</a>
+			<a href="tarifs.html">Tarifs</a>
+            <a href="liens-utiles.html">Liens utiles</a>
+            <a href="contact.html">Contact</a>
+		</nav>
     </header>
-	<section class="image-cover">
-	  <h1 class="titre">Une de nos plus belles chambres</h1>
-	  <section>
-	  	<a href="#description"><span class="fleche-animee"></span></a>
-	  </section>
-    </section>
-	<section>
-          <h1 id="description">Description</h1><hr/>
-          <p>Listes de liens utiles à la réalisation du site internet :</p>
-		  <ul>
-			  <li><a href="https://www.efteling.com/fr/hotel/junior-suites/suites-junior">Images à récupérer (Efteling)</a></li>
-              <li><a href="https://aubergedubarrez.com/">Inspiration menu n°1</a></li>
-			  <li><a href="http://www.hotel-segala-pleinciel.com/fr/musee-soulages">Inspiration menu n°2</a></li>
-			  <li><a href="https://codepen.io/anon/pen/LedjJy">Scroll JQuery</a> -> OK</li>
-			  <li><a href="https://www.youtube.com/watch?v=wpGNFGqNfdU">Menu responsive</a></li>
-		  </ul>
-        <p>Nous pouvons vous offrir de magnifiques chambres ! N'hésitez pas à nous <a href="contact.html">contacter</a> et nous vous recontacterons dans les plus brefs délais.</p>
-		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in gravida sapien, sodales interdum massa. Maecenas ac facilisis neque, id placerat nibh. Vivamus eget elit a odio varius feugiat. Nunc volutpat, eros sit amet elementum elementum, massa tellus cursus dolor, ut fringilla nibh lacus id tellus.</p>
-	</section>
-    <section>
-    <h2>Localisation</h2><hr>
-        <p>Notre hôtel est située à Milan, une garre et un arrêt de bus se situent à proximité du château :</p>
-    </section>
-    <div id="carte"></div>
-    <footer>Créé par Margaux SARTIEAUX et Joévin SOULENQ.</footer>
+	<div id="contenu">
+		<section class="image-cover">
+		  <h1 class="titre">Une de nos plus belles chambres</h1>
+		  <section>
+			<a href="#description"><span class="fleche-animee"></span></a>
+		  </section>
+		</section>
+		<section>
+			  <h1 id="description">Description</h1><hr/>
+			  <p>Listes de liens utiles à la réalisation du site internet :</p>
+			  <ul>
+				  <li><a href="https://www.efteling.com/fr/hotel/junior-suites/suites-junior">Images à récupérer (Efteling)</a></li>
+				  <li><a href="https://aubergedubarrez.com/">Inspiration menu n°1</a></li>
+				  <li><a href="http://www.hotel-segala-pleinciel.com/fr/musee-soulages">Inspiration menu n°2</a></li>
+				  <li><a href="https://codepen.io/anon/pen/LedjJy">Scroll JQuery</a> -> OK</li>
+				  <li><a href="https://www.youtube.com/watch?v=wpGNFGqNfdU">Menu responsive</a></li>
+			  </ul>
+			<p>Nous pouvons vous offrir de magnifiques chambres ! N'hésitez pas à nous <a href="contact.html">contacter</a> et nous vous recontacterons dans les plus brefs délais.</p>
+			  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in gravida sapien, sodales interdum massa. Maecenas ac facilisis neque, id placerat nibh. Vivamus eget elit a odio varius feugiat. Nunc volutpat, eros sit amet elementum elementum, massa tellus cursus dolor, ut fringilla nibh lacus id tellus.</p>
+		</section>
+		<section>
+		<h2>Localisation</h2><hr>
+			<p>Notre hôtel est située à Milan, une garre et un arrêt de bus se situent à proximité du château :</p>
+		</section>
+		<div id="carte"></div>
+		<footer>Créé par Margaux SARTIEAUX et Joévin SOULENQ.</footer>
+	  </div>
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/script.js"></script>
     <script async defer

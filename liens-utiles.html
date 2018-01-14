@@ -3,11 +3,11 @@
   <head>
 	<meta charset="UTF-8">
 	<title>Le Château de Milan</title>
-    <meta name="keywords" content="maintenance, réparation, assistance, service, dépannage, informatique, ordinateur, carladez, aveyron, à domicile">
-    <meta name="description" content="Dépannage et maintenance informatique à domicile autour du Carladez.">
-    <meta name="author" content="Joévin SOULENQ">
+    <meta name="keywords" content="château, hôtel, reservation, milan, luxe, avis">
+    <meta name="description" content="Le Château de Milan vous propose ses nombreuses chambres de luxe au meilleur prix.">
     <link rel="icon" href="img/favicon.ico">
   	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width">
   </head>
   <body>
   	<header>

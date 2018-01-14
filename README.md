@@ -1,6 +1,6 @@
 # Développement Web
 
-Réalisation d'un site internet sans framework CSS.
+Réalisation d'un site web sans framework CSS.
 
-Le site internet est déployé à cette adresse :
+Le site est déployé à cette adresse :
 http://gite-brommat.fr/projetMilan/

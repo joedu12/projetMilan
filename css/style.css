@@ -88,15 +88,14 @@ a:hover {
 
 /* ------ Début Menu horisontal ------ */
 .menu-horisontal a {
+	position: relative;
     color:black;
     padding: 10px;
 }
-
 .menu-horisontal {
     padding: 8px 10%;
     font-size: 1.8em;
     background: #f4f4f4F4;
-	margin-bottom: 5px; /* Bordure blanche -> ça va pas. */
 }
 
 .menu-horisontal a:hover {
@@ -110,12 +109,18 @@ a.logo {
 }
 
 a.actif {
-    font-weight: bold;    
+    font-weight: bold;
 }
 
-.menu-horisontal a.actif:hover, a.liens:hover {
- 	/* Nécessite un margin-bottom dans "header > nav" */
-    border-bottom: 2px Solid #ec2929;
+/* Souligne les liens du menu */
+.menu-horisontal a.liens:hover:before, a.actif:hover:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 3px;
+	left: 0;
+	background-color: #ec2929;
 }
 
 .menu-horisontal span { color:#f4f4f4F4; } /* à éviter... */

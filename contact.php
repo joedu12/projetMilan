@@ -12,7 +12,7 @@
   <body>
   	<header>
         <nav class="menu-horisontal">
-			<a href="#" onclick="ouvrirMenu()" class="btn-ouvrir"><img src="/img/menu.svg"/></a>
+			<a href="#" onclick="ouvrirMenu()" class="btn-ouvrir"><img src="img/menu.svg"/></a>
 			<a href="index.html" class="logo">Le Château de Milan</a>
             <a href="tarifs.html" class="liens">Tarifs</a>
             <a href="liens-utiles.html" class="liens">Liens utiles</a>

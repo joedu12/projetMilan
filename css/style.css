@@ -33,7 +33,7 @@ section {
 	font-family: "Ananda Black";
 	font-size: 2em;
 	text-align: center;
-	color: white; 
+	color: white;
 }
 
 .fleche-animee { /* Flèche annimée sous le titre */
@@ -244,15 +244,17 @@ footer {
 }
 
 /* Media Queries */
-@media(max-width: 878px) {
+@media(max-width: 865px) {
 	.liens{display:none}
 	.actif{display:none}
+	.menu-horisontal a { left:-10%; }
 }
 
-@media(max-width: 615px) {
+@media(max-width: 688px) {
 	.logo{display: none}
 }
 
-@media(min-width: 878px) {
+@media(min-width: 865px) {
 	.btn-ouvrir{display:none}
+	.menu-horisontal a { left:10%; }
 }

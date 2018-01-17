@@ -68,28 +68,12 @@ h1{
 	margin-top : 20px; 
 }
 
-/* Blog */
-h2{
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
-time {
-	margin-top: 0;
-}
-
 a {
+    color:#008cba; /* couleur des liens */
     text-decoration:none;
-	color: black;
 }
-
-/* fin du Blog */
 
 a:hover {
-    text-decoration : none;
-}
-
-nav > a:hover {
     text-decoration : underline;
 }
 
@@ -100,6 +84,24 @@ nav > a:hover {
     background-size: cover;
     background-position: center; 
 }
+
+
+/* ------ Début Blog ------ */
+.blog a {
+	text-decoration: none;
+	color:black;
+}
+
+.blog h2{
+	margin: 0;
+	margin-bottom: 0;
+}
+
+.blog time {
+	margin-top: 0;
+}
+/* ------ Fin Blog ------ */
+
 
 /* ------ Début Carousel ------ */
 div#carousel img {

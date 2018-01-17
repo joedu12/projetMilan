@@ -112,6 +112,11 @@ a.actif {
     font-weight: bold;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Souligne les liens du menu */
 .menu-horisontal a.liens:hover:before, a.actif:hover:before {
 	content: "";
@@ -172,6 +177,17 @@ a.actif {
 	overflow: hidden;
 }
 /* ------ Fin Menu vertical ------ */
+
+
+/* ------ Début Blog ------ */
+.blog > article > header > h2 {
+	margin: 0px 0px;
+}
+
+.blog > article {
+	margin: 20px 0px;
+}
+/* ------ Fin Blog ------ */
 
 
 /* ------ Début Formulaire de contact ------ */

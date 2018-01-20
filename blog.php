@@ -11,20 +11,20 @@
   </head>
   <body>
   	<header>
-        <nav class="menu-horisontal">
-			<a href="#" onclick="ouvrirMenu()" class="btn-ouvrir"><img src="img/menu.svg" alt="Menu"/></a>
-			<a href="index.html" class="logo">Le Château de Milan</a>
-            <a href="hotel.html" class="liens">Hôtel</a>
-            <a href="blog.html" class="actif">Blog</a>
-            <a href="contact.html" class="liens">Contact</a>
+      <nav class="menu-horisontal">
+  			<a href="#" onclick="ouvrirMenu()" class="btn-ouvrir"><img src="img/menu.svg" alt="Menu"/></a>
+  			<a href="index.html" class="logo">Le Château de Milan</a>
+        <a href="hotel.html" class="liens">Hôtel</a>
+        <a href="blog.php" class="actif">Blog</a>
+        <a href="contact.html" class="liens">Contact</a>
         </nav>
-		<nav id="menu-vertical" class="menu-vertical">
-			<a href="#" onclick="fermerMenu()" class="btn-fermer">&times;</a>
-			<a href="index.html">Accueil</a>
-			<a href="hotel.html">Hôtel</a>
-            <a href="blog.html">Blog</a>
-            <a href="contact.html">Contact</a>
-		</nav>
+  		<nav id="menu-vertical" class="menu-vertical">
+  			<a href="#" onclick="fermerMenu()" class="btn-fermer">&times;</a>
+  			<a href="index.html">Accueil</a>
+  			<a href="hotel.html">Hôtel</a>
+        <a href="blog.php">Blog</a>
+        <a href="contact.html">Contact</a>
+  		</nav>
     	</header>
 	<div id="contenu">
 		<section class="blog"> 
@@ -35,15 +35,16 @@
   $result = $conn->query($query);
   $result->setFetchMode(PDO::FETCH_CLASS, 'Blog');
 
-  if(!empty($_GET["id"])) {
-    $blog = $result->fetch();
-    echo $blog->voir($_GET["id"])."\n";
-  }
-  else {
-    while ($blog = $result->fetch()) {
-        echo $blog->liste()."\n";
+  while ($blog = $result->fetch()) {
+    if (empty($_GET["id"])) {
+      echo $blog->liste()."\n";
+    }
+    elseif ($_GET["id"] == $blog->getId())
+    {
+      echo $blog->voir($_GET["id"])."\n";
     }
   }
+
   $conn = null;
 ?>
 		</section>

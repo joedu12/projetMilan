@@ -1,11 +1,16 @@
 <?php
 
 class Blog {
-    public $id;
-    public $titre;
-    public $courte_description;
-    public $contenu;
-    public $date;
+    private $id;
+    private $titre;
+    private $courte_description;
+    private $contenu;
+    private $date;
+
+    public function getId()
+    {
+        return $this->id;
+    }
      
     public function listeAdmin()
     {
@@ -26,8 +31,7 @@ class Blog {
 			$ret .= '<time>' . $this->date . '</time>';
 		  $ret .= '</a>';
           $ret .= '<p>' . $this->courte_description . '</p>';
-        $ret .= '</header>';
-        $ret .= '<hr/>';
+        $ret .= '<hr/></header>';
         return $ret;
     }
 
@@ -44,6 +48,7 @@ class Blog {
           $ret .= '</header>';
           return $ret;
         }
+        return $this->id;
     }
 }
 

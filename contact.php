@@ -15,14 +15,14 @@
 			<a href="#" onclick="ouvrirMenu()" class="btn-ouvrir"><img src="img/menu.svg" alt="Menu"/></a>
 			<a href="index.html" class="logo">Le Château de Milan</a>
             <a href="hotel.html" class="liens">Hôtel</a>
-            <a href="blog.html" class="liens">Blog</a>
+            <a href="blog.php" class="liens">Blog</a>
             <a href="contact.html" class="actif">Contact</a>
         </nav>
 		<nav id="menu-vertical" class="menu-vertical">
 			<a href="#" onclick="fermerMenu()" class="btn-fermer">&times;</a>
 			<a href="index.html">Accueil</a>
 			<a href="hotel.html">Hôtel</a>
-            <a href="blog.html">Blog</a>
+            <a href="blog.php">Blog</a>
             <a href="contact.html">Contact</a>
 		</nav>
     </header>

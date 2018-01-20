@@ -282,7 +282,7 @@ label {
 }
 
 input, textarea, select {
-    margin: 20px 0px;
+    margin: 30px 0px;
     width: 75%;
     resize: vertical;
 }

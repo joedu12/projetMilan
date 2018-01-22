@@ -56,7 +56,7 @@
       "id" => $id
     ));
 
-    echo "Article modifié <a href='index.php'>retour</a> ?";
+    echo "Article modifié avec succès <a href='index.php'>retour</a> ?";
   }
 
   if(!empty($_GET["id"])) {

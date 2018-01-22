@@ -27,9 +27,16 @@
   require "../inc/config.php";
   try {
     extract($_POST);
-    $sql = "INSERT INTO blog (titre, courte_description, contenu)
-            VALUES ('$titre', '$courte_description', '$contenu')";
-    $conn->exec($sql);
+
+    $req = $conn->prepare('INSERT INTO blog (titre, courte_description, contenu)
+    VALUES (:titre, :courte_description, :contenu)');
+
+    $req->execute(array(
+      "titre" => $titre,
+      "courte_description" => $courte_description,
+      "contenu" => $contenu
+    ));
+
     echo "Article créé avec succès !<br/>";
     $id = $conn->lastInsertId();
   }

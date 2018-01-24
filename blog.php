@@ -31,21 +31,61 @@
 <?php
   require "inc/config.php";
 
-  $query = "SELECT * FROM blog";
-  $result = $conn->query($query);
-  $result->setFetchMode(PDO::FETCH_CLASS, 'Blog');
+  /*
+   * Affiche un article au complet
+   */
+  if(!empty($_GET["id"])) {
+    $result = $conn->prepare('SELECT * FROM blog WHERE id = ?');
+    $result->execute([$_GET["id"]]);
+    $data = $result->fetch();
 
-  while ($blog = $result->fetch()) {
-    if (empty($_GET["id"])) {
-      echo $blog->liste()."\n";
-    }
-    elseif ($_GET["id"] == $blog->getId())
-    {
-      echo $blog->voir($_GET["id"])."\n";
-    }
+    $html  = '<header>';
+      $html .= '<img src="img/' . $data['id'] . '.jpg"/>';
+      $html .= '<h2>' . $data['titre'] . '</h2>';
+      $html .= '<time>' . $data['date'] . '</time>';
+      $html .= '<p>' . $data['courte_description'] . '</p>';
+      $html .= '<p>' . $data['contenu'] . '</p>';
+    $html .= '</header>';
+    echo $html;
+    $conn = null;
   }
 
-  $conn = null;
+  /*
+   * Affiche la liste des articles
+   */
+  elseif (empty($_GET["id"])) {
+    // numéro de page par défaut
+    $page = (!empty($_GET['page']) ? $_GET['page'] : 1); 
+    $limite = 2;
+
+    // numéro du premier enregistrement
+    $debut = ($page - 1) * $limite;
+
+    $result = $conn->prepare('SELECT * FROM blog LIMIT :limite OFFSET :debut');
+    $result->bindValue('debut', $debut, PDO::PARAM_INT);
+    $result->bindValue('limite', $limite, PDO::PARAM_INT);
+    $result->execute();
+
+    while ($data = $result->fetch()) {
+      $html = '<header>';
+        $html .= '<a href="blog.php?id=' . $data['id'] . '">';
+          $html .= '<img src="img/' . $data['id'] . '.jpg"/>';
+          $html .= '<h2>' . $data['titre'] . '</h2>';
+          $html .= '<time>' . $data['date'] . '</time>';
+        $html .= '</a>';
+        $html .= '<p>' . $data['courte_description'] . '</p>';
+      $html .= '<hr/></header>';
+
+      echo $html;
+    }
+
+    $html  = '<a href="?page=' . ($page - 1) . '">Page précédente</a>';
+    $html .= ' - ';
+    $html  .= '<a href="?page=' . ($page + 1) . '">Page suivante</a>';
+    echo $html;
+
+    $conn = null;
+  }
 ?>
 		</section>
 		<footer>Créé par Margaux SARTIEAUX et Joévin SOULENQ.</footer>

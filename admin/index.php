@@ -11,6 +11,8 @@
           width: 75%;
           resize: vertical;
       }
+      table { margin-bottom: 20px; }
+      td { padding: 3px; }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head> 
@@ -32,18 +34,25 @@
       <header>
         <h2>Liste des articles :</h2>
       </header>
+        <table>
 <?php
   require "../inc/config.php";
 
-  $query = "SELECT * FROM blog";
-  $result = $conn->query($query);
-  $result->setFetchMode(PDO::FETCH_CLASS, 'Blog');
+  $result = $conn->prepare('SELECT * FROM blog');
+  $result->execute();
 
-  while ($blog = $result->fetch()) {
-      echo $blog->listeAdmin()."\n";
+  while ($data = $result->fetch()) {
+    $html = '<tr>';
+    $html .= '<td>' .$data['id'] . '</td>';
+    $html .= '<td>' . $data['titre'] . '</td>';
+    $html .= '<td><a href="edit.php?id=' . $data['id'] . '">Modifier</a></td>';
+    $html .= '<td><a href="suppr.php?id=' . $data['id'] . '">Supprimer</a></td>';
+    $html .= '</tr>';
+    echo $html;
   }
   $conn = null;
 ?>
+      </table>
     </section>
     <section>
       <header><hr/>

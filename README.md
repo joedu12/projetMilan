@@ -19,7 +19,8 @@ Provenance des articles du blog :
 * Menu responsive (via CSS + JS) => OK
 * Articles sur le blog (via PHP) => OK
 * Page d’administration (via PHP) => OK
-* Commentaires et [pagination](https://zestedesavoir.com/tutoriels/351/paginer-avec-php-et-mysql/) => **KO**
+* [Pagination](https://zestedesavoir.com/tutoriels/351/paginer-avec-php-et-mysql/) => OK
+* [Commentaires](https://www.grafikart.fr/tutoriels/php/systeme-commentaire-php-45) => **KO**
 * Header qui disparaît au scroll => **KO**
 * Réservation => **KO**
 * Bas de page => **KO**

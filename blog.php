@@ -32,27 +32,79 @@
   require "inc/config.php";
 
   /*
-   * Affiche un article au complet
+   * Ajoute un commentaire si le formulaire est renseigné
+   */
+  if(!empty($_POST["pseudo"]) && !empty($_GET["id"])) {
+    extract($_POST);
+
+    $req = $conn->prepare('INSERT INTO commentaire (pseudo, mail, contenu, blog_id)
+                           VALUES (:pseudo, :mail, :contenu, :blog_id)');
+
+    $req->execute(array(
+      "pseudo" => $pseudo,
+      "mail" => $mail,
+      "contenu" => $contenu,
+      "blog_id" => $_GET["id"]
+    ));
+
+    echo "Commentaire créé avec succès !<br/>";
+  }
+
+  /*
+   * Affiche un article et ses commentaires
    */
   if(!empty($_GET["id"])) {
     $result = $conn->prepare('SELECT * FROM blog WHERE id = ?');
     $result->execute([$_GET["id"]]);
-    $data = $result->fetch();
+    $article = $result->fetch();
 
-    $html  = '<header>';
-      $html .= '<img src="img/' . $data['id'] . '.jpg"/>';
-      $html .= '<h2>' . $data['titre'] . '</h2>';
-      $html .= '<time>' . $data['date'] . '</time>';
-      $html .= '<p>' . $data['courte_description'] . '</p>';
-      $html .= '<p>' . $data['contenu'] . '</p>';
-    $html .= '</header>';
+    $result = $conn->prepare('SELECT * FROM commentaire WHERE blog_id = ?');
+    $result->execute([$_GET["id"]]);
+
+    $html  = '<article>';
+      $html  .= '<header>';
+        $html .= '<img src="img/' . $article['id'] . '.jpg"/>';
+        $html .= '<h2>' . $article['titre'] . '</h2>';
+        $html .= '<time>' . $article['date'] . '</time>';
+        $html .= '<p>' . $article['courte_description'] . '</p>';
+        $html .= '<p>' . $article['contenu'] . '</p>';
+        $html .= '<hr/>';
+      $html .= '</header>';
+        $html .= '<section class="commentaire">';
+        while ($commentaire = $result->fetch()) {
+          $html .= '<div>';
+          $html .= '<p>' . $commentaire['pseudo'] . '</p>';
+          $html .= '<p>' . $commentaire['mail'] . '</p>';
+          $html .= '<p>' . $commentaire['contenu'] . '</p>';
+          $html .= '</div>';
+        }
+        $html .= '</section>';
+    $html  .= '</article>';
     echo $html;
+?>
+
+    <form action="blog.php?id=<?= $article['id'] ?>" accept-charset="UTF-8" method="POST">
+      <label for="pseudo">Pseudo</label>
+      <input type="text" id="pseudo" name="pseudo">
+
+      <label for="mail">Émail.</label>
+      <input type="email" id="mail" name="mail">
+
+      <label for="contenu">Message</label>
+      <textarea id="contenu" name="contenu" rows="3" placeholder="Écrivez votre commentaire ici."></textarea>
+
+      <div class="boutons">
+        <button type="reset">Annuler</button>
+        <button type="submit">Envoyer</button>
+      </div>
+    </form>
+<?php
   }
 
   /*
    * Affiche la liste des articles
    */
-  elseif (empty($_GET["id"])) {
+  if (empty($_GET["id"])) {
     // numéro de page par défaut
     $page = (!empty($_GET['page']) ? $_GET['page'] : 1); 
 

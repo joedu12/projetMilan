@@ -4,9 +4,9 @@
 
 // carte Google Map
 function initMap() {
-var hotel = {lat: 43.600, lng: 1.433};
+var hotel = {lat: 42.687095, lng: 3.034329};
 var map = new google.maps.Map(document.getElementById('carte'), {
-  zoom: 14,
+  zoom: 16,
   center: hotel
 });
 var marker = new google.maps.Marker({

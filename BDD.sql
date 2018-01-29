@@ -1,10 +1,10 @@
 DROP TABLE IF EXISTS `blog`;
 CREATE TABLE IF NOT EXISTS `blog` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `titre` varchar(255) NOT NULL,
   `courte_description` text NOT NULL,
   `contenu` text NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB
   DEFAULT CHARSET=utf8;
@@ -20,10 +20,15 @@ INSERT INTO `blog` (`id`, `titre`, `courte_description`, `contenu`, `date`) VALU
 DROP TABLE IF EXISTS `commentaire`;
 CREATE TABLE IF NOT EXISTS `commentaire` (
   `id` INT(11) NOT NULL AUTO_INCREMENT ,
-  `pseudo` VARCHAR(255) NOT NULL ,
+  `pseudo` VARCHAR(255) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `mail` VARCHAR(255) NOT NULL,
-  `contenu` TEXT NOT NULL ,
+  `contenu` TEXT NOT NULL,
   `blog_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET=utf8;
+
+INSERT INTO `commentaire` (`id`, `pseudo`, `date`, `mail`, `contenu`, `blog_id`) VALUES
+(1, 'Pierrick', '2018-01-29 20:55:53', 'pierrick.dubois@monmail.fr', 'Cela semble excellent !', 1),
+(2, 'Élisa', '2018-01-29 21:55:53', 'delisa.sarran@monmail.fr', 'Je confirme !', 1);

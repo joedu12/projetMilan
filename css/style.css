@@ -238,6 +238,13 @@ img {
 .blog > article {
 	margin: 20px 0px;
 }
+
+.commentaire {
+  background:#f8f8f8;
+  border: 1px solid #f0f0f0;
+  padding: 10px;
+  margin: 10px;
+}
 /* ------ Fin Blog ------ */
 
 

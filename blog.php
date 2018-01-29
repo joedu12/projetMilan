@@ -70,15 +70,14 @@
         $html .= '<p>' . $article['contenu'] . '</p>';
         $html .= '<hr/>';
       $html .= '</header>';
+      while ($commentaire = $result->fetch()) {
         $html .= '<section class="commentaire">';
-        while ($commentaire = $result->fetch()) {
-          $html .= '<div>';
           $html .= '<p>' . $commentaire['pseudo'] . '</p>';
+          $html .= '<time>' . $commentaire['date'] . '</time>';
           $html .= '<p>' . $commentaire['mail'] . '</p>';
           $html .= '<p>' . $commentaire['contenu'] . '</p>';
-          $html .= '</div>';
-        }
         $html .= '</section>';
+      }
     $html  .= '</article>';
     echo $html;
 ?>

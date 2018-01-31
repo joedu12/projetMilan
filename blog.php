@@ -72,9 +72,9 @@
       $html .= '</header>';
       while ($commentaire = $result->fetch()) {
         $html .= '<section class="commentaire">';
-          $html .= '<p>' . $commentaire['pseudo'] . '</p>';
           $html .= '<time>' . $commentaire['date'] . '</time>';
-          $html .= '<p>' . $commentaire['mail'] . '</p>';
+          $html .= '<p class="pseudo">' . $commentaire['pseudo'];
+          $html .= '<span> (' . $commentaire['mail'] . ')</span></p>';
           $html .= '<p>' . $commentaire['contenu'] . '</p>';
         $html .= '</section>';
       }

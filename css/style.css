@@ -232,18 +232,36 @@ img {
 
 /* ------ Début Blog ------ */
 .blog > article > header > h2 {
-	margin: 0px 0px;
+  margin: 0px 0px;
 }
 
 .blog > article {
-	margin: 20px 0px;
+  margin: 20px 0px;
 }
 
 .commentaire {
   background:#f8f8f8;
   border: 1px solid #f0f0f0;
-  padding: 10px;
-  margin: 10px;
+  padding: 20px;
+  margin: 20px 0px;
+}
+
+.commentaire p {
+  margin:0px;
+}
+
+.commentaire .pseudo {
+  margin-bottom: 10px;
+}
+
+.commentaire span {
+  color:gray;
+  font-style: italic;
+}
+
+.commentaire time {
+  color:gray;
+  float:right;
 }
 /* ------ Fin Blog ------ */
 

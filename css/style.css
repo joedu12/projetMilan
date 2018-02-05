@@ -265,21 +265,56 @@ img {
 }
 /* ------ Fin Blog ------ */
 
+/* ------ Début cadre reservation ------ */
+
+#reservation{
+    border: 2px solid black;
+    border-radius: 45px;
+    margin: auto;
+	background: white;
+	margin-top:11%;
+}
+
+.flex-resa-item {
+  padding: 8px;
+  max-width: 350px;
+  margin: 0 30px;
+}
+
+#reservation > label{
+	margin: 20px 13px;
+    float: left;
+	width:auto;
+}
+
+#reservation >  input, #reservation > textarea, #reservation > select {
+    display: block;
+	margin: 30px 0px;
+    color: #6F6F6F;
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+/* ------ Fin du cadre reservation ------ */
 
 /* ------ Début Formulaire de contact ------ */
-input:focus, textarea:focus, select:focus {
+#admin > input:focus, #admin > textarea:focus, #admin > select:focus {
     border-color: #66AFE9;
     outline: 0px none;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(102, 175, 233, 0.6);
 }
 
-input, textarea, select {
+#admin >  input, #admin > textarea, #admin > select {
     display: block;
-    width: 100%;
     height: 35px;
     padding: 8px 12px;
     font-size: 15px;
     line-height: 1.4;
+	margin: 30px 0px;
+    width: 75%;
+    resize: vertical;
     color: #6F6F6F;
     background-color: #FFF;
     border: 1px solid #CCC;
@@ -303,17 +338,11 @@ button[type=submit]  {
     color: #FFF;
 }
 
-label {
+#admin > label {
     position: relative;
     margin: 20px 0px;
     float: left;
     width: 20%;
-}
-
-input, textarea, select {
-    margin: 30px 0px;
-    width: 75%;
-    resize: vertical;
 }
 /* ------ Fin Formulaire de contact ------ */
 

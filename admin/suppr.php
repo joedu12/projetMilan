@@ -26,7 +26,7 @@
 <?php
   require "../inc/config.php";
   try {
-    $sql = "DELETE FROM blog WHERE id={$_GET['id']}";
+    $sql = "DELETE FROM blog WHERE id_blog={$_GET['id']}";
     $conn->exec($sql);
     echo "Article supprimé avec succès !<br/>";
   }

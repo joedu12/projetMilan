@@ -47,7 +47,7 @@
       titre = :titre,
       courte_description = :courte_description,
       contenu =:contenu
-      WHERE id = :id;');
+      WHERE id_blog = :id;');
 
     $req->execute(array(
       "titre" => $titre, 
@@ -61,14 +61,14 @@
 
   if(!empty($_GET["id"])) {
     // Pré-remplit le formulaire
-    $result = $conn->prepare("SELECT * FROM blog WHERE id = ?");
+    $result = $conn->prepare("SELECT * FROM blog WHERE id_blog = ?");
     $result->execute([$_GET["id"]]);
     $data = $result->fetch();
   }
 ?>
       <form method="post" action="edit.php">
         <img id="imgArticle" src="/projetMilan/img/<?= $_GET["id"] ?>.jpg">
-        <input name="id" type="hidden" value="<?= htmlspecialchars($data["id"]) ?>"/>
+        <input name="id" type="hidden" value="<?= htmlspecialchars($data["id_blog"]) ?>"/>
         <label for="titre">Titre :</label>
         <input type="text" id="titre" name="titre" value="<?= htmlspecialchars($data["titre"]); ?>"/>
         <br/>

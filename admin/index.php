@@ -43,10 +43,10 @@
 
   while ($data = $result->fetch()) {
     $html = '<tr>';
-    $html .= '<td>' .$data['id'] . '</td>';
+    $html .= '<td>' .$data['id_blog'] . '</td>';
     $html .= '<td>' . $data['titre'] . '</td>';
-    $html .= '<td><a href="edit.php?id=' . $data['id'] . '">Modifier</a></td>';
-    $html .= '<td><a href="suppr.php?id=' . $data['id'] . '">Supprimer</a></td>';
+    $html .= '<td><a href="edit.php?id=' . $data['id_blog'] . '">Modifier</a></td>';
+    $html .= '<td><a href="suppr.php?id=' . $data['id_blog'] . '">Supprimer</a></td>';
     $html .= '</tr>';
     echo $html;
   }

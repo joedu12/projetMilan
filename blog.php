@@ -37,14 +37,14 @@
   if(!empty($_POST["pseudo"]) && !empty($_GET["id"])) {
     extract($_POST);
 
-    $req = $conn->prepare('INSERT INTO commentaire (pseudo, mail, contenu, blog_id)
-                           VALUES (:pseudo, :mail, :contenu, :blog_id)');
+    $req = $conn->prepare('INSERT INTO commentaire (pseudo, mail, contenu, fk_blog)
+                           VALUES (:pseudo, :mail, :contenu, :fk_blog)');
 
     $req->execute(array(
       "pseudo" => $pseudo,
       "mail" => $mail,
       "contenu" => $contenu,
-      "blog_id" => $_GET["id"]
+      "fk_blog" => $_GET["id"]
     ));
 
     echo "Commentaire créé avec succès !<br/>";
@@ -54,16 +54,16 @@
    * Affiche un article et ses commentaires
    */
   if(!empty($_GET["id"])) {
-    $result = $conn->prepare('SELECT * FROM blog WHERE id = ?');
+    $result = $conn->prepare('SELECT * FROM blog WHERE id_blog = ?');
     $result->execute([$_GET["id"]]);
     $article = $result->fetch();
 
-    $result = $conn->prepare('SELECT * FROM commentaire WHERE blog_id = ?');
+    $result = $conn->prepare('SELECT * FROM commentaire WHERE fk_blog = ?');
     $result->execute([$_GET["id"]]);
 
     $html  = '<article>';
       $html  .= '<header>';
-        $html .= '<img src="img/' . $article['id'] . '.jpg"/>';
+        $html .= '<img src="img/' . $article['id_blog'] . '.jpg"/>';
         $html .= '<h2>' . $article['titre'] . '</h2>';
         $html .= '<time>' . $article['date'] . '</time>';
         $html .= '<p>' . $article['courte_description'] . '</p>';
@@ -82,7 +82,7 @@
     echo $html;
 ?>
 
-    <form action="blog.php?id=<?= $article['id'] ?>" accept-charset="UTF-8" method="POST">
+    <form action="blog.php?id=<?= $article['id_blog'] ?>" accept-charset="UTF-8" method="POST">
       <label for="pseudo">Pseudo</label>
       <input type="text" id="pseudo" name="pseudo">
 
@@ -126,8 +126,8 @@
 	// articles
     while ($data = $result->fetch()) {
       $html = '<header>';
-        $html .= '<a href="blog.php?id=' . $data['id'] . '">';
-          $html .= '<img src="img/' . $data['id'] . '.jpg"/>';
+        $html .= '<a href="blog.php?id=' . $data['id_blog'] . '">';
+          $html .= '<img src="img/' . $data['id_blog'] . '.jpg"/>';
           $html .= '<h2>' . $data['titre'] . '</h2>';
           $html .= '<time>' . $data['date'] . '</time>';
         $html .= '</a>';

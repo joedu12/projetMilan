@@ -28,7 +28,7 @@
   try {
     extract($_POST);
 
-    $req = $conn->prepare('INSERT INTO blog (titre, courte_description, contenu)
+    $req = $conn->prepare('INSERT INTO Blog (titre, courte_description, contenu)
     VALUES (:titre, :courte_description, :contenu)');
 
     $req->execute(array(

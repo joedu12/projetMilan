@@ -38,7 +38,7 @@
 <?php
   require "../inc/config.php";
 
-  $result = $conn->prepare('SELECT * FROM blog');
+  $result = $conn->prepare('SELECT * FROM Blog');
   $result->execute();
 
   while ($data = $result->fetch()) {

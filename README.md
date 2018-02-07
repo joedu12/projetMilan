@@ -8,6 +8,13 @@ Le site est déployé à cette adresse :
 ----
 ## Base de données
 Un export de la base de données est fourni dans le fichier *BDD.sql*
+La conception a été réalisée via [JMerise](http://www.jfreesoft.com/JMerise/) (cf. *BDD.mcd*).
+
+MCD
+![Capture](https://github.com/joedu12/projetMilan/tree/master/img/MCD.png)
+
+MCD
+![Capture](https://github.com/joedu12/projetMilan/tree/master/img/MDL.png)
 
 Provenance des articles du blog : 
 [migusto.migros.ch](https://migusto.migros.ch/fr/recettes)
@@ -20,8 +27,7 @@ Provenance des articles du blog :
 * Articles sur le blog (via PHP) => OK
 * Page d’administration (via PHP) => OK
 * [Pagination](https://zestedesavoir.com/tutoriels/351/paginer-avec-php-et-mysql/) => OK
-* [Commentaires](https://www.grafikart.fr/tutoriels/php/systeme-commentaire-php-45) => **KO**
-* Header qui disparaît au scroll => **KO**
+* [Commentaires](https://www.grafikart.fr/tutoriels/php/systeme-commentaire-php-45) => OK
 * Réservation => **KO**
 * Bas de page => **KO**
 

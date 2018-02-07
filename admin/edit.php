@@ -43,7 +43,7 @@
   if(!empty($_POST)){
     extract($_POST);
 
-    $req = $conn->prepare('UPDATE blog SET
+    $req = $conn->prepare('UPDATE Blog SET
       titre = :titre,
       courte_description = :courte_description,
       contenu =:contenu
@@ -61,7 +61,7 @@
 
   if(!empty($_GET["id"])) {
     // Pré-remplit le formulaire
-    $result = $conn->prepare("SELECT * FROM blog WHERE id_blog = ?");
+    $result = $conn->prepare("SELECT * FROM Blog WHERE id_blog = ?");
     $result->execute([$_GET["id"]]);
     $data = $result->fetch();
   }

@@ -37,7 +37,7 @@
   if(!empty($_POST["pseudo"]) && !empty($_GET["id"])) {
     extract($_POST);
 
-    $req = $conn->prepare('INSERT INTO commentaire (pseudo, mail, contenu, fk_blog)
+    $req = $conn->prepare('INSERT INTO Commentaire (pseudo, mail, contenu, fk_blog)
                            VALUES (:pseudo, :mail, :contenu, :fk_blog)');
 
     $req->execute(array(
@@ -54,11 +54,11 @@
    * Affiche un article et ses commentaires
    */
   if(!empty($_GET["id"])) {
-    $result = $conn->prepare('SELECT * FROM blog WHERE id_blog = ?');
+    $result = $conn->prepare('SELECT * FROM Blog WHERE id_blog = ?');
     $result->execute([$_GET["id"]]);
     $article = $result->fetch();
 
-    $result = $conn->prepare('SELECT * FROM commentaire WHERE fk_blog = ?');
+    $result = $conn->prepare('SELECT * FROM Commentaire WHERE fk_blog = ?');
     $result->execute([$_GET["id"]]);
 
     $html  = '<article>';
@@ -113,7 +113,7 @@
     // numéro du premier enregistrement
     $debut = ($page - 1) * $limite;
 
-    $result = $conn->prepare('SELECT SQL_CALC_FOUND_ROWS * FROM blog
+    $result = $conn->prepare('SELECT SQL_CALC_FOUND_ROWS * FROM Blog
     	LIMIT :limite OFFSET :debut');
     $result->bindValue('debut', $debut, PDO::PARAM_INT);
     $result->bindValue('limite', $limite, PDO::PARAM_INT);

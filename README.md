@@ -8,13 +8,14 @@ Le site est déployé à cette adresse :
 ----
 ## Base de données
 Un export de la base de données est fourni dans le fichier *BDD.sql*
+
 La conception a été réalisée via [JMerise](http://www.jfreesoft.com/JMerise/) (cf. *BDD.mcd*).
 
 MCD
-![Capture](https://github.com/joedu12/projetMilan/tree/master/img/MCD.png)
+![MCD](https://raw.githubusercontent.com/joedu12/projetMilan/master/img/MCD.png)
 
 MCD
-![Capture](https://github.com/joedu12/projetMilan/tree/master/img/MDL.png)
+![MLD](https://raw.githubusercontent.com/joedu12/projetMilan/master/img/MLD.png)
 
 Provenance des articles du blog : 
 [migusto.migros.ch](https://migusto.migros.ch/fr/recettes)

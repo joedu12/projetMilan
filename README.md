@@ -11,10 +11,8 @@ Un export de la base de données est fourni dans le fichier *BDD.sql*
 
 La conception a été réalisée via [JMerise](http://www.jfreesoft.com/JMerise/) (cf. *BDD.mcd*).
 
-MCD
 ![MCD](https://raw.githubusercontent.com/joedu12/projetMilan/master/img/MCD.png)
 
-MCD
 ![MLD](https://raw.githubusercontent.com/joedu12/projetMilan/master/img/MLD.png)
 
 Provenance des articles du blog : 

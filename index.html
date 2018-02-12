@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<meta charset="UTF-8">
 	<title>Le Château de Milan</title>
     <meta name="keywords" content="château, hôtel, reservation, milan, luxe, avis">
@@ -32,46 +33,47 @@
 		  <section>
 			<a href="#description"><span class="fleche-animee"></span></a>
 		  </section>
-			<div class="reservation" id="reservation">
-			<ul class="flex-container" id ="flex-reservation">
-			   <li class="flex-resa-item">
-					<label>Date d'arrivée </label>
-					<input type="date" value="" class="form-control">
-				</li>
-				<li class="flex-resa-item">
-					<label  >Date de départ </label>
-					<input type="date" value="" class="form-control">
-				</li>
-				<li class="flex-resa-item">
-					<label  >Adultes </label>
-					<select class="form-control">
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-						<option>6</option>
-					</select>
-				</li>
-				<li class="flex-resa-item">
-					<label  >Enfants (3-12) </label>
-					<select class="form-control">
-						<option>None</option>
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-						<option>6</option>
-					</select>
-				</li>
-				<li class="flex-resa-item">
-					<button type="submit" class="form-control" name="submit">SEND</button>
-				</li>
-			</ul>
-		</div>
+		  <section>
+			  <div class="reservation" id="reservation">
+					<form class="flex-container" id ="flex-reservation">
+					   <div class="flex-item">
+							<label for="dateArrivee">Date d'arrivée </label>
+							<input type="date" value="" class="form-control">
+						</div>
+						<div class="flex-item">
+							<label for="dateDepart">Date de départ </label>
+							<input type="date" value="" class="form-control">
+						</div>
+						<div class="flex-item">
+							<label for="adulte" >Adultes </label>
+							<select class="form-control">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+							</select>
+						</div>
+						<div class="flex-item">
+							<label for="enfant" >Enfants (3-12) </label>
+							<select class="form-control">
+								<option>None</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+							</select>
+						</div>
+						<div class="flex-item">
+							<button type="submit" class="form-control" name="submit">SEND</button>
+						</div>
+					</form>
+				</div>
+			</section>
 		</section>
-		
 		<section>
 			  <h1 id="description">Description</h1><hr/>
 			  <p>Listes de liens utiles à la réalisation du site internet :</p>
@@ -87,10 +89,10 @@
 		</section>
 		<section>
 		<h2>Localisation</h2><hr>
-			<p>Notre hôtel est située à Milan, une garre et un arrêt de bus se situent à proximité du château :</p>
+			<p>Notre hôtel est située à Milan, une gare et un arrêt de bus se situent à proximité du château :</p>
 		</section>
 		<div id="carte"></div>
-			<footer>
+		<footer>
 			<ul class="flex-container" id="first-footer">
 				<li class="flex-item">
 					<h4>CONTACT</h4>
@@ -121,9 +123,9 @@
 	  </div>
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/script.js"></script>
-    <script defer src="js/fontawesome-all.min.js"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfB1Vyn80rYlpp168WcMZ25KJ0RURm148&callback=initMap">
     </script>
+
   </body>
 </html>

@@ -11,7 +11,7 @@
   </head>
   <body>
   	<header>
-        <nav class="menu-horisontal">
+        <nav class="menu-horizontal">
 			<a href="#" onclick="ouvrirMenu()" class="btn-ouvrir"><img src="img/menu.svg" alt="Menu"/></a>
 			<a href="index.html" class="logo">Le Château de Milan</a>
             <a href="hotel.html" class="liens">Hôtel</a>

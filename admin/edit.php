@@ -22,7 +22,7 @@
   </head> 
   <body>
     <header>
-      <nav class="menu-horisontal">
+      <nav class="menu-horizontal">
         <a href="#" onclick="ouvrirMenu()" class="btn-ouvrir"><img src="../img/menu.svg" alt="Menu"/></a>
         <a href="index.php" class="logo">Administration</a>
         <a href="../index.html" class="liens">Retourner sur le site</a>

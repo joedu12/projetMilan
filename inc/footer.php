@@ -1,4 +1,4 @@
-		<footer>
+		<footer class="footer">
 			<ul class="flex-container" id="first-footer">
 				<li class="flex-item">
 					<h4>CONTACT</h4>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<meta charset="UTF-8">
 	<title>Le Château de Milan</title>
     <meta name="keywords" content="château, hôtel, reservation, milan, luxe, avis">
@@ -14,17 +13,17 @@
   	<header>
         <nav class="menu-horizontal">
 			<a href="#" onclick="ouvrirMenu()" class="btn-ouvrir"><img src="img/menu.svg" alt="Menu"/></a>
-			<a href="index.html" class="logo">Le Château de Milan</a>
-            <a href="hotel.html" class="liens">Hôtel</a>
+			<a href="index.php" class="logo">Le Château de Milan</a>
+            <a href="hotel.php" class="liens">Hôtel</a>
             <a href="blog.php" class="liens">Blog</a>
-            <a href="contact.html" class="liens">Contact</a>
+            <a href="contact.php" class="liens">Contact</a>
         </nav>
 		<nav id="menu-vertical" class="menu-vertical">
 			<a href="#" onclick="fermerMenu()" class="btn-fermer">&times;</a>
-			<a href="index.html">Accueil</a>
-			<a href="hotel.html">Hôtel</a>
+			<a href="index.php">Accueil</a>
+			<a href="hotel.php">Hôtel</a>
             <a href="blog.php">Blog</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.php">Contact</a>
 		</nav>
     </header>
 	<div id="contenu">
@@ -83,7 +82,7 @@
 				  <li><a href="https://codepen.io/anon/pen/LedjJy">Scroll JQuery</a> -> OK</li>
 				  <li><a href="https://www.youtube.com/watch?v=wpGNFGqNfdU">Menu responsive</a></li>
 			  </ul>
-			<p>Nous pouvons vous offrir de magnifiques chambres ! N'hésitez pas à nous <a href="contact.html">contacter</a> et nous vous recontacterons dans les plus brefs délais.</p>
+			<p>Nous pouvons vous offrir de magnifiques chambres ! N'hésitez pas à nous <a href="contact.php">contacter</a> et nous vous recontacterons dans les plus brefs délais.</p>
 			  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in gravida sapien, sodales interdum massa. Maecenas ac facilisis neque, id placerat nibh. Vivamus eget elit a odio varius feugiat. Nunc volutpat, eros sit amet elementum elementum, massa tellus cursus dolor, ut fringilla nibh lacus id tellus.</p>
 		</section>
 		<section>
@@ -91,37 +90,11 @@
 			<p>Notre hôtel est située à Milan, une gare et un arrêt de bus se situent à proximité du château :</p>
 		</section>
 		<div id="carte"></div>
-		<footer>
-			<ul class="flex-container" id="first-footer">
-				<li class="flex-item">
-					<h4>CONTACT</h4>
-					<i class="fa fa-map-marker" aria-hidden="true"></i> <a href="https://www.google.fr/maps?q=94+Avenue+de+la+C%C3%B4te+Vermeille,+66140+Canet+en+Roussillon&um=1&ie=UTF-8&sa=X&ved=0ahUKEwj7oO7t3evYAhUQZlAKHQVNCV0Q_AUICigB">  94 Avenue de la Côte Vermeille, 66140 Canet en Rousillon </a><br><br>
-					<i class="fa fa-phone" aria-hidden="true"></i>  04.66.78.80.09<br><br>
-					<i class="fa fa-envelope" aria-hidden="true"></i>  contact@chateaudemilan.com<br>
-				</li>
-					
-				<li class="flex-item">
-					<h4>HORAIRES D’OUVERTURE</h4>
-					Le restaurant de l'Auberge du Barrez, le Comptoir du Barrez est ouvert du mardi au dimanche<br><br>
-					Déjeuner 12:00 à 14:30<br>
-					Dîner 19:00 à 23:00<br>
-				</li>
-				<li id ="lien-util" class="flex-item">
-					<h4>LIEN UTILES</h4>
-					<i class="fab fa-facebook fab-3" aria-hidden="true"></i>
-					<i class="fab fa-twitter fab-3" aria-hidden="true"></i>
-                    <i class="fab fa-google-plus fab-3" aria-hidden="true"></i>
-                    <i class="fab fa-tripadvisor fab-3" aria-hidden="true"></i>
-                    
-				</li>
-			</ul>
-			<ul class="end-footer">
-				Créé par Margaux SARTIEAUX et Joévin SOULENQ.
-			</ul>
-		</footer>
+		<?php require "inc/footer.php"; ?>
 	  </div>
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/script.js"></script>
+	<script defer src="js/fontawesome-all.min.js"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfB1Vyn80rYlpp168WcMZ25KJ0RURm148&callback=initMap">
     </script>

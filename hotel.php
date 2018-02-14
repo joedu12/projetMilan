@@ -13,17 +13,17 @@
   	<header>
         <nav class="menu-horizontal">
 			<a href="#" onclick="ouvrirMenu()" class="btn-ouvrir"><img src="img/menu.svg" alt="Menu"/></a>
-			<a href="index.html" class="logo">Le Château de Milan</a>
-            <a href="hotel.html" class="actif">Hôtel</a>
+			<a href="index.php" class="logo">Le Château de Milan</a>
+            <a href="hotel.php" class="actif">Hôtel</a>
             <a href="blog.php" class="liens">Blog</a>
-            <a href="contact.html" class="liens">Contact</a>
+            <a href="contact.php" class="liens">Contact</a>
         </nav>
 		<nav id="menu-vertical" class="menu-vertical">
 			<a href="#" onclick="fermerMenu()" class="btn-fermer">&times;</a>
-			<a href="index.html">Accueil</a>
-			<a href="hotel.html">Hôtel</a>
+			<a href="index.php">Accueil</a>
+			<a href="hotel.php">Hôtel</a>
             <a href="blog.php">Blog</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.php">Contact</a>
 		</nav>
     </header>
 	<div id="contenu">
@@ -68,9 +68,10 @@
 				  <p>Le rendre efficace et magnifique.</p>
 			  </li>
 		</section>
-    	<footer>Créé par Margaux SARTIEAUX et Joévin SOULENQ.</footer>
+    	<?php require "inc/footer.php"; ?>
 	</div>
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/script.js"></script>
+    <script defer src="js/fontawesome-all.min.js"></script>
   </body>
 </html>

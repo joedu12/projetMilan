@@ -12,12 +12,12 @@
       <nav class="menu-horizontal">
         <a href="#" onclick="ouvrirMenu()" class="btn-ouvrir"><img src="../img/menu.svg" alt="Menu"/></a>
         <a href="index.php" class="logo">Administration</a>
-        <a href="../index.html" class="liens">Retourner sur le site</a>
+        <a href="../index.php" class="liens">Retourner sur le site</a>
       </nav>
       <nav id="menu-vertical" class="menu-vertical">
         <a href="#" onclick="fermerMenu()" class="btn-fermer">&times;</a>
         <a href="index.php">Administration</a>
-        <a href="../index.html">Retourner sur le site</a>
+        <a href="../index.php">Retourner sur le site</a>
       </nav>
     </header>
   <div id="contenu">
@@ -46,10 +46,11 @@
 ?>
       </p>
     </section>
-    <footer>Créé par Margaux SARTIEAUX et Joévin SOULENQ.</footer>
+    <?php require "../inc/footer.php"; ?>
     </div>
     <script src="../js/jquery-3.2.1.js"></script>
     <script src="../js/script.js"></script>
     <script>setTimeout(function(){ location.href='index.php'; }, 2000);</script>
+    <script defer src="../js/fontawesome-all.min.js"></script>
   </body>
 </html>

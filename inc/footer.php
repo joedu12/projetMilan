@@ -19,7 +19,6 @@
 					<i class="fab fa-twitter fab-3" aria-hidden="true"></i>
                     <i class="fab fa-google-plus fab-3" aria-hidden="true"></i>
                     <i class="fab fa-tripadvisor fab-3" aria-hidden="true"></i>
-                    
 				</li>
 			</ul>
 			<ul class="end-footer">

@@ -46,7 +46,7 @@ $(document).ready(function() {
             method: form.attr('method'),
             data: form.serialize(),
             success: function(result){
-                if (result == 'success'){
+                if (result == 'succes'){
                     $('.etat_message').text('Merci à vous, un mail à été envoyé aux gérants !');  
                 } else {
                     $('.etat_message').text('Erreur !');

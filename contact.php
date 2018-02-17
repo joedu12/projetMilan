@@ -26,46 +26,25 @@
             <a href="contact.php">Contact</a>
     </nav>
     </header>
-    <section>
   <div id="contenu">
-<?php
-if(!empty($_POST)){
-  extract($_POST);
-  if(!empty($nom) && !empty($email) && !empty($mess)){
-    $mess=str_replace("\'","'",$mess);
-    $destinataire="joevin.soulenq@gmail.com";
-    $sujet="Message client :";
-    $msg="Un nouveau message est arrivé : \n
-Nom : $nom \n
-Email : $email \n
-Message : $mess";
-    $entete="Form: $nom \n Replay-To: $email";
-    mail($destinataire,$sujet,$msg,$entete);
-    echo '<div>';
-    echo "Merci &agrave; vous, un mail &agrave; &eacute;t&eacute; envoy&eacute; au g&eacute;rants !";
-    echo '</div>';
-  }
-  else{
-    echo "<div>Tout les champs n'ont pas &eacute;t&eacute; remplis !</div>";
-  }
-}
-?>
+    <section>
       <header>
         <h1>Contact</h1><hr/>
       </header>
-      <form id="admin" action="contact.php" accept-charset="UTF-8" method="POST">
+      <form class="contact" action="inc/formContact.php" accept-charset="UTF-8" method="POST">
         <label for="nom">Nom :</label>
-        <input type="text" id="nom" placeholder="Nom" name="nom">
+        <input type="text" id="nom" placeholder="Nom" name="nom" required>
 
         <label for="email">Émail :</label>
-        <input type="email" id="email" placeholder="Émail" name="email">
+        <input type="email" id="email" placeholder="Émail" name="email" required>
 
         <label for="mess">Message :</label>
-        <textarea id="mess" name="mess" rows="3" placeholder="Décrivez ici brèvement votre problème ainsi que votre adresse."></textarea>
+        <textarea id="mess" name="mess" rows="3" placeholder="Entrez ici le message que vous souhaitez nous envoyer." required></textarea>
 
         <div class="boutons">
           <button type="reset">Annuler</button>
           <button type="submit">Envoyer</button>
+          <span class="etat_message"></span>
         </div>  
       </form>
     </section>

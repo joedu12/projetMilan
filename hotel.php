@@ -37,36 +37,25 @@
 		</div>
 		<section>
 			<header>
-			  <h1>To do list :</h1><hr/>
+			  <h1>Les chambres :</h1><hr/>
 			</header>
-			  <li>
-				<b>Carousel => OK</b>
-				<p>Faire un carousel sur la page de l'hôtel (CSS).</p>
-			  </li>
-			  <li>
-				<b>Flèche => OK</b>
-				<p>Scroll animé vers le bas (jquery).</p>
-			  </li>
-			  <li>
-				  <b>Menu responsive => OK</b>
-				  <p>Menu responsive (CSS + JS).</p>
-			  </li>
-			  <li>
-				  <b>Joli header</b>
-				  <p>Bandeau qui disparait au scroll.</p>
-			  </li>
-			  <li>
-				  <b>Blog (il manque les commentaires)</b>
-				  <p>Le rendre efficace et magnifique.</p>
-			  </li>
-			  <li>
-				  <b>Réservation :</b>
-				  <p>Le rendre efficace et magnifique.</p>
-			  </li>
-			  <li>
-				  <b>Footer :</b>
-				  <p>Le rendre efficace et magnifique.</p>
-			  </li>
+<?php
+  require "inc/config.php";
+
+  $result = $conn->prepare('SELECT * FROM Chambre');
+  $result->execute();
+
+  while ($data = $result->fetch()) {
+    $html = '<article>';
+    $html .= '<h2>' . $data['nom'] . '</h2>';
+    $html .= '<p>' . $data['description'] . '</p>';
+    $html .= '<p>' . $data['capacite'] . ' personnes</p>';
+    $html .= '<p>' . $data['tarif'] . ' €</p>';
+    $html .= '</article>';
+    echo $html;
+  }
+  $conn = null;
+?>
 		</section>
     	<?php require "inc/footer.php"; ?>
 	</div>

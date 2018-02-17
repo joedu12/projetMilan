@@ -1,5 +1,5 @@
 /*!
- * Personalisation JavaScript
+ * Personalisation JavaScript / JQuery
  */
 
 // carte Google Map
@@ -32,3 +32,29 @@ function fermerMenu(){
 	document.getElementById("menu-vertical").style.width = '0';
 	document.getElementsByClassName("logo")[0].style.marginLeft = '0';
 }
+
+// Gestion du formulaire de contact
+$(document).ready(function() {
+    $('.contact').on('submit',function(){
+         
+        // Ajoute le texte 'Envoi...' juste après le clic sur le bouton envoi. 
+        $('.etat_message').text('Envoi en cours...'); 
+         
+        var form = $(this);
+        $.ajax({
+            url: form.attr('action'),
+            method: form.attr('method'),
+            data: form.serialize(),
+            success: function(result){
+                if (result == 'success'){
+                    $('.etat_message').text('Merci à vous, un mail à été envoyé aux gérants !');  
+                } else {
+                    $('.etat_message').text('Erreur !');
+                }
+            }
+        });
+         
+        // Empèche l'envoi du formulaire sans données. 
+        return false;   
+    });
+});

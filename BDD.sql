@@ -75,7 +75,7 @@ DROP TABLE IF EXISTS Chambre;
 CREATE TABLE IF NOT EXISTS Chambre(
 	id_chambre	INTEGER NOT NULL AUTO_INCREMENT,
 	nom			VARCHAR(255) NOT NULL,
-	descrption	TEXT NOT NULL,
+	description	TEXT NOT NULL,
 	capacite	INTEGER NOT NULL,
 	tarif		DECIMAL(6,2) NOT NULL,
   	PRIMARY KEY (id_chambre)
@@ -111,3 +111,6 @@ INSERT INTO `Blog` (`id_blog`, `titre`, `courte_description`, `contenu`, `date`)
 INSERT INTO `Commentaire` (`id_comm`, `pseudo`, `date`, `mail`, `contenu`, `fk_blog`) VALUES
 (1, 'Pierrick', '2018-01-29 20:55:53', 'pierrick.dubois@monmail.fr', 'Cela semble excellent !', 1),
 (2, 'Élisa', '2018-01-29 21:55:53', 'delisa.sarran@monmail.fr', 'Je confirme !', 1);
+
+INSERT INTO `Chambre` (`id_chambre`, `nom`, `description`, `capacite`, `tarif`) VALUES ('1', 'Chambre confort - 2 lits', 'Cadre chaleureux et contemporain pour découvrir la cuisine gastronomique. Hôtel neuf de très bon confort chambre spacieuse, avec télévision, bain et douche à jets, WC, téléphone, coffre et sèche cheveux, jardin, parking et garage. - Hébergement pour 2 personnes 2 lits.', '2', '70.5'),
+('2', 'Chambre luxe - 2 lits', 'Cadre chaleureux et contemporain pour découvrir la cuisine gastronomique. Hôtel neuf de très bon confort chambre spacieuse, avec télévision, bain et douche à jets, WC, téléphone, coffre et sèche cheveux, jardin, parking et garage. - Hébergement pour 2 personnes grand lit.', '2', '75.5');

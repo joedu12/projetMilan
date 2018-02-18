@@ -27,7 +27,7 @@ div#carousel figure {
 	  100% { left: -400%; }
 }
 /* ------ Fin Carousel ------ */
-.chambre {
+article .chambre {
   	background:#f8f8f8;
   	border: 1px solid #f0f0f0;
   	padding: 10px;
@@ -35,14 +35,14 @@ div#carousel figure {
 }
 
 .chambre img {
-    max-width: 100%;
-    width: 27%;
-    float: left;
-    margin: 10px;
+    	max-width: 100%;
+    	width: 27%;
+    	float: left;
+    	margin: 10px;
 }
 
 .chambre h2 {
-    margin:5px;
+    	margin:5px;
 }
 
 .chambre p {

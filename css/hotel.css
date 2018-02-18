@@ -37,15 +37,15 @@ div#carousel figure {
     justify-content: center;
 }
 
-.chambre img {
-    width: 30%;
-    float: left;
-    margin-bottom: 20px;
-    margin-right: 10px;
+.chambre img 
+    	max-width: 100%;
+    	width: 27%;
+    	float: left;
+    	margin: 10px;
 }
 
 .chambre h2 {
-    margin:5px;
+    	margin:5px;
 }
 
 .chambre p {

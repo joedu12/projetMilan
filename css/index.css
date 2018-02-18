@@ -7,8 +7,7 @@
 	color: white;
 }
 
-.fleche-animee { /* Flèche annimée sous le titre */
-  	position: absolute;
+.fleche-animee { /* Flèche annimée sous le titre */position: absolute;
   	left: 49%;
   	width: 24px;
   	height: 24px;

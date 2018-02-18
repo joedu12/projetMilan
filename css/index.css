@@ -12,12 +12,10 @@
   	left: 49%;
   	width: 24px;
   	height: 24px;
-  	margin-left: -12px;
   	border-left: 2px solid #fff;
   	border-bottom: 2px solid #fff;
   	transform: rotate(-45deg);
   	animation: sdb05 1.5s infinite;
-  	box-sizing: border-box;
 }
 
 @keyframes sdb05 {
@@ -32,40 +30,6 @@
     	background-size: cover;
     	background-position: center; 
 }
-
-
-
-/* ------ Début Carousel ------ */
-div#carousel img {
-	width: 20%;
-	height: 50vh;
-	float: left;
-	object-fit: cover;
-	margin-bottom: 20px;
-}
-
-div#carousel figure { 
-	  position: relative;
-	  width: 500%;
-	  margin: 0;
-	  left: 0;
-	  animation: 30s slidy infinite; 
-}
-
-@keyframes slidy {
-	  0% { left: 0%; }
-	  20% { left: 0%; }
-	  25% { left: -100%; }
-	  45% { left: -100%; }
-	  50% { left: -200%; }
-	  70% { left: -200%; }
-	  75% { left: -300%; }
-	  95% { left: -300%; }
-	  100% { left: -400%; }
-}
-/* ------ Fin Carousel ------ */
-
-
 
 /* ------ Début cadre reservation ------ */
 

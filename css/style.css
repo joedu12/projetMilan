@@ -84,7 +84,6 @@ a:hover {
 /* Image de l'accueil */
 .image-cover {
     	background-image: url('../img/bandeau-accueil.jpg');
-    	height: 500px;
     	background-size: cover;
     	background-position: center; 
 }

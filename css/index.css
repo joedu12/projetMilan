@@ -7,17 +7,14 @@
 	color: white;
 }
 
-.fleche-animee { /* Flèche annimée sous le titre */
-  	position: absolute;
+.fleche-animee { /* Flèche annimée sous le titre */position: absolute;
   	left: 49%;
   	width: 24px;
   	height: 24px;
-  	margin-left: -12px;
   	border-left: 2px solid #fff;
   	border-bottom: 2px solid #fff;
   	transform: rotate(-45deg);
   	animation: sdb05 1.5s infinite;
-  	box-sizing: border-box;
 }
 
 @keyframes sdb05 {

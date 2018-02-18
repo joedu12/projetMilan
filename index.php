@@ -29,11 +29,11 @@
 	<div id="contenu">
 		<section class="image-cover">
 		  <h1 class="titre">Une de nos plus belles chambres</h1>
-		  <section>
+		  <div style="height: 70px;">
 			<a href="#description"><span class="fleche-animee"></span></a>
-		  </section>
-			 <div class="reservation" id="reservation">
-				<form class="flex-container" id ="flex-reservation">
+		  </div>
+			 <div id="reservation">
+				<form class="flex-container" >
 				   <div class="flex-item">
 					<label for="dateArrivee">Date d'arrivée </label>
 					<input type="date" value="" class="form-control">
@@ -43,7 +43,7 @@
 					<input type="date" value="" class="form-control">
 				   </div>
 				   <div class="flex-item">
-					<label for="adulte" >Adultes </label>
+					<label for="adulte" >Personnes </label>
 						<select class="form-control">
 							<option>1</option>
 							<option>2</option>
@@ -51,18 +51,9 @@
 							<option>4</option>
 							<option>5</option>
 							<option>6</option>
-						</select>
-				  </div>
-				  <div class="flex-item">
-					<label for="enfant" >Enfants (3-12) </label>
-						<select class="form-control">
-							<option>None</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
 						</select>
 				  </div>
 				  <div class="flex-item">
@@ -71,7 +62,6 @@
 				</form>
 			</div>
 		</section>
-	      </section>
 	      <section>
 			  <h1 id="description">Description</h1><hr/>
 			  <p>Listes de liens utiles à la réalisation du site internet :</p>

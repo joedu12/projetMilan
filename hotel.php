@@ -72,7 +72,7 @@
 
   while ($data = $result->fetch()) {
     $html = '<article class="chambre">';
-    $html .= '<img src="img/chambre-' . $data['id'] . '.jpg">';
+    $html .= '<img src="img/chambre-' . $article['id'] . '.jpg">';
     $html .= '<h2>' . $data['nom'] . '</h2>';
     $html .= '<p>' . $data['description'] . '</p>';
     $html .= '<p>' . $data['capacite'] . ' personnes</p>';

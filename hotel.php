@@ -20,7 +20,7 @@
 				<img src="img/chambre-4.jpg" alt="Chambre 4">
 			</figure>
 		</div>
-		<section>
+		<section class = "chambre">
 			<header>
 			  <h1>Les chambres :</h1><hr/>
 			</header>
@@ -63,7 +63,7 @@
                     <p>4 personnes</p>
                     <p>100 €</p>
                 </div>
-            </article>-->
+            </article> -->
 <?php
   require "inc/config.php";
 
@@ -71,7 +71,7 @@
   $result->execute();
 
   while ($data = $result->fetch()) {
-    $html = '<article class ="chambre">';
+    $html = '<article>';
     $html .= '<img src="img/' . $article['id_chambre'] . '.jpg"/>';
     $html .= '<h2>' . $data['nom'] . '</h2>';
     $html .= '<p>' . $data['description'] . '</p>';

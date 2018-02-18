@@ -1,3 +1,12 @@
+/* ----- import des autres css ----- */
+@import url(menu.css);
+@import url(index.css);
+@import url(hotel.css);
+@import url(blog.css);
+@import url(contact.css);
+@import url(footer.css);
+
+/* ------ Polices ------ */
 @font-face {
     	font-family: "Open Sans";
     	font-weight: small;
@@ -10,6 +19,7 @@
     	src: url('../fonts/Ananda-Black.ttf');
 }
 
+/* ---- style css de base ----- */
 html {
     	position: relative;
     	min-height: 100%;
@@ -27,33 +37,7 @@ section {
 	padding: 0px 10%;
 }
 
-.titre { /* Joli titre au milleu de l'image d'accueil */
-	margin: 0;
-	padding-top: 230px;
-	font-family: "Ananda Black";
-	font-size: 2em;
-	text-align: center;
-	color: white;
-}
 
-.fleche-animee { /* Flèche annimée sous le titre */
-  	position: absolute;
-  	top: 0;
-  	left: 49%;
-  	width: 24px;
-  	height: 24px;
-  	margin-left: -12px;
-  	border-left: 2px solid #fff;
-  	border-bottom: 2px solid #fff;
-  	transform: rotate(-45deg);
-  	animation: sdb05 1.5s infinite;
-  	box-sizing: border-box;
-}
-@keyframes sdb05 {
-  	0% { transform: rotate(-45deg) translate(0, 0); opacity: 0; }
-  	50% { opacity: 1; }
-  	100% { transform: rotate(-45deg) translate(-20px, 20px); opacity: 0; }
-}
 
 
 header > hr {
@@ -81,289 +65,10 @@ a:hover {
 	text-decoration : underline;
 }
 
-/* Image de l'accueil */
-.image-cover {
-    	background-image: url('../img/bandeau-accueil.jpg');
-    	background-size: cover;
-    	background-position: center; 
-}
 
 
-/* ------ Début Blog ------ */
-.blog a {
-	text-decoration: none;
-	color:black;
-}
+/* ------ Flex-Container ------ */
 
-.blog h2{
-	margin: 0;
-	margin-bottom: 0;
-}
-
-.blog time {
-	margin-top: 0;
-}
-
-div.numero-page {
-	  text-align:center;
-}
-/* ------ Fin Blog ------ */
-
-
-/* ------ Début Carousel ------ */
-div#carousel img {
-	width: 20%;
-	height: 50vh;
-	float: left;
-	object-fit: cover;
-	margin-bottom: 20px;
-}
-
-div#carousel figure { 
-	  position: relative;
-	  width: 500%;
-	  margin: 0;
-	  left: 0;
-	  animation: 30s slidy infinite; 
-}
-
-@keyframes slidy {
-	  0% { left: 0%; }
-	  20% { left: 0%; }
-	  25% { left: -100%; }
-	  45% { left: -100%; }
-	  50% { left: -200%; }
-	  70% { left: -200%; }
-	  75% { left: -300%; }
-	  95% { left: -300%; }
-	  100% { left: -400%; }
-}
-/* ------ Fin Carousel ------ */
-
-/* ------ Début Menu horizontal ------ */
-.menu-horizontal a {
-	position: relative;
-    	color:black;
-    	padding: 10px;
-}
-.menu-horizontal {
-    	padding: 8px 10%;
-    	font-size: 1.8em;
-    	background: #f4f4f4F4;
-}
-
-.menu-horizontal a:hover {
-    	text-decoration: none;
-}
-
-a.logo {
-    	color:#ec2929; /* couleur du logo d'accueil */
-    	font-family: "Ananda Black", Helvetica, sans-serif;
-	transition:margin-left 0.5s;
-}
-
-a.actif {
-    	font-weight: bold;
-}
-
-img {
-  	max-width: 100%;
-  	height: auto;
-}
-
-/* Souligne les liens du menu */
-.menu-horizontal a.liens:hover:before, a.actif:hover:before {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 2px;
-	bottom: 3px;
-	left: 0;
-	background-color: #ec2929;
-}
-
-.menu-horizontal span { color:#f4f4f4F4; } /* à éviter... */
-.btn-ouvrir {
-	position: absolute;
-	top:5px;
-	left:0;
-}
-/* ------ Fin Menu horizontal ------ */
-
-
-/* ------ Début Menu vertical ------ */
-.menu-vertical {
-	height: 100%;
-	width: 0;
-	position: fixed;
-	z-index: 1; /* premier plan */
-	top: 0;
-	left: 0;
-	background-color: #111;
-	opacity: 0.9;
-	overflow-x: hidden;
-	padding-top: 60px;
-	transition: 0.5s;
-}
-
-.menu-vertical a { 
-    padding: 10px 10px 10px 30px;
-	text-decoration: none;
-	font-size: 22ppx;
-	color:#ccc;
-	display: block;
-	transition: 0.3s;
-}
-
-.menu-vertical a:hover {
-    color: white;
-}
-
-.menu-vertical .btn-fermer {
-	position: absolute;
-	top:0;
-	right: 22px;
-	font-size: 36px;
-}
-
-#contenu {
-	transition:margin-left 0.5s;
-	overflow: hidden;
-}
-/* ------ Fin Menu vertical ------ */
-
-
-/* ------ Début Blog ------ */
-.blog > article > header > h2 {
-	margin: 0px 0px;
-}
-
-.blog > article {
-	margin: 20px 0px;
-}
-
-.commentaire {
-  	background:#f8f8f8;
-  	border: 1px solid #f0f0f0;
-  	padding: 20px;
-  	margin: 20px 0px;
-}
-
-.commentaire p {
-  	margin:0px;
-}
-
-.commentaire .pseudo {
-  	margin-bottom: 10px;
-}
-
-.commentaire span {
-  	color:gray;
-  	font-style: italic;
-}
-
-.commentaire time {
-  	color:gray;
-  	float:right;
-}
-/* ------ Fin Blog ------ */
-
-/* ------ Début cadre reservation ------ */
-
-#reservation{
-    	border: 2px solid black;
-    	border-radius: 45px;
-	background: white;
-	margin-top:95px;
-}
-
-#reservation .flex-item {
-  	padding: 4px;
-  	max-width: 350px;
-  	margin: auto;
-}
-
-#reservation label{
-    	float: left;
-	width:auto;
-	padding:30px;
-}
-
-#reservation  input, #reservation textarea, #reservation select {
-    	display: block;
-	margin: 30px 0px;
-    	color: #6F6F6F;
-    	background-color: #FFF;
-    	border: 1px solid #CCC;
-    	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
-    	transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-	padding:4px;
-}
-
-/* ------ Fin du cadre reservation ------ */
-
-* ------ Début Formulaire de contact ------ */
-.contact > input:focus, .contact > textarea:focus, .contact > select:focus {
-    	border-color: #66AFE9;
-    	outline: 0px none;
-    	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(102, 175, 233, 0.6);
-}
-
-.contact >  input, .contact > textarea, .contact > select {
-    	display: block;
-    	height: 35px;
-    	padding: 8px 12px;
-    	font-size: 15px;
-    	line-height: 1.4;
-	margin: 30px 0px;
-    	width: 75%;
-    	resize: vertical;
-    	color: #6F6F6F;
-    	background-color: #FFF;
-    	border: 1px solid #CCC;
-    	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
-    	transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-}
-
-button {
-    	text-align: center;
-    	background-image: none;
-    	border: 1px solid transparent;
-    	padding: 8px 12px;
-    	font-size: 15px;
-    	line-height: 1.4;
-    	margin: 20px 5px;
-}
-
-button[type=submit]  {
-    	background-image: linear-gradient(to bottom, #337AB7 0px, #265A88 100%);
-    	background-repeat: repeat-x;
-    	color: #FFF;
-}
-
-.contact > label {
-    	position: relative;
-    	margin: 20px 0px;
-    	float: left;
-    	width: 20%;
-}
-/* ------ Fin Formulaire de contact ------ */
-
-/* Carte Google Map */
-#carte {
-    	height: 400px;
-    	width: 100%;
-}
-
-/* ------ Début Bas de page ------ */
-footer {
-    background-color: #e8e8e8;
-    color:#999999;
-    padding-top: 10px;
-    position: absolute;
-    min-width: 100%;
-    margin-top: 3%;
-}
 
 .flex-container {
     list-style: none;
@@ -375,30 +80,8 @@ footer {
     justify-content: center;
 }
 
-.footer .flex-item{
-    padding: 8px;
-    width: 350px;
-    margin: 0 50px;
-}
 
-#first-footer{
-    margin-bottom: 25px;
-}
-
-.flex-item svg {
-    margin-right: 5px;
-}
-
-.end-footer {
-    text-align: center;
-    background-color:#6E6E6E;
-    padding: 10px;
-    margin:0;
-}
-/* ------ Fin Bas de page ------ */
-
-
-/* Media Queries */
+/* -------- Media Queries --------- */
 @media(max-width: 865px) {
 	.liens{display:none}
 	.actif{display:none}

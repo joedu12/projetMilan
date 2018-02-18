@@ -10,22 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-  	<header>
-      <nav class="menu-horizontal">
-  			<a href="#" onclick="ouvrirMenu()" class="btn-ouvrir"><img src="img/menu.svg" alt="Menu"/></a>
-  			<a href="index.php" class="logo">Le Château de Milan</a>
-        <a href="hotel.php" class="liens">Hôtel</a>
-        <a href="blog.php" class="actif">Blog</a>
-        <a href="contact.php" class="liens">Contact</a>
-        </nav>
-  		<nav id="menu-vertical" class="menu-vertical">
-  			<a href="#" onclick="fermerMenu()" class="btn-fermer">&times;</a>
-  			<a href="index.php">Accueil</a>
-  			<a href="hotel.php">Hôtel</a>
-        <a href="blog.php">Blog</a>
-        <a href="contact.php">Contact</a>
-  		</nav>
-    	</header>
+    <?php require "inc/header.php"; ?>
 	<div id="contenu">
 		<section class="blog"> 
 <?php
@@ -82,7 +67,7 @@
     echo $html;
 ?>
 
-    <form action="blog.php?id=<?= $article['id_blog'] ?>" accept-charset="UTF-8" method="POST">
+    <form class= "blog" action="blog.php?id=<?= $article['id_blog'] ?>" accept-charset="UTF-8" method="POST">
       <label for="pseudo">Pseudo</label>
       <input type="text" id="pseudo" name="pseudo">
 

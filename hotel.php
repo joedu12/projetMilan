@@ -49,8 +49,8 @@
      */
     if (empty($_GET["id"])) {
     echo '<section class="chambre">';
-	echo '<header>';
-	echo '<h1>Les chambres :</h1><hr/>';
+    echo '<header>';
+    echo '<h1>Les chambres :</h1><hr/>';
     echo '</header>';
 
       $result = $conn->prepare('SELECT * FROM Chambre');
@@ -72,8 +72,9 @@
       $conn = null;
   }
 ?>
-    	<?php require "inc/footer.php"; ?>
-	</div>
+    </section>
+    <?php require "inc/footer.php"; ?>
+    </div>
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/script.js"></script>
     <script defer src="js/fontawesome-all.min.js"></script>

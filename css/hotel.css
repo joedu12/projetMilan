@@ -39,9 +39,10 @@ div#carousel figure {
 
 .chambre img {
     	max-width: 100%;
-    	width: 27%;
+    	height: 200px;
     	float: left;
-    	margin: 10px;
+	    margin:0px;
+    	margin-right: 20px;
 }
 
 .chambre h2 {

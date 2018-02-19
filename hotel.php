@@ -24,64 +24,25 @@
 			<header>
 			  <h1>Les chambres :</h1><hr/>
 			</header>
-           <!-- <article class= "chambre">
-                <img src="img/confort2.jpg" alt="confort2">
-                <div class="descrption">
-                    <h2>Chambre tout confort 2 personnes</h2>
-                    <p>Chambre d'hôtel de luxe et tout confort, avec un grand lit double, un combiné baignoire-douche, buffet petit déjeuner compris.</p>
-                    <p>25m²</p>
-                    <p>2 personnes</p>
-                    <p>70.50 €</p>
-                </div>
-            </article>
-            <article class= "chambre">
-                <img src="img/confort2.jpg" alt="confort2">
-                <div class="description">
-                    <h2>Chambre tout confort 4 personnes</h2>
-                    <p>Chambre d'hôtel de luxe avec un grand lit double et deux lits simples, combiné baignoire-douche, buffet petit déjeuner compris.</p>
-                    <p>29m²</p>
-                    <p>4 personnes</p>
-                    <p>75 €</p>
-                </div>
-            </article>
-            <article class= "chambre">
-                <img src="img/confort2.jpg" alt="confort2">
-                <div class="descrption">
-                    <h2>Chambre d’hôtel 5 personnes</h2>
-                    <p>Chambre d'hôtel cosy et fonctionnelle avec douche en toilettes, boxsprings, deux lits surélevés et petit-déjeuner compris.</p>
-                    <p>23m²</p>
-                    <p>5 personnes</p>
-                    <p>75.50 €</p>
-                </div>
-            </article>
-            <article class= "chambre">
-                <img src="img/confort2.jpg" alt="confort2">
-                <div class="descrption">
-                    <h2>Suite Blanche-Neige 4 personnes</h2>
-                    <p>Suite féerique avec un miroir enchanté, deux lits doubles, une combiné baignoire-douche, un coin salon avec des fauteuils royaux et un buffet petit déjeuner copieux.</p>
-                    <p>53m²</p>
-                    <p>4 personnes</p>
-                    <p>100 €</p>
-                </div>
-            </article> -->
-<?php
-  require "inc/config.php";
+           
+        <?php
+          require "inc/config.php";
 
-  $result = $conn->prepare('SELECT * FROM Chambre');
-  $result->execute();
+          $result = $conn->prepare('SELECT * FROM Chambre');
+          $result->execute();
 
-  while ($data = $result->fetch()) {
-    $html = '<article>';
-    $html .= '<img src="img/' . $article['id_chambre'] . '.jpg"/>';
-    $html .= '<h2>' . $data['nom'] . '</h2>';
-    $html .= '<p>' . $data['description'] . '</p>';
-    $html .= '<p>' . $data['capacite'] . ' personnes</p>';
-    $html .= '<p>' . $data['tarif'] . ' €</p>';
-    $html .= '</article>';
-    echo $html;
-  }
-  $conn = null;
-?>
+          while ($data = $result->fetch()) {
+            $html = '<article>';
+            $html .= '<img src="img/' . $article['id_chambre'] . '.jpg"/>';
+            $html .= '<h2>' . $data['nom'] . '</h2>';
+            $html .= '<p>' . $data['description'] . '</p>';
+            $html .= '<p>' . $data['capacite'] . ' personnes</p>';
+            $html .= '<p>' . $data['tarif'] . ' €</p>';
+            $html .= '</article>';
+            echo $html;
+          }
+          $conn = null;
+        ?>
 		</section>
     	<?php require "inc/footer.php"; ?>
 	</div>

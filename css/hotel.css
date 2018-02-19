@@ -37,7 +37,7 @@ div#carousel figure {
     justify-content: center;
 }
 
-.chambre img 
+.chambre img {
     	max-width: 100%;
     	width: 27%;
     	float: left;

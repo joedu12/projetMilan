@@ -114,8 +114,8 @@
         $html .= '<a href="blog.php?id=' . $data['id_blog'] . '">';
           $html .= '<img src="img/' . $data['id_blog'] . '.jpg"/>';
           $html .= '<h2>' . $data['titre'] . '</h2>';
-          $html .= '<time>' . $data['date'] . '</time>';
         $html .= '</a>';
+          $html .= '<time>' . $data['date'] . '</time>';
         $html .= '<p>' . $data['courte_description'] . '</p>';
       $html .= '<hr/></header>';
 

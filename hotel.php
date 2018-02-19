@@ -20,6 +20,7 @@
 				<img src="img/chambre-4.jpg" alt="Chambre 4">
 			</figure>
 		</div>
+
 <?php
   /*
    * Affiche une chambre
@@ -71,7 +72,6 @@
       $conn = null;
   }
 ?>
-		</section>
     	<?php require "inc/footer.php"; ?>
 	</div>
     <script src="js/jquery-3.2.1.js"></script>

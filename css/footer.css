@@ -4,7 +4,7 @@ footer {
     color:#999999;
     padding-top: 10px;
     position: absolute;
-    min-width: 100%;
+    width: 100%;
     margin-top: 3%;
 }
 
@@ -24,8 +24,13 @@ footer {
     margin: 0 50px;
 }
 
+.footer a {
+    color:#999999;
+}
+
 #first-footer{
     margin-bottom: 25px;
+    
 }
 
 .flex-item svg {
@@ -37,5 +42,8 @@ footer {
     background-color:#6E6E6E;
     padding: 10px;
     margin:0;
+    
+    min-width: 300px;
 }
+
 /* ------ Fin Bas de page ------ */

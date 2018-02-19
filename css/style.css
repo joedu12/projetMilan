@@ -83,13 +83,15 @@ a:hover {
 
 /* -------- Media Queries --------- */
 @media(max-width: 865px) {
-	.liens{display:none}
-	.actif{display:none}
-	.menu-horizontal a { left:-10%; }
+    .liens{display:none}
+    .actif{display:none}
+    .menu-horizontal a { left:-10%; }
+    a.logo { left:-50px; }
+    nav.menu-horizontal { white-space: nowrap; }
 }
 
-@media(max-width: 688px) {
-	.logo{display: none}
+@media(max-width: 320px) {
+    .logo{display: none}
 }
 
 @media(min-width: 865px) {

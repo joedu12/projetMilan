@@ -77,6 +77,7 @@ CREATE TABLE IF NOT EXISTS Chambre(
 	nom			VARCHAR(255) NOT NULL,
 	description	TEXT NOT NULL,
 	capacite	INTEGER NOT NULL,
+	surface		DECIMAL(6,2) NOT NULL,
 	tarif		DECIMAL(6,2) NOT NULL,
   	PRIMARY KEY (id_chambre)
 ) ENGINE = InnoDB
@@ -112,5 +113,8 @@ INSERT INTO `Commentaire` (`id_comm`, `pseudo`, `date`, `mail`, `contenu`, `fk_b
 (1, 'Pierrick', '2018-01-29 20:55:53', 'pierrick.dubois@monmail.fr', 'Cela semble excellent !', 1),
 (2, 'Élisa', '2018-01-29 21:55:53', 'delisa.sarran@monmail.fr', 'Je confirme !', 1);
 
-INSERT INTO `Chambre` (`id_chambre`, `nom`, `description`, `capacite`, `tarif`) VALUES ('1', 'Chambre confort - 2 lits', 'Cadre chaleureux et contemporain pour découvrir la cuisine gastronomique. Hôtel neuf de très bon confort chambre spacieuse, avec télévision, bain et douche à jets, WC, téléphone, coffre et sèche cheveux, jardin, parking et garage. - Hébergement pour 2 personnes 2 lits.', '2', '70.5'),
-('2', 'Chambre luxe - 2 lits', 'Cadre chaleureux et contemporain pour découvrir la cuisine gastronomique. Hôtel neuf de très bon confort chambre spacieuse, avec télévision, bain et douche à jets, WC, téléphone, coffre et sèche cheveux, jardin, parking et garage. - Hébergement pour 2 personnes grand lit.', '2', '75.5');
+INSERT INTO `Chambre` (`id_chambre`, `nom`, `description`, `capacite`, `surface`, `tarif`) VALUES
+('1', 'Chambre confort - 2 lits', 'Cadre chaleureux et contemporain pour découvrir la cuisine gastronomique. Hôtel neuf de très bon confort chambre spacieuse, avec télévision, bain et douche à jets, WC, téléphone, coffre et sèche cheveux, jardin, parking et garage. - Hébergement pour 2 personnes 2 lits.', '2', '25', '70.5'),
+('2', 'Suite Blanche-Neige 4 personnes', 'Suite féerique avec un miroir enchanté, deux lits doubles, une combiné baignoire-douche, un coin salon avec des fauteuils royaux et un buffet petit déjeuner copieux. - Hébergement pour 4 personnes 2 lits.', '4', '30', '100.0'),
+('3', 'Chambre tout confort 4 personnes', 'Chambre de luxe avec un grand lit double et deux lits simples, combiné baignoire-douche, buffet petit déjeuner compris.', '4', '40', '80.5'),
+('4', 'Chambre cozy 5 personnes', 'Chambre cosy et fonctionnelle avec douche en toilettes, boxsprings, deux lits surélevés plus un lit double et petit-déjeuner compris.', '45', '50', '110.0');

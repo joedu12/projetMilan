@@ -21,15 +21,15 @@
 				<form class="flex-container" >
 				   <div class="flex-item">
 					<label for="dateArrivee">Date d'arrivée </label>
-					<input type="date" value="" class="form-control">
+					<input type="date" value="" id="dateArrivee" class="form-control">
 				   </div>
 				   <div class="flex-item">
 					<label for="dateDepart">Date de départ </label>
-					<input type="date" value="" class="form-control">
+					<input type="date" value="" id="dateDepart" class="form-control">
 				   </div>
 				   <div class="flex-item">
-					<label for="adulte" >Personnes </label>
-						<select class="form-control">
+					<label for="personne" >Personnes </label>
+						<select class="form-control" id="personne">
 							<option>1</option>
 							<option>2</option>
 							<option>3</option>

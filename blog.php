@@ -28,7 +28,7 @@
     $req->execute(array(
       "pseudo" => $pseudo,
       "mail" => $mail,
-      "contenu" => $contenu,
+      "contenu" => $message,
       "fk_blog" => $_GET["id"]
     ));
 
@@ -74,8 +74,8 @@
       <label for="mail">Émail.</label>
       <input type="email" id="mail" name="mail">
 
-      <label for="contenu">Message</label>
-      <textarea id="contenu" name="contenu" rows="3" placeholder="Écrivez votre commentaire ici."></textarea>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="3" placeholder="Écrivez votre commentaire ici."></textarea>
 
       <div class="boutons">
         <button type="reset">Annuler</button>

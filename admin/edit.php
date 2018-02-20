@@ -67,7 +67,7 @@
   }
 ?>
       <form method="post" action="edit.php">
-        <img id="imgArticle" src="/projetMilan/img/<?= $_GET["id"] ?>.jpg">
+        <img id="imgArticle" src="/projetMilan/img/blog/<?= $_GET["id"] ?>.jpg" alt="<?= htmlspecialchars($data["titre"]) ?>">
         <input name="id" type="hidden" value="<?= htmlspecialchars($data["id_blog"]) ?>"/>
         <label for="titre">Titre :</label>
         <input type="text" id="titre" name="titre" value="<?= htmlspecialchars($data["titre"]); ?>"/>

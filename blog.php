@@ -48,11 +48,11 @@
 
     $html  = '<article>';
       $html  .= '<header>';
-        $html .= '<img src="img/blog/' . $article['id_blog'] . '.jpg"/>';
+        $html .= '<img src="img/blog/' . $article['id_blog'] . '.jpg" alt="' . $article['titre'] . '"/>';
         $html .= '<h2>' . $article['titre'] . '</h2>';
         $html .= '<time>' . $article['date'] . '</time>';
         $html .= '<p>' . $article['courte_description'] . '</p>';
-        $html .= '<p>' . $article['contenu'] . '</p>';
+        $html .= $article['contenu'];
         $html .= '<hr/>';
       $html .= '</header>';
       while ($commentaire = $result->fetch()) {
@@ -112,7 +112,7 @@
     while ($data = $result->fetch()) {
       $html = '<header>';
         $html .= '<a href="blog.php?id=' . $data['id_blog'] . '">';
-          $html .= '<img src="img/blog/' . $data['id_blog'] . '.jpg"/>';
+          $html .= '<img src="img/blog/' . $data['id_blog'] . '.jpg" alt="' . $data['titre'] . '"/>';
           $html .= '<h2>' . $data['titre'] . '</h2>';
         $html .= '</a>';
           $html .= '<time>' . $data['date'] . '</time>';

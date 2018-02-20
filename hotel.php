@@ -36,7 +36,7 @@
     echo '<h1>' . $data['nom']. '</h1><hr/>';
     echo '</header>';
     $html = '<article>';
-    $html .= '<img src="img/chambres/' . $data['id_chambre'] . '_0.jpg"/>';
+    $html .= '<img src="img/chambres/' . $data['id_chambre'] . '_0.jpg" alt="' . $data['nom'] . '"/>';
         $html .= '<p>' . $data['description'] . '</p>';
         $html .= '<p>' . $data['capacite'] . ' personnes</p>';
         $html .= '<p>' . $data['surface'] . ' m²</p>';
@@ -58,7 +58,7 @@
 
       while ($data = $result->fetch()) {
         $html = '<article>';
-        $html .= '<img src="img/chambres/' . $data['id_chambre'] . '_0.jpg"/>';
+        $html .= '<img src="img/chambres/' . $data['id_chambre'] . '_0.jpg" alt="' . $data['nom'] . '"/>';
         $html .= '<a href="hotel.php?id=' . $data['id_chambre'] . '">';
             $html .= '<h2>' . $data['nom'] . '</h2>';
         $html .= '</a>';

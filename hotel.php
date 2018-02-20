@@ -58,8 +58,8 @@
 
       while ($data = $result->fetch()) {
         $html = '<article>';
-        $html .= '<img src="img/chambres/' . $data['id_chambre'] . '_0.jpg" alt="' . $data['nom'] . '"/>';
         $html .= '<a href="hotel.php?id=' . $data['id_chambre'] . '">';
+            $html .= '<img src="img/chambres/' . $data['id_chambre'] . '_0.jpg"/>';
             $html .= '<h2>' . $data['nom'] . '</h2>';
         $html .= '</a>';
         $html .= '<p>' . $data['description'] . '</p>';

@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS Commentaire (
   id_comm	INTEGER NOT NULL AUTO_INCREMENT,
   pseudo	VARCHAR(255) NOT NULL,
   mail		VARCHAR(255) NOT NULL,
-  date		TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  date		DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   contenu	TEXT NOT NULL,
   fk_blog	INTEGER NOT NULL,
   PRIMARY KEY (id_comm)
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS Blog (
   id_blog		INTEGER NOT NULL AUTO_INCREMENT,
   titre			VARCHAR(255) NOT NULL,
   courte_description	TEXT NOT NULL,
-  date			TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  date			DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   contenu		TEXT NOT NULL,
   PRIMARY KEY (id_blog)
 ) ENGINE=InnoDB
@@ -45,9 +45,9 @@ DROP TABLE IF EXISTS Reservation;
 CREATE TABLE IF NOT EXISTS Reservation(
 	id_resa		INTEGER NOT NULL AUTO_INCREMENT,
 	nbPers		INTEGER,
-	dateResa	TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    dateArrivee TIMESTAMP NOT NULL,
-    dateDepart  TIMESTAMP NOT NULL,
+	dateResa	DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    dateArrivee DATETIME NOT NULL,
+    dateDepart  DATETIME NOT NULL,
 	fk_client	INTEGER NOT NULL,
 	PRIMARY KEY (id_resa)
 ) ENGINE = InnoDB
@@ -118,3 +118,15 @@ INSERT INTO `Chambre` (`id_chambre`, `nom`, `description`, `capacite`, `surface`
 ('2', 'Suite Blanche-Neige 4 personnes', 'Suite féerique avec un miroir enchanté, deux lits doubles, une combiné baignoire-douche, un coin salon avec des fauteuils royaux et un buffet petit déjeuner copieux. - Hébergement pour 4 personnes 2 lits.', '4', '30', '100.0'),
 ('3', 'Chambre tout confort 4 personnes', 'Chambre de luxe avec un grand lit double et deux lits simples, combiné baignoire-douche, buffet petit déjeuner compris.', '4', '40', '80.5'),
 ('4', 'Chambre cozy 5 personnes', 'Chambre cosy et fonctionnelle avec douche en toilettes, boxsprings, deux lits surélevés plus un lit double et petit-déjeuner compris.', '45', '50', '110.0');
+
+INSERT INTO `Client` (`id_client`, `nom`, `prenom`, `adresse`, `cp`, `ville`) VALUES
+(1, 'DELMONTEIL', 'Patricia', '6 rue de la Madeleine', '15430', 'PAULHAC'),
+(2, 'DELRIEU', 'David', '4 avenue du Pradel', '12210', 'LAGUIOLE');
+
+INSERT INTO `Reservation` (`id_resa`, `nbPers`, `dateResa`, `dateArrivee`, `dateDepart`, `fk_client`) VALUES
+(1, 2, '2018-02-27 22:00:00', '2018-03-12 10:00:00', '2018-03-18 10:00:00', 1),
+(2, 4, '2018-02-27 21:00:00', '2018-03-19 10:00:00', '2018-03-25 10:00:00', 2);
+
+INSERT INTO `ResaChambre` (`fk_resa`, `fk_chambre`) VALUES
+(1, 1),
+(2, 2);

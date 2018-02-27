@@ -35,14 +35,14 @@ div#carousel figure {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    overflow:auto;
 }
 
 .chambre img {
-    	max-width: 100%;
-    	height: 200px;
-    	float: left;
-	    margin:0px;
-    	margin-right: 20px;
+    min-width: 200px;
+    width: 30%;
+    float: left;
+    margin: 10px 15px 0px 12px;
 }
 
 .chambre h2 {

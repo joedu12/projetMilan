@@ -39,8 +39,8 @@
       "nom" => $nom, 
       "description" => $description, 
       "surface" => $surface, 
-        "tarif" => $tarif, 
-        "capacite" => $capacite
+      "tarif" => $tarif, 
+      "capacite" => $capacite
     ));
 
     echo "Chambre créé avec succès !<br/>";
@@ -54,7 +54,7 @@
   // upload l'image s'il y en a une
   if(!empty($_FILES['image']))
   {
-    $path = realpath(dirname(getcwd())) . '/img/chambre/' . $id . '.jpg';
+    $path = realpath(dirname(getcwd())) . '/img/chambres/' . $id . '_0.jpg';
     if(move_uploaded_file($_FILES['image']['tmp_name'], $path)) {
       echo "L'image ".  basename( $_FILES['image']['name']) . " à bien été envoyée.<br/>";
     } else{

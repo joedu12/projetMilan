@@ -42,7 +42,7 @@
 <?php
   require "../inc/config.php";
 
-  $result = $conn->prepare('SELECT * FROM CHAMBRE');
+  $result = $conn->prepare('SELECT * FROM Chambre');
   $result->execute();
 
   while ($data = $result->fetch()) {
@@ -66,19 +66,17 @@
         <label for="nom">Nom de la chambre :</label>
         <input type="text" id="nom" name="nom"/>
         <br/>
-        <label for="capacite">Capacité : </label>
-        <textarea d="capacite" id="capacite" name="capacite" style="height:150px;" rows="3"></textarea>
-          <br/>
-          
-        <label for="surface">Surface : </label>
-        <textarea d="surface" id="surface" name="surface" style="height:150px;" rows="3"></textarea>
-          <br/>
-          
-        <label for="tarif">Tarif : </label>
-        <textarea d="tarif" id="tarif" name="tarif" style="height:150px;" rows="3"></textarea>
-          <br/>
         <label for="description">Description : </label>
         <input type="text" id="description" name="description"/>
+        <br/>
+        <label for="capacite">Capacité : </label>
+        <input type="number" id="capacite" name="capacite"/>
+        <br/>
+        <label for="surface">Surface : </label>
+        <input type="number" id="surface" name="surface"/>
+        <br/>
+        <label for="tarif">Tarif : </label>
+        <textarea d="tarif" id="tarif" name="tarif"></textarea>
         <br/>
         <label>Image : </label>
         <input type="file" style="border:none" name="image"/>

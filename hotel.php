@@ -49,8 +49,8 @@
      */
     if (empty($_GET["id"])) {
     echo '<section class="chambre">';
-	echo '<header>';
-	echo '<h1>Les chambres :</h1><hr/>';
+    echo '<header>';
+    echo '<h1>Les chambres :</h1><hr/>';
     echo '</header>';
 
       $result = $conn->prepare('SELECT * FROM Chambre');
@@ -59,7 +59,7 @@
       while ($data = $result->fetch()) {
         $html = '<article>';
         $html .= '<a href="hotel.php?id=' . $data['id_chambre'] . '">';
-            $html .= '<img src="img/chambres/' . $data['id_chambre'] . '_0.jpg"/>';
+            $html .= '<img src="img/chambres/' . $data['id_chambre'] . '_0.jpg"alt="' . $data['nom'] . '"/>';
             $html .= '<h2>' . $data['nom'] . '</h2>';
         $html .= '</a>';
         $html .= '<p>' . $data['description'] . '</p>';
@@ -69,7 +69,7 @@
         $html .= '</article>';
         echo $html;
       }
-        
+      echo '</section>';
       $conn = null;
   }
 ?>

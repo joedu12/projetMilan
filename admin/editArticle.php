@@ -50,7 +50,7 @@
     $req = $conn->prepare('UPDATE Blog SET
       titre = :titre,
       courte_description = :courte_description,
-      contenu =:contenu
+      contenu = :contenu
       WHERE id_blog = :id;');
 
     $req->execute(array(

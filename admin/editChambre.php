@@ -11,7 +11,7 @@
         width: 75%;
         resize: vertical;
       }
-      #imgArticle {
+      #imgChambre {
         width: 100%;
         height: 25vh;
         object-fit: cover;
@@ -49,18 +49,18 @@
 
     $req = $conn->prepare('UPDATE Chambre SET
       nom = :nom, 
-      description= :description, 
-      surface= :surface, 
-      tarif= :tarif,
-      capacite =:capacite
+      description = :description, 
+      surface = :surface, 
+      tarif = :tarif,
+      capacite = :capacite
       WHERE id_chambre = :id;');
 
     $req->execute(array(
       "nom" => $nom, 
       "description" => $description, 
       "surface" => $surface, 
-        "tarif" => $tarif,
-        "capacite" => $capacite,
+      "tarif" => $tarif,
+      "capacite" => $capacite,
       "id" => $id
     ));
 
@@ -75,7 +75,7 @@
   }
 ?>
       <form method="post" action="editChambre.php">
-        <img id="imgChambre" src="/projetMilan/img/chambre/<?= $_GET["id"] ?>.jpg" alt="<?= htmlspecialchars($data["nom"]) ?>">
+        <img id="imgChambre" src="/projetMilan/img/chambres/<?= $_GET["id"] ?>_0.jpg" alt="<?= htmlspecialchars($data["nom"]) ?>">
         <input name="id" type="hidden" value="<?= htmlspecialchars($data["id_chambre"]) ?>"/>
         <label for="nom">Nom :</label>
         <input type="text" id="nom" name="nom" value="<?= htmlspecialchars($data["nom"]); ?>"/>
@@ -83,11 +83,14 @@
         <label for="description">Description : </label>
         <textarea id="description" name="description" style="height:100px;" rows="3"><?= htmlspecialchars($data["description"]); ?></textarea>
         <br/>
-        <label for="surface">surface : </label>
-        <textarea id="surface" name="surface" style="height:150px;" rows="3"><?= htmlspecialchars($data["surface"]); ?></textarea>
+        <label for="capacite">Capacite :</label>
+        <input type="number" id="capacite" name="capacite" value="<?= htmlspecialchars($data["capacite"]); ?>"/>
         <br/>
-        <label for="tarif">surface : </label>
-        <textarea id="tarif" name="tarif" style="height:150px;" rows="3"><?= htmlspecialchars($data["tarif"]); ?></textarea>
+        <label for="surface">Surface :</label>
+        <input type="number" id="surface" name="surface" value="<?= htmlspecialchars($data["surface"]); ?>"/>
+        <br/>
+        <label for="tarif">Tarif :</label>
+        <input type="text" id="tarif" name="tarif" value="<?= htmlspecialchars($data["tarif"]); ?>"/>
         <br/>
         <div class="boutons">
           <button type="reset" onclick="history.back()">Retour</button>

@@ -21,22 +21,6 @@
     	transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
 }
 
-button {
-    	text-align: center;
-    	background-image: none;
-    	border: 1px solid transparent;
-    	padding: 8px 12px;
-    	font-size: 15px;
-    	line-height: 1.4;
-    	margin: 20px 5px;
-}
-
-button[type=submit]  {
-    	background-image: linear-gradient(to bottom, #337AB7 0px, #265A88 100%);
-    	background-repeat: repeat-x;
-    	color: #FFF;
-}
-
 .contact > label {
     	position: relative;
     	margin: 20px 0px;

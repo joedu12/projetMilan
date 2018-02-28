@@ -80,6 +80,24 @@ a:hover {
     justify-content: center;
 }
 
+/*---------- Button -----------*/
+button {
+    background-image: linear-gradient(to bottom, #ec2929 0px, #9f0606 100%);
+    border-radius: 7px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09) inset;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    margin: 13px 5px;
+    padding: 10px 40px;
+    border: 0px;
+    color: white;
+    font-weight:bold;
+}
+
+button[type=reset]  {
+    background-image: linear-gradient(to bottom, #e8e8e8 0px, #e8e8e8 100%);
+    color: #999;
+}
+
 
 /* -------- Media Queries --------- */
 @media(max-width: 865px) {

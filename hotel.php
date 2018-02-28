@@ -69,6 +69,7 @@
         $html .= '</article>';
         echo $html;
       }
+        
       $conn = null;
   }
 ?>

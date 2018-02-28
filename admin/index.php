@@ -21,60 +21,24 @@
       <nav class="menu-horizontal">
         <a href="#" onclick="ouvrirMenu()" class="btn-ouvrir"><img src="../img/menu.svg" alt="Menu"/></a>
         <a href="index.php" class="logo">Administration</a>
+        <a href="article.php" class="liens">Articles</a>
+        <a href="chambre.php" class="liens">Chambres</a>
         <a href="../index.php" class="liens">Retourner sur le site</a>
       </nav>
       <nav id="menu-vertical" class="menu-vertical">
         <a href="#" onclick="fermerMenu()" class="btn-fermer">&times;</a>
         <a href="index.php">Administration</a>
+        <a href="article.php" class="liens">Articles</a>
+        <a href="chambre.php" class="liens">Chambres</a>
         <a href="../index.php">Retourner sur le site</a>
       </nav>
     </header>
   <div id="contenu">
     <section>
       <header>
-        <h2>Liste des articles :</h2>
+        <h2>Bonjour !</h2>
       </header>
-        <table>
-<?php
-  require "../inc/config.php";
-
-  $result = $conn->prepare('SELECT * FROM Blog');
-  $result->execute();
-
-  while ($data = $result->fetch()) {
-    $html = '<tr>';
-    $html .= '<td>' .$data['id_blog'] . '</td>';
-    $html .= '<td>' . $data['titre'] . '</td>';
-    $html .= '<td><a href="edit.php?id=' . $data['id_blog'] . '">Modifier</a></td>';
-    $html .= '<td><a href="suppr.php?id=' . $data['id_blog'] . '">Supprimer</a></td>';
-    $html .= '</tr>';
-    echo $html;
-  }
-  $conn = null;
-?>
-      </table>
-    </section>
-    <section>
-      <header><hr/>
-        <h2>Créer un nouvel article :</h2>
-      </header>
-      <form method="post" action="creer.php" enctype="multipart/form-data">
-        <label for="titre">Titre :</label>
-        <input type="text" id="titre" name="titre"/>
-        <br/>
-        <label for="courte_description">Courte description : </label>
-        <input type="text" id="courte_description" name="courte_description"/>
-        <br/>
-        <label for="contenu">Courte description : </label>
-        <textarea d="contenu" id="contenu" name="contenu" style="height:150px;" rows="3"></textarea>
-        <br/>
-        <label>Image d'entête : </label>
-        <input type="file" style="border:none" name="image"></input><br/>
-        <div class="boutons">
-          <button type="reset">Annuler</button>
-          <button type="submit">Créer</button>
-        </div> 
-      </form>
+        <p>Ici, vous pourrez ajouter, modifier, supprimer les articles ou les chambres</p>
     </section>
     <?php require "../inc/footer.php"; ?>
     </div>

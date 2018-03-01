@@ -18,18 +18,18 @@
 			<a href="#description"><span class="fleche-animee"></span></a>
 		  </div>
 			 <div id="reservation">
-				<form class="flex-container" action="inc/resultatRecherche.php" accept-charset="UTF-8" method="POST">
+				<form class="flex-container" action="reservation.php" accept-charset="UTF-8" method="GET">
 				   <div class="flex-item">
-					<label for="dateArrivee"> <strong>Date d'arrivée</strong> </label>
-					<input type="date" value="" id="dateArrivee" class="form-control">
+					<label for="dateArrivee"><strong>Date d'arrivée</strong></label>
+					<input type="date" name="dateArrivee" id="dateArrivee" class="form-control">
 				   </div>
 				   <div class="flex-item">
-					<label for="dateDepart"> <strong>Date de départ</strong> </label>
-					<input type="date" value="" id="dateDepart" class="form-control">
+					<label for="dateDepart"><strong>Date de départ</strong></label>
+					<input type="date" name="dateDepart" id="dateDepart" class="form-control">
 				   </div>
 				   <div class="flex-item">
-					<label for="personne"> <strong>Personnes</strong> </label>
-						<select class="form-control" id="personne">
+					<label for="personne"><strong>Personnes</strong></label>
+						<select class="form-control" id="personne" name="personne">
 							<option>1</option>
 							<option>2</option>
 							<option>3</option>
@@ -42,7 +42,7 @@
 						</select>
 				  </div>
 				  <div class="flex-item">
-					<button type="submit" class="form-control" name="submit"> <strong>Envoyer</strong> </button>
+					<button type="submit" class="form-control"><strong>Envoyer</strong></button>
 				  </div>
 				</form>
 			</div>

@@ -27,6 +27,6 @@ Provenance des articles du blog :
 * Page d’administration (via PHP) => OK
 * [Pagination](https://zestedesavoir.com/tutoriels/351/paginer-avec-php-et-mysql/) => OK
 * [Commentaires](https://www.grafikart.fr/tutoriels/php/systeme-commentaire-php-45) => OK
-* Réservation => **KO**
-* Bas de page => **KO**
+* Réservation => OK
+* Bas de page => OK
 

@@ -5,6 +5,7 @@
 @import url(blog.css);
 @import url(contact.css);
 @import url(footer.css);
+@import url(reservation.css);
 
 /* ------ Polices ------ */
 @font-face {
@@ -65,7 +66,24 @@ a:hover {
 	text-decoration : underline;
 }
 
+/* ------ Input/textarea/select ----- */
+input:focus, textarea:focus, select:focus {
+    	border-color: #66AFE9;
+    	outline: 0px none;
+    	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(102, 175, 233, 0.6);
+}
 
+input, textarea, select {
+    	display: block;
+    	padding: 8px 8px;
+    	width: 100%;
+    	resize: vertical;
+    	color: #6F6F6F;
+    	background-color: #FFF;
+    	border: 1px solid #CCC;
+    	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+    	transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
 
 /* ------ Flex-Container ------ */
 

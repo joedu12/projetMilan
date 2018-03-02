@@ -45,8 +45,9 @@
 
     $result = $conn->prepare('SELECT * FROM Commentaire WHERE fk_blog = ?');
     $result->execute([$_GET["id"]]);
-
+    
     $html  = '<article>';
+    $html = '<h1>Plat du jour</h1>';
       $html  .= '<header>';
         $html .= '<img src="img/blog/' . $article['id_blog'] . '.jpg" alt="' . $article['titre'] . '"/>';
         $html .= '<h2>' . $article['titre'] . '</h2>';
@@ -107,7 +108,7 @@
 	// Permet de récupérer le nombre d'articles
 	$resultNbRow = $conn->query('SELECT found_rows()');
 	$nbArticles = $resultNbRow->fetchColumn();
-
+    
 	// articles
     while ($data = $result->fetch()) {
       $html = '<header>';

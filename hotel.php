@@ -20,7 +20,10 @@
 				<img src="img/chambre-4.jpg" alt="Chambre 4">
 			</figure>
 		</div>
-
+        <div class="reservation" id = "resahotel">
+                <?php require "inc/cadreResa.php"; ?>
+        </div>
+        <section>
 <?php
   /*
    * Affiche une chambre
@@ -31,7 +34,6 @@
     $result->execute([$_GET["id"]]);
     $data = $result->fetch();
 
-    echo '<section>';
     echo '<header>';
     echo '<h1>' . $data['nom']. '</h1><hr/>';
     echo '</header>';
@@ -48,7 +50,7 @@
      *Affiche l'ensemble des chambres
      */
     if (empty($_GET["id"])) {
-    echo '<section class="chambre">';
+    echo '<div class="chambre">';
     echo '<header>';
     echo '<h1>Les chambres :</h1><hr/>';
     echo '</header>';
@@ -73,8 +75,9 @@
       $conn = null;
   }
 ?>
-    	<?php require "inc/footer.php"; ?>
-	</div>
+        </section>
+        <?php require "inc/footer.php"; ?>
+	 </div>
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/script.js"></script>
     <script defer src="js/fontawesome-all.min.js"></script>

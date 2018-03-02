@@ -4,7 +4,6 @@ div#carousel img {
 	height: 50vh;
 	float: left;
 	object-fit: cover;
-	margin-bottom: 20px;
 }
 
 div#carousel figure { 

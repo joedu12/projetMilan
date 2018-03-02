@@ -12,6 +12,7 @@
   <body>
     <?php require "inc/header.php"; ?>
 	<div id="contenu">
+    
 <?php
   require "inc/config.php";
   /*
@@ -21,19 +22,24 @@
     extract($_GET);
 
     echo '<section class="chambre">';
+      
     echo '<header>';
-    echo '<h1>Chambre disponible trouvée(s) :</h1><hr/>';
+        echo '<h1>Chambre disponible trouvée(s) :</h1><hr/>';
     echo '</header>';
-
+      
     // la requête est à revoir
-    $req = $conn->prepare('SELECT * 
-      FROM Chambre
-      WHERE capacite > :personne
-      NOT IN (
-        SELECT id_chambre 
-        FROM Reservation r
-        WHERE r.dateArrivee > :dateArrivee
-        AND r.dateDepart < :dateDepart);');
+    $req = $conn->prepare('SELECT  c.*
+FROM    chambre c
+LEFT JOIN resachambre rc ON c.id_chambre = rc.fk_chambre
+WHERE c.capacite >= :personne
+AND ISNULL(rc.fk_resa) OR rc.fk_resa NOT IN (
+  SELECT rv.id_resa FROM reservation rv   
+           WHERE :dateArrivee BETWEEN dateArrivee AND dateDepart
+           OR    :dateDepart BETWEEN dateArrivee AND dateDepart 
+           OR  dateArrivee BETWEEN :dateArrivee AND :dateDepart  
+           AND dateDepart BETWEEN :dateArrivee AND :dateDepart
+)
+         ORDER BY c.capacite;');
 
     $req->execute(array(
       "personne" => $personne,
@@ -97,7 +103,7 @@
       <input type="hidden" id="dateDepart" name="dateDepart">
       <div class="boutons">
         <button type="reset">Annuler</button>
-        <button type="submit">Envoyer</button>
+        <button type="submit">Réserver</button>
       </div>
     </form>
 <?php
@@ -109,7 +115,7 @@
 
         // là ce n'est pas correct, il faut enregistrer la réservation au lieu du client
         $req = $conn->prepare('INSERT INTO Client (nom, prenom, adresse, cp, ville)
-        VALUES (:nom, :prenom, :adresse, :cp, :ville)');
+        VALUES (:nom, :prenom, :adresse, :cp, :ville);');
 
         $req->execute(array(
           "nom" => $nom, 
@@ -126,7 +132,7 @@
     echo '</section>';
 ?>
     	<?php require "inc/footer.php"; ?>
-	</div>
+      </div>
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/script.js"></script>
     <script defer src="js/fontawesome-all.min.js"></script>

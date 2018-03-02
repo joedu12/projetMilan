@@ -29,11 +29,11 @@
       
     // la requête est à revoir
     $req = $conn->prepare('SELECT  c.*
-FROM    chambre c
-LEFT JOIN resachambre rc ON c.id_chambre = rc.fk_chambre
+FROM    Chambre c
+LEFT JOIN ResaChambre rc ON c.id_chambre = rc.fk_chambre
 WHERE c.capacite >= :personne
 AND ISNULL(rc.fk_resa) OR rc.fk_resa NOT IN (
-  SELECT rv.id_resa FROM reservation rv   
+  SELECT rv.id_resa FROM Reservation rv   
            WHERE :dateArrivee BETWEEN dateArrivee AND dateDepart
            OR    :dateDepart BETWEEN dateArrivee AND dateDepart 
            OR  dateArrivee BETWEEN :dateArrivee AND :dateDepart  

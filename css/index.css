@@ -25,9 +25,9 @@
 
 /* Image de l'accueil */
 .image-cover {
-    	background-image: url('../img/bandeau-accueil.jpg');
-    	background-size: cover;
-    	background-position: center; 
+	background-image: url('../img/bandeau-accueil.jpg');
+	background-size: cover;
+	background-position: center; 
 }
 
 .image-cover h1{
@@ -56,9 +56,9 @@
 }
 
 .column{
-    -webkit-columns: 2 300px;
-     -moz-columns: 2 300px;
-    columns: 2 300px;
+	-webkit-columns: 2 300px;
+	-moz-columns: 2 300px;
+	columns: 2 300px;
 }
 
 .chiffre {
@@ -67,6 +67,6 @@
 
 /* Carte Google Map */
 #carte {
-    	height: 400px;
-    	width: 100%;
+	height: 400px;
+	width: 100%;
 }

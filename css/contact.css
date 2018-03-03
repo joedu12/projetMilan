@@ -1,15 +1,15 @@
 /* ------ Début Formulaire de contact ------ */
 .contact >  input, .contact > textarea, .contact > select {
-    	padding: 11px 8px;
-    	font-size: 15px;
-	   margin: 30px 0px;
-    	width: 75%;
+	padding: 11px 8px;
+	font-size: 15px;
+	margin: 30px 0px;
+	width: 75%;
 }
 
 .contact > label {
-    	position: relative;
-    	margin: 20px 0px;
-    	float: left;
-    	width: 20%;
+	position: relative;
+	margin: 20px 0px;
+	float: left;
+	width: 20%;
 }
 /* ------ Fin Formulaire de contact ------ */

@@ -54,6 +54,9 @@
         <label for="description">Description : </label>
         <textarea id="description" name="description"></textarea>
         <br/>
+        <label for="equipement">Équipement : </label>
+        <textarea id="equipement" name="equipement"></textarea>
+        <br/>
         <label>Image : </label>
         <input type="file" style="border:none" name="image"/>
           <br/>

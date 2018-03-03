@@ -16,12 +16,13 @@
           try {
             extract($_POST);
 
-            $req = $conn->prepare('INSERT INTO Chambre (nom, description, surface, tarif, capacite)
-            VALUES (:nom, :description, :surface, :tarif, :capacite)');
+            $req = $conn->prepare('INSERT INTO Chambre (nom, description, surface, tarif, capacite, equipement)
+            VALUES (:nom, :description, :surface, :tarif, :capacite, :equipement)');
 
             $req->execute(array(
               "nom" => $nom, 
-              "description" => $description, 
+              "description" => $description,
+              "equipement" => $equipement,
               "surface" => $surface, 
               "tarif" => $tarif, 
               "capacite" => $capacite

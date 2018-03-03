@@ -26,9 +26,6 @@
                   <h1 class="titre">Bienvenue au Château de Milan <br/> 
                   Hôtel et Restaurant</h1><hr/>
                   <p>JOEVIN ET MARGAUX ONT LE PLAISIR DE VOUS ACCUEILLIR</p>
-                
-                  
-                  <!-- Revoir le responsive -->
                     <div class="column">
                             <h2>Hotel <chiffre>4****</chiffre> en bord de mer pour votre séjours</h2>
                             <p>Le Château de Milan hôtel sur Canet-Plage situé sur le front de mer de Canet-en-Roussillon, vous accueille pour un séjour de détente à deux pas de la plage, à 20 minutes de voiture de l’aéroport de Perpignan-Rivesaltes et de la gare de Perpignan. Cet hôtel 4 étoiles est facilement accessible en taxi ou en bus. Les voyageurs qui arrivent en voiture disposent d’un parking public et gratuit hors saison, situé face à l’hôtel. Ses chambres spacieuses et baignées de lumière sont décorées dans le style « bord de mer » . L’hôtel met à votre disposition son salon d’affaires pour vos rencontres professionnelles.</p>

@@ -10,7 +10,7 @@
         <a href="#" onclick="fermerMenu()" class="btn-fermer">&times;</a>
         <a href="index.php">Accueil</a>
         <a href="hotel.php">Hôtel</a>
-    <a href="blog.php">Blog</a>
+    <a href="blog.php">Plat du Jour</a>
     <a href="contact.php">Contact</a>
     </nav>
 </header>

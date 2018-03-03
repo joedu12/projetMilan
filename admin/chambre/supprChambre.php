@@ -11,7 +11,6 @@
     <?php require "../admMenu.php"; ?>
   <div id="contenu">
     <section>
-      <p>
         <?php
           require "../../inc/config.php";
           try {
@@ -33,7 +32,6 @@
               echo "<p><b>Erreur :</b> Image introuvable.</p>";
           }
         ?>
-      </p>
     </section>
       <?php require "../../inc/footer.php"; ?>
     </div>

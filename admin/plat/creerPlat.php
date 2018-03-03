@@ -11,7 +11,6 @@
     <?php require "../admMenu.php"; ?>
   <div id="contenu">
     <section>
-      <p>
         <?php
           require "../../inc/config.php";
           try {
@@ -23,7 +22,7 @@
             $req->execute(array(
               "titre" => $titre,
               "courte_description" => $courte_description,
-              "contenu" => $contenu
+              "contenu" => $content
             ));
 
             echo "<p>Plat du jour créé avec succès !</p><br/>";
@@ -45,7 +44,6 @@
             }
           }
         ?>
-      </p>
     </section>
     <?php require "../../inc/footer.php"; ?>
     </div>

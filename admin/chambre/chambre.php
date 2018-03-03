@@ -49,10 +49,10 @@
         <input type="number" id="surface" name="surface"/>
         <br/>
         <label for="tarif">Tarif : </label>
-        <input d="tarif" id="tarif" name="tarif"/>
+        <input type="number" id="tarif" name="tarif"/>
         <br/>
         <label for="description">Description : </label>
-        <textarea d= "description" id="description" name="description"></textarea>
+        <textarea id="description" name="description"></textarea>
         <br/>
         <label>Image : </label>
         <input type="file" style="border:none" name="image"/>

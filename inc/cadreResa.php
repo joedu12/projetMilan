@@ -9,8 +9,8 @@
 		<input type="date" name="dateDepart" id="dateDepart" class="form-control" required>
 	   </div>
 	   <div class="flex-item">
-		<label for="personne" required><strong>Personnes</strong></label>
-			<select class="form-control" id="personne" name="personne" required>
+		<label for="personne"><strong>Personnes</strong></label>
+			<select class="form-control" id="personne" name="personne">
 				<option>1</option>
 				<option>2</option>
 				<option>3</option>

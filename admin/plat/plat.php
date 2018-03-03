@@ -45,8 +45,8 @@
         <label for="courte_description">Courte description : </label>
         <input type="text" id="courte_description" name="courte_description" required/>
         <br/>
-        <label for="contenu">Longue description : </label>
-        <textarea d="contenu" id="contenu" name="contenu" style="height:150px;" rows="3" required></textarea>
+        <label for="content">Longue description : </label>
+        <textarea id="content" name="content" style="height:150px;" rows="3" required></textarea>
         <br/>
         <label>Image d'entête : </label>
         <input type="file" style="border:none" name="image"/>

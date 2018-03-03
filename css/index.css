@@ -61,6 +61,9 @@
     columns: 2 300px;
 }
 
+.chiffre {
+  font-family: "akaDora";
+}
 
 /* Carte Google Map */
 #carte {

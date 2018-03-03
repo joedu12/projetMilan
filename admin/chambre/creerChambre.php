@@ -11,7 +11,6 @@
     <?php require "../admMenu.php"; ?>
   <div id="contenu">
     <section>
-      <p>
         <?php
           require "../../inc/config.php";
           try {
@@ -47,7 +46,6 @@
             }
           }
         ?>
-      </p>
     </section>
     <?php require "../../inc/footer.php"; ?>
     </div>

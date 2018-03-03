@@ -13,137 +13,146 @@
     <?php require "inc/header.php"; ?>
 	<div id="contenu">
     
-    <div class="reservation" id = "resahotel">
-            <?php require "inc/cadreResa.php"; ?>
-    </div>
-        <?php
-          require "inc/config.php";
-          /*
-           * Affiche la chambre disponible correspondant aux critères
-           */
-          if(!empty($_GET["personne"]) && !empty($_GET["dateArrivee"]) && !empty($_GET["dateDepart"])) {
-            extract($_GET);
+<?php
+  require "inc/config.php";
+  /*
+   * Affiche la chambre disponible correspondant aux critères
+   */
+  if(!empty($_GET["personne"]) && !empty($_GET["dateArrivee"]) && !empty($_GET["dateDepart"]) && empty($_GET["id"]) ) {
+    extract($_GET);
 
-            echo '<section class="chambre">';
+    echo '<section class="chambre">';
+    echo '<header>';
+        echo '<h1>Chambre disponible trouvée(s) :</h1><hr/>';
+    echo '</header>';
+      
+    // la requête est à revoir
+    $req = $conn->prepare('SELECT  c.*
+FROM    Chambre c
+LEFT JOIN ResaChambre rc ON c.id_chambre = rc.fk_chambre
+WHERE c.capacite >= :personne
+AND ISNULL(rc.fk_resa) OR rc.fk_resa NOT IN (
+  SELECT rv.id_resa FROM Reservation rv   
+           WHERE :dateArrivee BETWEEN dateArrivee AND dateDepart
+           OR    :dateDepart BETWEEN dateArrivee AND dateDepart 
+           OR  dateArrivee BETWEEN :dateArrivee AND :dateDepart  
+           AND dateDepart BETWEEN :dateArrivee AND :dateDepart
+)
+         ORDER BY c.capacite;');
 
-            echo '<header>';
-                echo '<h1>Chambre disponible trouvée(s) :</h1><hr/>';
-            echo '</header>';
+    $req->execute(array(
+      "personne" => $personne,
+      "dateDepart" => $dateDepart,
+      "dateArrivee" => $dateArrivee
+    ));
 
-            $req = $conn->prepare('SELECT  c.*
-            FROM    chambre c
-            LEFT JOIN resachambre rc ON c.id_chambre = rc.fk_chambre
-            WHERE c.capacite >= :personne
-            AND ISNULL(rc.fk_resa) OR rc.fk_resa NOT IN (
-              SELECT rv.id_resa FROM reservation rv   
-                       WHERE :dateArrivee BETWEEN dateArrivee AND dateDepart
-                       OR    :dateDepart BETWEEN dateArrivee AND dateDepart 
-                       OR  dateArrivee BETWEEN :dateArrivee AND :dateDepart  
-                       AND dateDepart BETWEEN :dateArrivee AND :dateDepart
-            )
-                     ORDER BY c.capacite;');
+    while ($data = $req->fetch()) {
+      $html = '<article>';
+      $html .= '<a href="reservation.php?id=' . $data['id_chambre'] . '&personne=' . htmlspecialchars($personne) . '&dateArrivee=' . htmlspecialchars($dateArrivee) . '&dateDepart=' . htmlspecialchars($dateDepart) . '">';
+            $html .= '<img src="img/chambres/' . $data['id_chambre'] . '_0.jpg"alt="' . $data['nom'] . '"/>';
+            $html .= '<h2>' . $data['nom'] . '</h2>';
+        $html .= '</a>';
+      $html .= '<p>' . $data['description'] . '</p>';
+      $html .= '<p>' . $data['capacite'] . ' personnes</p>';
+      $html .= '<p>' . $data['surface'] . ' m²</p>';
+      $html .= '<p>' . $data['tarif'] . ' €</p>';
+      $html .= '</article>';
+      echo $html;
+    }
 
+    echo '</section>';
+  }
 
-            $req->execute(array(
-              "personne" => $personne,
-              "dateDepart" => $dateDepart,
-              "dateArrivee" => $dateArrivee
-            ));
+  /*
+   * Affiche la chambre à réserver
+   */
+  if(!empty($_GET["id"])) {
+    $result = $conn->prepare('SELECT * FROM Chambre WHERE id_chambre = ?');
+    $result->execute([$_GET["id"]]);
+    $data = $result->fetch();
 
-            while ($data = $req->fetch()) {
-              $html = '<article>';
-              $html .= '<a href="reservation.php?id=' . $data['id_chambre'] .  '&dateDepart=' . $dateDepart . '&dateArrivee=' . $dateArrivee .  '&nbPers=' . $personne .'">';
-                    $html .= '<img src="img/chambres/' . $data['id_chambre'] . '_0.jpg"alt="' . $data['nom'] . '"/>';
-                    $html .= '<h2>' . $data['nom'] . '</h2>';
-                $html .= '</a>';
-              $html .= '<p>' . $data['description'] . '</p>';
-              $html .= '<p>' . $data['capacite'] . ' personnes</p>';
-              $html .= '<p>' . $data['surface'] . ' m²</p>';
-              $html .= '<p>' . $data['tarif'] . ' €</p>';
-              $html .= '</article>';
-              echo $html;
-            }
+    echo '<section>';
+    echo '<header>';
+    echo '<h1>' . $data['nom']. '</h1><hr/>';
+    echo '</header>';
+    $html = '<article>';
+    $html .= '<img src="img/chambres/' . $data['id_chambre'] . '_0.jpg"/>';
+        $html .= '<p>' . $data['description'] . '</p>';
+        $html .= '<p>' . $data['capacite'] . ' personnes</p>';
+        $html .= '<p>' . $data['surface'] . ' m²</p>';
+    $html .= '<p>' . $data['tarif'] . ' €</p>';
+    $html .= '</article>';
+    echo $html;
+?>
 
-            echo '</section>';
-          }
+    <h1>Formulaire de réservation : </h1>
+    <form class= "blog" action="reservation.php" accept-charset="UTF-8" method="POST">
+      <label for="nom">Nom</label>
+      <input type="text" id="nom" name="nom" required>
+      <label for="prenom">Prénom</label>
+      <input type="text" id="prenom" name="prenom" required>
+      <label for="adresse">Adresse</label>
+      <input type="text" id="adresse" name="adresse" required>
+      <label for="cp">Code Postal</label>
+      <input type="text" id="cp" name="cp" required>
+      <label for="mail">Ville</label>
+      <input type="text" id="ville" name="ville" required>
+      <label for="dateArrivee">Date d'arrivée</label>
+      <input type="date" name="dateArrivee" id="dateArrivee" value="<?= htmlspecialchars($_GET["dateArrivee"]) ?>" required>
+      <label for="dateDepart">Date de départ</label>
+      <input type="date" name="dateDepart" id="dateDepart" value="<?= htmlspecialchars($_GET["dateDepart"]) ?>" required>
+      <label for="personne">Personnes</label>
+      <input type="number" name="personne" id="personne" value="<?= htmlspecialchars($_GET["personne"]) ?>" required>
+      <input type="hidden" value="<?= htmlspecialchars($_GET["id"]) ?>" name="id_chambre">
+      <div class="boutons">
+        <button type="reset">Annuler</button>
+        <button type="submit">Réserver</button>
+      </div>
+    </form>
+<?php
+    }
 
-          /*
-           * Affiche la chambre à réserver
-           */
-          if(!empty($_GET["id"])) {
-            $result = $conn->prepare('SELECT * FROM Chambre WHERE id_chambre = ?');
-            $result->execute([$_GET["id"]]);
-            $data = $result->fetch();
+    if(!empty($_POST)){
+      extract($_POST);
+      if(!empty($nom) && !empty($prenom) && !empty($adresse) && !empty($cp) && !empty($ville)
+      && !empty($dateArrivee) && !empty($dateDepart) && !empty($personne)
+      && !empty($id_chambre)) {
 
-            echo '<section>';
-            echo '<header>';
-            echo '<h1>' . $data['nom']. '</h1><hr/>';
-            echo '</header>';
-            $html = '<article>';
-            $html .= '<img src="img/chambres/' . $data['id_chambre'] . '_0.jpg"/>';
-                $html .= '<p>' . $data['description'] . '</p>';
-                $html .= '<p>' . $data['capacite'] . ' personnes</p>';
-                $html .= '<p>' . $data['surface'] . ' m²</p>';
-            $html .= '<p>' . $data['tarif'] . ' €</p>';
-            $html .= '</article>';
-            echo $html;
-        ?>
+        $reqClient = $conn->prepare('INSERT INTO Client (nom, prenom, adresse, cp, ville)
+                                     VALUES (:nom, :prenom, :adresse, :cp, :ville);
+        ');
+        $reqClient->execute(array(
+          "nom" => $nom,
+          "prenom" => $prenom, 
+          "adresse" => $adresse, 
+          "cp" => $cp, 
+          "ville" => $ville
+        ));
 
-            <h1>Formulaire de réservation : </h1>
-            <form class= "blog" action="reservation.php" accept-charset="UTF-8" method="POST">
-              <label for="nom">Nom</label>
-              <input type="text" id="nom" name="nom" required>
-              <label for="prenom">Prénom</label>
-              <input type="text" id="prenom" name="prenom" required>
-              <label for="adresse">Adresse</label>
-              <input type="text" id="adresse" name="adresse" required>
-              <label for="cp">Code Postal</label>
-              <input type="text" id="cp" name="cp" required>
-              <label for="mail">Ville</label>
-              <input type="text" id="ville" name="ville" required>
-              <input type="hidden" id="nbPers" name="nbPers" value="<?= $_GET['nbPers'] ?>">
-              <input type="hidden" id="dateArrivee" name="dateArrivee" value="<?= $_GET['dateArrivee'] ?>">
-              <input type="hidden" id="dateDepart" name="dateDepart" value="<?= $_GET['dateDepart'] ?>">
-              <div class="boutons">
-                <button type="reset">Annuler</button>
-                <button type="submit">Réserver</button>
-              </div>
-            </form>
-        <?php
-            }
+        $reqReservation = $conn->prepare('INSERT INTO Reservation (nbPers, dateArrivee, dateDepart, fk_client)
+                                          VALUES (:personne, :dateArrivee, :dateDepart, :fk_client);
+        ');
+        $reqReservation->execute(array(
+          "personne" => $personne,
+          "dateArrivee" => $dateArrivee, 
+          "dateDepart" => $dateDepart,
+          "fk_client" => $conn->lastInsertId()
+        ));
 
-            if(!empty($_POST)){
-              extract($_POST);
-              if(!empty($nom) && !empty($prenom) && !empty($adresse) && !empty($cp) && !empty($ville)) {
+        $reqResaChambre = $conn->prepare('INSERT INTO ResaChambre (fk_resa, fk_chambre)
+                                          VALUES (:fk_resa, :fk_chambre);
+        ');
+        $reqResaChambre->execute(array(
+          "fk_resa" => $conn->lastInsertId(),
+          "fk_chambre" => $id_chambre
+        ));
 
-                $req1 = $conn->prepare('INSERT INTO Client (nom, prenom, adresse, cp, ville) VALUES (:nom, :prenom, :adresse, :cp, :ville);');
-                
-                $req1->execute(array(
-                  "nom" => $nom, 
-                  "prenom" => $prenom, 
-                  "adresse" => $adresse, 
-                  "cp" => $cp, 
-                  "ville" => $ville
-                ));
-                  
-                $idClient = $conn->lastInsertId();
-                  
-                $req2 = $conn->prepare('INSERT INTO Reservation (nbPers, dateResa, dateArrivee, dateDepart, fk_client) VALUES (:nbPers, :dateResa, :dateArrivee, :dateDepart, :idClient);');
-                  
-                $req2->execute(array(
-                  "nbPers" => intval($nbPers), 
-                  "dateResa" => date('Y-m-d'), 
-                  "dateArrivee" => $dateArrivee, 
-                  "dateDepart" => $dateDepart,
-                  "idClient" => $idClient
-                ));
-
-                echo "Merci pour votre réservation $prenom ! <br/>";
-                }
-              }
-            $conn = null;
-            echo '</section>';
-        ?>
+        echo "<h1>Réservation enregistrée !</h1>";
+        }
+      }
+    $conn = null;
+    echo '</section>';
+?>
     	<?php require "inc/footer.php"; ?>
       </div>
     <script src="js/jquery-3.2.1.js"></script>

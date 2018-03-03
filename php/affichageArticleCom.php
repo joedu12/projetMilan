@@ -38,8 +38,8 @@
         $html .= '<time>' . $article['date'] . '</time>';
         $html .= '<p>' . $article['courte_description'] . '</p>';
         $html .= $article['contenu'];
+        $html .= '</header>';
         $html .= '<hr/>';
-      $html .= '</header>';
       while ($commentaire = $result->fetch()) {
         $html .= '<section class="commentaire">';
           $html .= '<time>' . $commentaire['date'] . '</time>';

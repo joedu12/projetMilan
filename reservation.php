@@ -28,16 +28,16 @@
       
     // la requête est à revoir
     $req = $conn->prepare('SELECT  c.*
-FROM    Chambre c
-LEFT JOIN ResaChambre rc ON c.id_chambre = rc.fk_chambre
-WHERE c.capacite >= :personne
-AND ISNULL(rc.fk_resa) OR rc.fk_resa NOT IN (
-  SELECT rv.id_resa FROM Reservation rv   
-           WHERE :dateArrivee BETWEEN dateArrivee AND dateDepart
-           OR    :dateDepart BETWEEN dateArrivee AND dateDepart 
-           OR  dateArrivee BETWEEN :dateArrivee AND :dateDepart  
-           AND dateDepart BETWEEN :dateArrivee AND :dateDepart
-)
+        FROM    Chambre c
+        LEFT JOIN ResaChambre rc ON c.id_chambre = rc.fk_chambre
+        WHERE c.capacite >= :personne
+        AND ISNULL(rc.fk_resa) OR rc.fk_resa NOT IN (
+          SELECT rv.id_resa FROM Reservation rv   
+                   WHERE :dateArrivee BETWEEN dateArrivee AND dateDepart
+                   OR    :dateDepart BETWEEN dateArrivee AND dateDepart 
+                   OR  dateArrivee BETWEEN :dateArrivee AND :dateDepart  
+                   AND dateDepart BETWEEN :dateArrivee AND :dateDepart
+        )
          ORDER BY c.capacite;');
 
     $req->execute(array(
@@ -147,7 +147,8 @@ AND ISNULL(rc.fk_resa) OR rc.fk_resa NOT IN (
           "fk_chambre" => $id_chambre
         ));
 
-        echo "<h1>Réservation enregistrée !</h1>";
+        echo "<section><h2>Merci pour votre réservation enregistrée $prenom !</h2></section>";
+        
         }
       }
     $conn = null;

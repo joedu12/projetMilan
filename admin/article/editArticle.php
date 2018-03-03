@@ -3,19 +3,19 @@
   <head>
     <meta charset="UTF-8">
     <title>Le Château de Milan - Administration</title>
-    <link rel="icon" href="../img/favicon.ico">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../../img/favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css">
     <style> /* surcharge pour la page d'administration */
       
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head> 
   <body>
-    <?php require "admMenu.php"; ?>
+    <?php require "../admMenu.php"; ?>
   <div id="contenu">
     <section>
         <?php
-          require "../inc/config.php";
+          require "../../inc/config.php";
           $data = null;
 
           // Modifie l'article
@@ -35,7 +35,8 @@
               "id" => $id
             ));
 
-            echo "Article modifié avec succès <a href='index.php'>retour</a> ?";
+            echo "<p>Article modifié avec succès </p>
+                <p><a href='/projetMilan/admin/article/article.php'>Retour aux articles</a> ? </p>";
           }
 
           if(!empty($_GET["id"])) {
@@ -46,7 +47,7 @@
           }
         ?>
       <form method="post" action="editArticle.php">
-        <img id="imgArticle" src="/projetMilan/img/blog/<?= $_GET["id"] ?>.jpg" alt="<?= htmlspecialchars($data["titre"]) ?>">
+        <img id="imgArticle" src="/projetMilan/img/blog/<?= $_GET["id"] ?>.jpg" alt="<?= htmlspecialchars($data["titre"]); ?>">
         <input name="id" type="hidden" value="<?= htmlspecialchars($data["id_blog"]) ?>"/>
         <label for="titre">Titre :</label>
         <input type="text" id="titre" name="titre" value="<?= htmlspecialchars($data["titre"]); ?>"/>
@@ -64,10 +65,10 @@
         </div> 
       </form>
     </section>
-    <?php require "../inc/footer.php"; ?>
+    <?php require "../../inc/footer.php"; ?>
     </div>
-    <script src="../js/jquery-3.2.1.js"></script>
-    <script src="../js/script.js"></script>
-    <script defer src="../js/fontawesome-all.min.js"></script>
+    <script src="../../js/jquery-3.2.1.js"></script>
+    <script src="../../js/script.js"></script>
+    <script defer src="../../js/fontawesome-all.min.js"></script>
   </body>
 </html>

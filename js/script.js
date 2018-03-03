@@ -55,6 +55,7 @@ $(document).ready(function() {
         });
          
         // Empèche l'envoi du formulaire sans données. 
-        return false;   
+        return false;   2018-03-12
     });
 });
+

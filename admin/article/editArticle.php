@@ -6,55 +6,45 @@
     <link rel="icon" href="../img/favicon.ico">
     <link rel="stylesheet" href="../css/style.css">
     <style> /* surcharge pour la page d'administration */
-      input, textarea, select {
-        margin: 0px 0px;
-        width: 75%;
-        resize: vertical;
-      }
-      #imgArticle {
-        width: 100%;
-        height: 25vh;
-        object-fit: cover;
-        margin-bottom: 20px;
-      }
+      
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head> 
   <body>
-    <?php require "aHeader.php"; ?>
+    <?php require "admMenu.php"; ?>
   <div id="contenu">
     <section>
-<?php
-  require "../inc/config.php";
-  $data = null;
+        <?php
+          require "../inc/config.php";
+          $data = null;
 
-  // Modifie l'article
-  if(!empty($_POST)){
-    extract($_POST);
+          // Modifie l'article
+          if(!empty($_POST)){
+            extract($_POST);
 
-    $req = $conn->prepare('UPDATE Blog SET
-      titre = :titre,
-      courte_description = :courte_description,
-      contenu = :contenu
-      WHERE id_blog = :id;');
+            $req = $conn->prepare('UPDATE Blog SET
+              titre = :titre,
+              courte_description = :courte_description,
+              contenu = :contenu
+              WHERE id_blog = :id;');
 
-    $req->execute(array(
-      "titre" => $titre, 
-      "courte_description" => $courte_description,
-      "contenu" => $contenu,
-      "id" => $id
-    ));
+            $req->execute(array(
+              "titre" => $titre, 
+              "courte_description" => $courte_description,
+              "contenu" => $contenu,
+              "id" => $id
+            ));
 
-    echo "Article modifié avec succès <a href='index.php'>retour</a> ?";
-  }
+            echo "Article modifié avec succès <a href='index.php'>retour</a> ?";
+          }
 
-  if(!empty($_GET["id"])) {
-    // Pré-remplit le formulaire
-    $result = $conn->prepare("SELECT * FROM Blog WHERE id_blog = ?");
-    $result->execute([$_GET["id"]]);
-    $data = $result->fetch();
-  }
-?>
+          if(!empty($_GET["id"])) {
+            // Pré-remplit le formulaire
+            $result = $conn->prepare("SELECT * FROM Blog WHERE id_blog = ?");
+            $result->execute([$_GET["id"]]);
+            $data = $result->fetch();
+          }
+        ?>
       <form method="post" action="editArticle.php">
         <img id="imgArticle" src="/projetMilan/img/blog/<?= $_GET["id"] ?>.jpg" alt="<?= htmlspecialchars($data["titre"]) ?>">
         <input name="id" type="hidden" value="<?= htmlspecialchars($data["id_blog"]) ?>"/>

@@ -16,12 +16,12 @@
       <header>
         <h1>Contact</h1><hr/>
       </header>
-      <form class="contact" action="inc/formContact.php" accept-charset="UTF-8" method="POST">
+      <form class="contact" action="php/formContact.php" accept-charset="UTF-8" method="POST">
         <label for="nom">Nom :</label>
         <input type="text" id="nom" placeholder="Nom" name="nom" required>
 
         <label for="email">Émail :</label>
-        <input type="email" id="email" placeholder="Émail" name="email" required>
+        <input type="email" id="email" placeholder="Émail" name="email">
 
         <label for="mess">Message :</label>
         <textarea id="mess" name="mess" rows="3" placeholder="Entrez ici le message que vous souhaitez nous envoyer." required></textarea>

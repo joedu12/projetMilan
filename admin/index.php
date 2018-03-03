@@ -5,19 +5,10 @@
     <title>Le Château de Milan - Administration</title>
     <link rel="icon" href="../img/favicon.ico">
     <link rel="stylesheet" href="../css/style.css">
-    <style> /* surcharge pour la page d'administration */
-      input, textarea, select {
-          margin: 0px 0px;
-          width: 75%;
-          resize: vertical;
-      }
-      table { margin-bottom: 20px; }
-      td { padding: 3px; }
-    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head> 
   <body>
-    <?php require "aHeader.php"; ?>
+    <?php require "admMenu.php"; ?>
   <div id="contenu">
     <section>
       <header>

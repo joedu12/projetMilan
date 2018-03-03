@@ -6,6 +6,7 @@
 @import url(contact.css);
 @import url(footer.css);
 @import url(reservation.css);
+@import url(admin.css);
 
 /* ------ Polices ------ */
 @font-face {
@@ -36,6 +37,7 @@ body {
 section {
 	position: relative;
 	padding: 0px 10%;
+    margin-bottom: 30px;
 }
 
 
@@ -99,7 +101,7 @@ input, textarea, select {
 }
 
 /*---------- Button -----------*/
-button {
+button, a.button {
     background-image: linear-gradient(to bottom, #ec2929 0px, #9f0606 100%);
     border-radius: 7px;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.09) inset;
@@ -109,6 +111,7 @@ button {
     border: 0px;
     color: white;
     font-weight:bold;
+    text-decoration: none; 
 }
 
 button[type=reset]  {

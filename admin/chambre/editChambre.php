@@ -5,60 +5,47 @@
     <title>Le Château de Milan - Administration</title>
     <link rel="icon" href="../img/favicon.ico">
     <link rel="stylesheet" href="../css/style.css">
-    <style> /* surcharge pour la page d'administration */
-      input, textarea, select {
-        margin: 0px 0px;
-        width: 75%;
-        resize: vertical;
-      }
-      #imgChambre {
-        width: 100%;
-        height: 25vh;
-        object-fit: cover;
-        margin-bottom: 20px;
-      }
-    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head> 
   <body>
-    <?php require "aHeader.php"; ?>
+    <?php require "admMenu.php"; ?>
   <div id="contenu">
     <section>
-<?php
-  require "../inc/config.php";
-  $data = null;
+        <?php
+          require "../inc/config.php";
+          $data = null;
 
-  // Modifie l'article
-  if(!empty($_POST)){
-    extract($_POST);
+          // Modifie l'article
+          if(!empty($_POST)){
+            extract($_POST);
 
-    $req = $conn->prepare('UPDATE Chambre SET
-      nom = :nom, 
-      description = :description, 
-      surface = :surface, 
-      tarif = :tarif,
-      capacite = :capacite
-      WHERE id_chambre = :id;');
+            $req = $conn->prepare('UPDATE Chambre SET
+              nom = :nom, 
+              description = :description, 
+              surface = :surface, 
+              tarif = :tarif,
+              capacite = :capacite
+              WHERE id_chambre = :id;');
 
-    $req->execute(array(
-      "nom" => $nom, 
-      "description" => $description, 
-      "surface" => $surface, 
-      "tarif" => $tarif,
-      "capacite" => $capacite,
-      "id" => $id
-    ));
+            $req->execute(array(
+              "nom" => $nom, 
+              "description" => $description, 
+              "surface" => $surface, 
+              "tarif" => $tarif,
+              "capacite" => $capacite,
+              "id" => $id
+            ));
 
-    echo "Chambre modifié avec succès <a href='index.php'>retour</a> ?";
-  }
+            echo "Chambre modifié avec succès <a href='index.php'>retour</a> ?";
+          }
 
-  if(!empty($_GET["id"])) {
-    // Pré-remplit le formulaire
-    $result = $conn->prepare("SELECT * FROM Chambre WHERE id_chambre = ?");
-    $result->execute([$_GET["id"]]);
-    $data = $result->fetch();
-  }
-?>
+          if(!empty($_GET["id"])) {
+            // Pré-remplit le formulaire
+            $result = $conn->prepare("SELECT * FROM Chambre WHERE id_chambre = ?");
+            $result->execute([$_GET["id"]]);
+            $data = $result->fetch();
+          }
+        ?>
       <form method="post" action="editChambre.php">
         <img id="imgChambre" src="/projetMilan/img/chambres/<?= $_GET["id"] ?>_0.jpg" alt="<?= htmlspecialchars($data["nom"]) ?>">
         <input name="id" type="hidden" value="<?= htmlspecialchars($data["id_chambre"]) ?>"/>

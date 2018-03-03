@@ -17,20 +17,20 @@
           try {
             $sql = "DELETE FROM Blog WHERE id_blog={$_GET['id']}";
             $conn->exec($sql);
-            echo "<p>Article supprimé avec succès !</p><br/>";
+            echo "<p>Article supprimé avec succès !</p>";
           }
           catch(PDOException $e) {
             echo "<p><b>Erreur :</b> " . $e->getMessage()."</p>";
           }
 
           // suppression de l'image
-          $image = realpath(dirname(getcwd())) . '../../img/blog/' . $_GET['id'] . '.jpg';
+          $image = realpath(dirname(getcwd())) . '/../img/blog/' . $_GET['id'] . '.jpg';
           if(file_exists($image)){
               unlink($image);
-              echo "<p>Image supprimée avec succès.</p><br/>";
+              echo "<p>Image supprimée avec succès.</p>";
           }
           else{
-              echo "<p><b>Erreur :</b> Image introuvable.</p><br/>";
+              echo "<p><b>Erreur :</b> Image introuvable.</p>";
           }
         ?>
       </p>

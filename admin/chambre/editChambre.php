@@ -36,8 +36,24 @@
               "id" => $id
             ));
 
-            echo "<p>Article modifié avec succès </p>
-                <p><a href='/projetMilan/admin/chambre/chambre.php'>Retour aux chambres</a> ? </p>";
+            // upload l'image s'il y en a une
+            if(!empty($_FILES['image']))
+            {
+              $path = realpath(dirname(getcwd())) . '../../img/chambres/' . $id . '_0.jpg';
+              move_uploaded_file($_FILES['image']['tmp_name'], $path);
+            }
+
+            echo "<p>Article modifié avec succès !</p>";
+            echo "<p><a href='chambre.php'>Retour aux articles</a> ?</p>";
+
+            // complète le formulaire
+            $data["id_chambre"] = $id;
+            $_GET["id"] = $id;
+            $data["nom"] = $nom;
+            $data["description"] = $description;
+            $data["surface"] = $surface;
+            $data["tarif"] = $tarif;
+            $data["capacite"] = $capacite;
           }
 
           if(!empty($_GET["id"])) {
@@ -47,8 +63,8 @@
             $data = $result->fetch();
           }
         ?>
-      <form method="post" action="editChambre.php">
-        <img id="imgChambre" src="/projetMilan/img/chambres/<?= $_GET["id"] ?>_0.jpg" alt="<?= htmlspecialchars($data["nom"]) ?>">
+      <form method="post" action="editChambre.php" enctype="multipart/form-data">
+        <img id="imgArticle" src="/projetMilan/img/chambres/<?= $_GET["id"] ?>_0.jpg?<?= date('U') ?>" alt="<?= htmlspecialchars($data["nom"]) ?>">
         <input name="id" type="hidden" value="<?= htmlspecialchars($data["id_chambre"]) ?>"/>
         <label for="nom">Nom :</label>
         <input type="text" id="nom" name="nom" value="<?= htmlspecialchars($data["nom"]); ?>"/>
@@ -64,6 +80,9 @@
         <br/>
         <label for="tarif">Tarif :</label>
         <input type="text" id="tarif" name="tarif" value="<?= htmlspecialchars($data["tarif"]); ?>"/>
+        <br/>
+        <label>Image d'entête (laisser vide pour conserver l'existante) :</label>
+        <input type="file" style="border:none" name="image"/>
         <br/>
         <div class="boutons">
           <button type="reset" onclick="history.back()">Retour</button>

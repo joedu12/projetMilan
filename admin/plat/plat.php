@@ -25,8 +25,8 @@
     $html = '<tr>';
     $html .= '<td>' .$data['id_blog'] . '</td>';
     $html .= '<td>' . $data['titre'] . '</td>';
-    $html .= '<td><a href="editArticle.php?id=' . $data['id_blog'] . '">Modifier</a></td>';
-    $html .= '<td><a href="supprArticle.php?id=' . $data['id_blog'] . '">Supprimer</a></td>';
+    $html .= '<td><a href="editPlat.php?id=' . $data['id_blog'] . '">Modifier</a></td>';
+    $html .= '<td><a href="supprPlat.php?id=' . $data['id_blog'] . '">Supprimer</a></td>';
     $html .= '</tr>';
     echo $html;
   }
@@ -38,7 +38,7 @@
       <header><hr/>
         <h2>Créer un nouvel article :</h2>
       </header>
-      <form method="post" action="creerArticle.php" enctype="multipart/form-data">
+      <form method="post" action="creerPlat.php" enctype="multipart/form-data">
         <label for="titre">Titre :</label>
         <input type="text" id="titre" name="titre" required/>
         <br/>

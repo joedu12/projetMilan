@@ -7,20 +7,14 @@ footer {
     width: 100%;
 }
 
-.flex-container {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 .footer .flex-item{
     padding: 8px;
-    width: 350px;
-    margin: 0 50px;
+    width: 320px;
+    margin: 0 30px;
+}
+
+#lien-util{
+    width:200px;
 }
 
 .footer a {
@@ -41,7 +35,6 @@ footer {
     background-color:#6E6E6E;
     padding: 10px;
     margin:0;
-    
     min-width: 300px;
 }
 

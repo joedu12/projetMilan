@@ -18,7 +18,7 @@
           require "../../inc/config.php";
           $data = null;
 
-          // Modifie l'article
+          // Modifie le plat
           if(!empty($_POST)){
             extract($_POST);
 
@@ -42,8 +42,8 @@
               move_uploaded_file($_FILES['image']['tmp_name'], $path);
             }
 
-            echo "<p>Article modifié avec succès !</p>";
-            echo "<p><a href='article.php'>Retour aux articles</a> ?</p>";
+            echo "<p>Plat modifié avec succès !</p>";
+            echo "<p><a href='plat.php'>Retour à la liste à la liste des plats</a> ?</p>";
 
             // complète le formulaire
             $data["id_blog"] = $id;
@@ -60,7 +60,7 @@
             $data = $result->fetch();
           }
         ?>
-      <form method="post" action="editArticle.php" enctype="multipart/form-data">
+      <form method="post" action="editPlat.php" enctype="multipart/form-data">
         <img id="imgArticle" src="/projetMilan/img/blog/<?= $_GET["id"] ?>.jpg?<?= date('U') ?>" alt="<?= htmlspecialchars($data["titre"]); ?>">
         <input name="id" type="hidden" value="<?= htmlspecialchars($data["id_blog"]) ?>"/>
         <label for="titre">Titre :</label>

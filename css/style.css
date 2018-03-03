@@ -21,6 +21,12 @@
     	src: url('../fonts/Ananda-Black.ttf');
 }
 
+@font-face {
+    font-family:"akaDora";
+    src:url('../fonts/akaDora.ttf');
+    font-weight:normal;
+}
+
 /* ---- style css de base ----- */
 html {
     	position: relative;
@@ -41,8 +47,6 @@ section {
 }
 
 
-
-
 header > hr {
   	height: 1px;
   	background-color: lightgray;
@@ -57,6 +61,20 @@ h1{
 
 h2{
 	font-weight: bold;
+    margin-top: 40px;
+}
+
+h3{
+    margin-top: 35px;
+    color: #ec2929;
+}
+
+p{
+    text-align: justify;
+}
+
+chiffre{
+	font-family: "akaDora";
 }
 
 a {

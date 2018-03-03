@@ -14,10 +14,10 @@
     <div id="contenu">
         <div id="carousel">
             <figure>			
-                <img src="img/chambre-1.jpg" alt="Chambre 1">
-                <img src="img/chambre-2.jpg" alt="Chambre 2">
-                <img src="img/chambre-3.jpg" alt="Chambre 3">
-                <img src="img/chambre-4.jpg" alt="Chambre 4">
+                <img src="img/hotel/chambre-1.jpg" alt="Chambre 1">
+                <img src="img/hotel/chambre-2.jpg" alt="Chambre 2">
+                <img src="img/hotel/chambre-3.jpg" alt="Chambre 3">
+                <img src="img/hotel/chambre-4.jpg" alt="Chambre 4">
             </figure>
         </div>
         <div class="reservation" id = "resahotel">

@@ -14,7 +14,7 @@
       <header>
         <h2>Bonjour !</h2>
       </header>
-        <p>Ici, vous pourrez ajouter, modifier, supprimer les articles ou les chambres</p>
+        <p>Ici, vous pourrez ajouter, modifier, supprimer les plats ou les chambres</p>
     </section>
     <?php require "../inc/footer.php"; ?>
     </div>

@@ -22,17 +22,33 @@
 			</div>
 		</section>
 	      <section>
-			  <h1 id="description">Description</h1><hr/>
-			  <p>Listes de liens utiles à la réalisation du site internet :</p>
-			  <ul>
-				  <li><a href="https://www.efteling.com/fr/hotel/junior-suites/suites-junior">Images à récupérer (Efteling)</a></li>
-				  <li><a href="https://aubergedubarrez.com/">Inspiration menu n°1</a></li>
-				  <li><a href="http://www.hotel-segala-pleinciel.com/fr/musee-soulages">Inspiration menu n°2</a></li>
-				  <li><a href="https://codepen.io/anon/pen/LedjJy">Scroll JQuery</a> -> OK</li>
-				  <li><a href="https://www.youtube.com/watch?v=wpGNFGqNfdU">Menu responsive</a></li>
-			  </ul>
-			<p>Nous pouvons vous offrir de magnifiques chambres ! N'hésitez pas à nous <a href="contact.php">contacter</a> et nous vous recontacterons dans les plus brefs délais.</p>
-			  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in gravida sapien, sodales interdum massa. Maecenas ac facilisis neque, id placerat nibh. Vivamus eget elit a odio varius feugiat. Nunc volutpat, eros sit amet elementum elementum, massa tellus cursus dolor, ut fringilla nibh lacus id tellus.</p>
+              <div id="description">
+                  <h1 class="titre">Bienvenue au Château de Milan <br/> 
+                  Hôtel et Restaurant</h1><hr/>
+                  <p>JOEVIN ET MARGAUX ONT LE PLAISIR DE VOUS ACCUEILLIR</p>
+                
+                  
+                  <!-- Revoir le responsive -->
+                    <div class="column">
+                            <h2>Hotel <chiffre>4****</chiffre> en bord de mer pour votre séjours</h2>
+                            <p>Le Château de Milan hôtel sur Canet-Plage situé sur le front de mer de Canet-en-Roussillon, vous accueille pour un séjour de détente à deux pas de la plage, à 20 minutes de voiture de l’aéroport de Perpignan-Rivesaltes et de la gare de Perpignan. Cet hôtel 4 étoiles est facilement accessible en taxi ou en bus. Les voyageurs qui arrivent en voiture disposent d’un parking public et gratuit hors saison, situé face à l’hôtel. Ses chambres spacieuses et baignées de lumière sont décorées dans le style « bord de mer » . L’hôtel met à votre disposition son salon d’affaires pour vos rencontres professionnelles.</p>
+                    
+                            <h2>Des chambres claires spacieuses</h2>
+                            <p>De catégorie Classique ou Supérieure, nos chambres peuvent accueillir de 2 à 6 personnes et se dotent d’une salle de bain privative possédant des douches à l’italienne avec sèche-cheveux . Depuis la terrasse, vous profiterez d’une vue sur la mer ou sur l’Etang-Canigou. Un coffre-fort est disponible. Situées aux 4e, 5e et 6e étages de l’établissement, les chambres Supérieure offrent en prime le confort de peignoirs, de chaussons et de produits de toilette gratuits Algotherme. Dans ces dernières, vous bénéficierez également d’une machine Nespresso.</p>
+                        
+                            <h2>Petit-déjeuner et restauration</h2>
+                            <p>Dès les premières heures de la journée, que vous souhaitiez profiter de notre salle à manger ensoleillée ou que vous préfériez savourer votre petit-déjeuner au lit, toutes les options sont permises. En buffet ou directement dans votre chambre, vous vous délecterez d’un délicieux assortiment de mets sucrés et salés.</p>
+                            
+                            <h2>Pour un sejour reussi</h2>
+                            <p>Notre personnel parlant français, anglais, espagnol et allemand, vous accueille à la réception ouverte 24h/24 de notre hôtel près de l’aéroport de Perpignan. Pour satisfaire au mieux vos exigences, un business corner avec ordinateur, un service de bagagerie et de cireur, et une douche sont à votre disposition.</p>
+                        
+                            <h2>Détendez vous a deux pas de la plage</h2>
+                            <p>Notre hôtel à Canet-en-Roussillon offre aussi bien des espaces de détente que de travail, ce qui en fait le lieu idéal où séjourner pour vos affaires comme pour vos loisirs. Organisez vos séminaires d’entreprises ou vos conférences dans le salon « le Sardinal », qui accueille de 15 à 25 personnes selon la disposition souhaitée (en U ou en théâtre). Pendant vos moments de pause, sirotez cocktails ou boissons fraîches dans notre bar ouvert de 7h à 2h, adonnez-vous aux nombreuses activités nautiques disponibles au port de Canet, ou détendez-vous sur la plage. Les animaux domestiques sont acceptés sous certaines conditions.</p>
+                        <img src="img/hotel.jpg" alt="Hotel">
+                  </div>
+
+                </div>
+              
 		</section>
 		<section>
 		<h2>Localisation</h2><hr>

@@ -15,7 +15,7 @@
           require "../../inc/config.php";
           $data = null;
 
-          // Modifie l'article
+          // Modifie la chambre
           if(!empty($_POST)){
             extract($_POST);
 
@@ -43,8 +43,8 @@
               move_uploaded_file($_FILES['image']['tmp_name'], $path);
             }
 
-            echo "<p>Article modifié avec succès !</p>";
-            echo "<p><a href='chambre.php'>Retour aux articles</a> ?</p>";
+            echo "<p>Chambre modifié avec succès !</p>";
+            echo "<p><a href='chambre.php'>Retour à la liste des chambres</a> ?</p>";
 
             // complète le formulaire
             $data["id_chambre"] = $id;
@@ -64,7 +64,7 @@
           }
         ?>
       <form method="post" action="editChambre.php" enctype="multipart/form-data">
-        <img id="imgArticle" src="/projetMilan/img/chambres/<?= $_GET["id"] ?>_0.jpg?<?= date('U') ?>" alt="<?= htmlspecialchars($data["nom"]) ?>">
+        <img id="imgArticle" src="/projetMilan/img/chambres/<?= $_GET["id"] ?>.jpg?<?= date('U') ?>" alt="<?= htmlspecialchars($data["nom"]) ?>">
         <input name="id" type="hidden" value="<?= htmlspecialchars($data["id_chambre"]) ?>"/>
         <label for="nom">Nom :</label>
         <input type="text" id="nom" name="nom" value="<?= htmlspecialchars($data["nom"]); ?>"/>

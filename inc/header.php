@@ -3,7 +3,7 @@
         <a href="#" onclick="ouvrirMenu()" class="btn-ouvrir"><img src="img/menu.svg" alt="Menu"/></a>
         <a href="index.php" class="logo">Le Château de Milan</a>
     <a href="hotel.php" class="<?= $_SERVER['PHP_SELF']=="/projetMilan/hotel.php" ? "actif":"liens" ?>">Hôtel</a>
-    <a href="blog.php" class="<?= $_SERVER['PHP_SELF']=="/projetMilan/blog.php" ? "actif":"liens" ?>">Blog</a>
+    <a href="blog.php" class="<?= $_SERVER['PHP_SELF']=="/projetMilan/blog.php" ? "actif":"liens" ?>">Plat du Jour</a>
     <a href="contact.php" class="<?= $_SERVER['PHP_SELF']=="/projetMilan/contact.php" ? "actif":"liens" ?>">Contact</a>
     </nav>
     <nav id="menu-vertical" class="menu-vertical">

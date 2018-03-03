@@ -1,7 +1,7 @@
 /* ------ Début Carousel ------ */
 div#carousel img {
 	width: 20%;
-	height: 50vh;
+	height: 60vh;
 	float: left;
 	object-fit: cover;
 }
@@ -53,6 +53,10 @@ div#carousel figure {
 }
 
 article {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+}
+
+li{
+    padding: 0px 0px 5px 3px;
 }
 

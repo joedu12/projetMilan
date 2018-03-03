@@ -39,7 +39,7 @@
     </div>
     <script src="../../js/jquery-3.2.1.js"></script>
     <script src="../../js/script.js"></script>
-    <script>setTimeout(function(){ location.href='article.php'; }, 2000);</script>
+    <script>setTimeout(function(){ location.href='plat.php'; }, 2000);</script>
     <script defer src="../../js/fontawesome-all.min.js"></script>
   </body>
 </html>

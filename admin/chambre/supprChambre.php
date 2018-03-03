@@ -24,7 +24,7 @@
           }
 
           // suppression de l'image
-          $image = realpath(dirname(getcwd())) . '/../img/chambres/' . $_GET['id'] . '_0.jpg';
+          $image = realpath(dirname(getcwd())) . '/../img/chambres/' . $_GET['id'] . '.jpg';
           if(file_exists($image)){
               unlink($image);
               echo "<p>Image supprimée avec succès.</p>";

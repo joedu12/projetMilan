@@ -1,10 +1,10 @@
-.titre { /* Joli titre au milleu de l'image d'accueil */
+.titre, h1.titre { /* Joli titre au milleu de l'image d'accueil */
 	margin: 0;
-	padding-top: 230px;
+	padding-top: 3px;
 	font-family: "Ananda Black";
 	font-size: 2em;
 	text-align: center;
-	color: white;
+	color: #ec2929;
 }
 
 .fleche-animee { /* Flèche annimée sous le titre */position: absolute;
@@ -28,6 +28,37 @@
     	background-image: url('../img/bandeau-accueil.jpg');
     	background-size: cover;
     	background-position: center; 
+}
+
+.image-cover h1{
+    color:white;
+	padding-top: 230px;
+    
+}
+
+#description h2{
+    margin: 0;
+	padding-top: 3px;
+	font-family: "Ananda Black";
+	color: #ec2929;
+    
+}
+
+#description .flex-container{
+    justify-content: left;
+    min-width: 300px;
+}
+
+#description .flex-item{
+    margin: 0 20px 20px;
+    min-width: 200px;
+    max-width: 500px;
+}
+
+.column{
+    -webkit-columns: 2 300px;
+     -moz-columns: 2 300px;
+    columns: 2 300px;
 }
 
 

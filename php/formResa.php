@@ -13,12 +13,16 @@
     echo '<h1>' . $data['nom']. '</h1><hr/>';
     echo '</header>';
     $html = '<article>';
-    $html .= '<img src="img/chambres/' . $data['id_chambre'] . '_0.jpg"/>';
+    $html .= '<img src="img/chambres/' . $data['id_chambre'] . '.jpg"/>';
         $html .= '<p>' . $data['description'] . '</p>';
         $html .= '<p>' . $data['capacite'] . ' personnes</p>';
         $html .= '<p>' . $data['surface'] . ' m²</p>';
     $html .= '<p>' . $data['tarif'] . ' €</p>';
+    $html .= '<h2>Résumé des équipements</h2> ';
+    $html .= '<hr>';
+    $html .= '<div class = "column">'. $data['equipement'] . '</div>';
     $html .= '</article>';
+    $html .= '<hr/>';
     echo $html;
 ?>
 

@@ -39,7 +39,7 @@
           // upload l'image s'il y en a une
           if(!empty($_FILES['image']))
           {
-            $path = realpath(dirname(getcwd())) . '../../img/chambres/' . $id . '_0.jpg';
+            $path = realpath(dirname(getcwd())) . '../../img/chambres/' . $id . '.jpg';
             if(move_uploaded_file($_FILES['image']['tmp_name'], $path)) {
               echo "<p>L'image ".  basename( $_FILES['image']['name']) . " à bien été envoyée.</p><br/>";
             } else{

@@ -20,6 +20,10 @@
             <i class="fab fa-google-plus fab-3" aria-hidden="true"></i>
             <i class="fab fa-tripadvisor fab-3" aria-hidden="true"></i>
         </li>
+        <li id="photoCanet" class="flex-item">
+            <h4>UNE PHOTO DE CANET-EN-ROUSILLON</h4>
+            <img src="img/canet.jpg" alt="Canet">
+        </li>
     </ul>
     <p class ="end-footer">
         Créé par Margaux SARTIEAUX et Joévin SOULENQ.

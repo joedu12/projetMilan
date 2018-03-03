@@ -40,13 +40,13 @@
       </header>
       <form method="post" action="creerArticle.php" enctype="multipart/form-data">
         <label for="titre">Titre :</label>
-        <input type="text" id="titre" name="titre"/>
+        <input type="text" id="titre" name="titre" required/>
         <br/>
         <label for="courte_description">Courte description : </label>
-        <input type="text" id="courte_description" name="courte_description"/>
+        <input type="text" id="courte_description" name="courte_description" required/>
         <br/>
         <label for="contenu">Longue description : </label>
-        <textarea d="contenu" id="contenu" name="contenu" style="height:150px;" rows="3"></textarea>
+        <textarea d="contenu" id="contenu" name="contenu" style="height:150px;" rows="3" required></textarea>
         <br/>
         <label>Image d'entête : </label>
         <input type="file" style="border:none" name="image"/>

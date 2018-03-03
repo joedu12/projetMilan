@@ -28,11 +28,11 @@
               "capacite" => $capacite
             ));
 
-            echo "Chambre créé avec succès !<br/>";
+            echo "<p>Chambre créé avec succès !</p><br/>";
             $id = $conn->lastInsertId();
           }
           catch(PDOException $e) {
-            echo "<b>Erreur :</b> " . $e->getMessage();
+            echo "<p><b>Erreur :</b> " . $e->getMessage()."</p>";
           }
           $conn = null;
 
@@ -41,9 +41,9 @@
           {
             $path = realpath(dirname(getcwd())) . '/img/chambres/' . $id . '_0.jpg';
             if(move_uploaded_file($_FILES['image']['tmp_name'], $path)) {
-              echo "L'image ".  basename( $_FILES['image']['name']) . " à bien été envoyée.<br/>";
+              echo "<p>L'image ".  basename( $_FILES['image']['name']) . " à bien été envoyée.</p><br/>";
             } else{
-                echo "<b>Erreur :</b> Aucune image n'a été envoyée.<br/>";
+                echo "<p><b>Erreur :</b> Aucune image n'a été envoyée.</p><br/>";
             }
           }
         ?>
@@ -53,7 +53,7 @@
     </div>
     <script src="../../js/jquery-3.2.1.js"></script>
     <script src="../../js/script.js"></script>
-    <script>setTimeout(function(){ location.href='index.php'; }, 2000);</script>
+    <script>setTimeout(function(){ location.href='chambre.php'; }, 2000);</script>
     <script defer src="../../js/fontawesome-all.min.js"></script>
   </body>
 </html>

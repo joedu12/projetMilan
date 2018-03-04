@@ -59,3 +59,15 @@ $(document).ready(function() {
     });
 });
 
+// Gestion du calendrier
+$('#calendrier').fullCalendar({
+  header: {
+    left: 'prev,next today',
+    center: 'title',
+    right: 'month,agendaWeek,agendaDay'
+  },
+  locale: 'fr',
+  navLinks: true,
+  eventLimit: true,
+  events: "../php/listeResaJSON.php"
+});

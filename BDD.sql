@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS Client(
 	adresse		VARCHAR(255) NOT NULL,
 	cp			VARCHAR(12)  NOT NULL,
 	ville		VARCHAR(100) NOT NULL,
-    mail		VARCHAR(255) NOT NULL,
+    	email		VARCHAR(255) NOT NULL,
 	PRIMARY KEY (id_client)
 ) ENGINE = InnoDB
   DEFAULT CHARSET=utf8;
@@ -124,7 +124,7 @@ INSERT INTO `Chambre` (`id_chambre`, `nom`, `description`, `capacite`, `surface`
 (6, 'Chambre d’hôtel pour 5 personnes', 'Séjournez dans une chambre d\'hôtel 5 personnes au bord de la plage. Ces chambres confortablement aménagées ont tout ce qu\'il vous faut lors de votre séjour : au moins un lit double et deux lits superposés, une douche et des toilettes.', 5, '23.00', '110.00', ' <h3>Dormir</h3><ul><li>2 x Lits superposés</li> <li>2 ou 3 x Boxspring(s)</li> <li>Lit d\'enfant et Lit bébé sur demande</li>  </ul>     <h3>Sanitaires</h3><ul>   <li>Lavabo(s)</li>     <li>1 x Douche</li>     <li>Serviettes de bain (1 petite et 1 grande par personne)</li>     <li>Peignoirs</li>     <li>1 x Toilettes</li>     <li>Sèche-cheveux</li>     <li>Articles de toilettes (crème douche, shampooing, lait corporel)</li>  </ul> <h3>Détente</h3><ul>     <li>Téléviseur</li>     <li>Bureau avec chaise</li> </ul> <h3>Divers</h3><ul>      <li>Parking gratuit à l\'hôtel</li>     <li>WiFi</li>     <li>Non fumeur</li> </ul>'),
 (7, 'Chambre d\'hôtel adaptée pour 6 personnes', 'Profitez de toutes les commodités et du confort de cette chambre d\'hôtel pour 6 personnes, dans la plage. Cette chambre, avec appui et siège dans la douche et WC, convient pour maximum 2 hôtes à mobilité réduite/ Les deux côtés du lit double situé au rez-de-chaussée sont accessibles en fauteuil roulant.', 6, '43.00', '140.00', '<h3>Dormir</h3><ul> <li>2 x Lits superposés</li> <li>4 x Boxspring(s)</li> <li>Lit d\'enfant et Lit bébé sur demande</li>  </ul>    <h3>Sanitaire</h3><ul> <li>Lavabo(s)</li>     <li>1 x Douche</li>     <li>Serviettes de bain (1 petite et 1 grande par personne)</li>     <li>Peignoirs</li>     <li>1 x Toilettes</li>     <li>Sèche-cheveux</li>     <li>Articles de toilettes (crème douche, shampooing, lait corporel)</li>  </ul><h3>Détente</h3><ul>  <li>Téléviseur</li>     <li>Bureau avec chaise</li> </ul> <h3>Divers</h3><ul>     <li>Parking gratuit à l\'hôtel</li>     <li>WiFi</li>     <li>Non fumeur</li> </ul>');
 
-INSERT INTO `Client` (`id_client`, `nom`, `prenom`, `adresse`, `cp`, `ville`) VALUES
+INSERT INTO `Client` (`id_client`, `nom`, `prenom`, `adresse`, `cp`, `ville`, `email`) VALUES
 (1, 'DELMONTEIL', 'Patricia', '6 rue de la Madeleine', '15430', 'PAULHAC', 'delmonteil.pat@gmail.com'),
 (2, 'DELRIEU', 'David', '4 avenue du Pradel', '12210', 'LAGUIOLE', 'delrieu.david@gmail.com');
 

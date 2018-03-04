@@ -25,3 +25,19 @@ td {
   max-width: 900px;
   margin: 0 auto;
 }
+
+.flex-container div {
+    justify-content: left;
+    min-width: 300px;
+}
+
+.flex-container > p {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.flex-item p {
+    margin: 0 20px 20px;
+    min-width: 200px;
+    max-width: 500px;
+}

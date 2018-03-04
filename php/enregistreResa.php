@@ -35,7 +35,7 @@
           "fk_chambre" => $id_chambre
         ));
 
-        echo "<section><h2>Merci pour votre réservation $prenom ! Celle-ci est bien enregistré</h2>
+        echo "<section><h2>Merci pour votre réservation $prenom ! Celle-ci est bien enregistré.</h2>
         <p>Le paiement sera effectué sur place et sera de $tarifs €.</p>
         </section>";
         

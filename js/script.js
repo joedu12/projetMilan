@@ -69,5 +69,11 @@ $('#calendrier').fullCalendar({
   locale: 'fr',
   navLinks: true,
   eventLimit: true,
-  events: "../php/listeResaJSON.php"
+  events: "../php/listeResaJSON.php",
+  eventClick: function(event) {
+    if (event.url) {
+      $('#viewResa').load(event.url);
+      return false;
+    }
+  }
 });

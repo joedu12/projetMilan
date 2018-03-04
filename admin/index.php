@@ -18,6 +18,7 @@
 			<p>Vous pouvez ici ajouter, modifier ou supprimer les plats ou les chambres.</p>
 			<p>Le calendrier ci-dessous vous permet de visualiser les réservations.</p>
 			<div id="calendrier"></div>
+			<div id="viewResa"></div>
 		</section>
 		<?php require "../inc/footer.php"; ?>
     </div>

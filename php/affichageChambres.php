@@ -15,7 +15,7 @@
         $html .= '<p>' . $data['description'] . '</p>';
         $html .= '<p>' . $data['capacite'] . ' personnes</p>';
         $html .= '<p>' . $data['surface'] . ' m²</p>';
-    $html .= '<p>' . $data['tarif'] . ' €</p>';
+    $html .= '<p>' . $data['tarif'] . ' €/jour</p>';
     $html .= '<h2>Résumé des équipements</h2> ';
     $html .= '<hr>';
     $html .= '<div class="column">'. $data['equipement'] . '</div>';
@@ -46,7 +46,7 @@
         $html .= '<p>' . $data['description'] . '</p>';
         $html .= '<p>' . $data['capacite'] . ' personnes</p>';
         $html .= '<p>' . $data['surface'] . ' m²</p>';
-        $html .= '<p>' . $data['tarif'] . ' €</p>';
+        $html .= '<p>' . $data['tarif'] . ' €/jour</p>';
         $html .= '</article>';
         echo $html;
       }

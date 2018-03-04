@@ -17,7 +17,7 @@
         $html .= '<p>' . $data['description'] . '</p>';
         $html .= '<p>' . $data['capacite'] . ' personnes</p>';
         $html .= '<p>' . $data['surface'] . ' m²</p>';
-    $html .= '<p>' . $data['tarif'] . ' €</p>';
+    $html .= '<p>' . $data['tarif'] . ' €/jour</p>';
       
       $datetime1 = new DateTime($_GET["dateArrivee"]);
       $datetime2 = new DateTime($_GET["dateDepart"]);
@@ -57,6 +57,7 @@
       <input type="number" name="personne" id="personne" value="<?= htmlspecialchars($_GET["personne"]) ?>" required>
       <input type="hidden" value="<?= htmlspecialchars($_GET["id"]) ?>" name="id_chambre">
       <input type="hidden" value="<?= htmlspecialchars($data['nom']) ?>" name="nomChambre">
+      <input type="hidden" value="<?= sprintf("%.2f", $tarifs) ?>" name="tarifs">
       <div class="boutons">
         <button type="reset">Annuler</button>
         <button type="submit">Réserver</button>

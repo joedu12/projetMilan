@@ -2,7 +2,7 @@
     if(!empty($_POST)){
       extract($_POST);
       if(!empty($nom) && !empty($prenom) && !empty($adresse) && !empty($cp) && !empty($ville) && !empty($email)
-      && !empty($dateArrivee) && !empty($dateDepart) && !empty($personne)
+      && !empty($dateArrivee) && !empty($dateDepart) && !empty($personne) && !empty($tarifs)
       && !empty($id_chambre)) {
 
         $reqClient = $conn->prepare('INSERT INTO Client (nom, prenom, adresse, cp, ville, email)
@@ -36,7 +36,8 @@
         ));
 
         echo "<section><h2>Merci pour votre réservation $prenom ! Celle-ci est bien enregistré</h2>
-        <p>Le paiement sera effectué sur place.</p></section>";
+        <p>Le paiement sera effectué sur place et sera de $tarifs €.</p>
+        </section>";
         
         }
       }

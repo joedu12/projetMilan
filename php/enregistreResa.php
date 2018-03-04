@@ -1,19 +1,20 @@
 <?php
     if(!empty($_POST)){
       extract($_POST);
-      if(!empty($nom) && !empty($prenom) && !empty($adresse) && !empty($cp) && !empty($ville)
+      if(!empty($nom) && !empty($prenom) && !empty($adresse) && !empty($cp) && !empty($ville) && !empty($email)
       && !empty($dateArrivee) && !empty($dateDepart) && !empty($personne)
       && !empty($id_chambre)) {
 
-        $reqClient = $conn->prepare('INSERT INTO Client (nom, prenom, adresse, cp, ville)
-                                     VALUES (:nom, :prenom, :adresse, :cp, :ville);
+        $reqClient = $conn->prepare('INSERT INTO Client (nom, prenom, adresse, cp, ville, email)
+                                     VALUES (:nom, :prenom, :adresse, :cp, :ville :email);
         ');
         $reqClient->execute(array(
           "nom" => $nom,
           "prenom" => $prenom, 
           "adresse" => $adresse, 
           "cp" => $cp, 
-          "ville" => $ville
+          "ville" => $ville,
+          "email" => $email
         ));
 
         $reqReservation = $conn->prepare('INSERT INTO Reservation (nbPers, dateArrivee, dateDepart, fk_client)

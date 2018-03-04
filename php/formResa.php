@@ -36,7 +36,7 @@
 ?>
 
     <h1>Formulaire de réservation : </h1>
-    <form class= "blog" action="reservation.php" accept-charset="UTF-8" method="POST">
+    <form class= "blog" action="reservation.php" action="php/mailResa.php" action="php/mailClient.php"  accept-charset="UTF-8" method="POST">
       <label for="nom">Nom</label>
       <input type="text" id="nom" name="nom" required>
       <label for="prenom">Prénom</label>
@@ -47,6 +47,8 @@
       <input type="text" id="cp" name="cp" required>
       <label for="mail">Ville</label>
       <input type="text" id="ville" name="ville" required>
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" required>
       <label for="dateArrivee">Date d'arrivée</label>
       <input type="date" name="dateArrivee" id="dateArrivee" value="<?= htmlspecialchars($_GET["dateArrivee"]) ?>" required>
       <label for="dateDepart">Date de départ</label>

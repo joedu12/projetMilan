@@ -1,27 +1,27 @@
 /* ------ Début Menu horizontal ------ */
 .menu-horizontal a {
 	position: relative;
-    	color:black;
-    	padding: 10px;
+	color:black;
+	padding: 10px;
 }
 .menu-horizontal {
-    	padding: 8px 10%;
-    	font-size: 1.8em;
-    	background: #f4f4f4F4;
+	padding: 8px 10%;
+	font-size: 1.8em;
+	background: #f4f4f4F4;
 }
 
 .menu-horizontal a:hover {
-    	text-decoration: none;
+	text-decoration: none;
 }
 
 a.logo {
-    	color:#ec2929; /* couleur du logo d'accueil */
-    	font-family: "Ananda Black", Helvetica, sans-serif;
+	color:#ec2929; /* couleur du logo d'accueil */
+	font-family: "Ananda Black", Helvetica, sans-serif;
 	transition:margin-left 0.5s;
 }
 
 a.actif {
-    	font-weight: bold;
+	font-weight: bold;
 }
 
 img {
@@ -67,7 +67,7 @@ img {
 .menu-vertical a { 
     padding: 10px 10px 10px 30px;
 	text-decoration: none;
-	font-size: 22ppx;
+	font-size: 22px;
 	color:#ccc;
 	display: block;
 	transition: 0.3s;

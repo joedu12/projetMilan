@@ -11,7 +11,6 @@
     <?php require "../admMenu.php"; ?>
   <div id="contenu">
     <section>
-      <p>
         <?php
           require "../../inc/config.php";
           try {
@@ -23,7 +22,7 @@
             $req->execute(array(
               "titre" => $titre,
               "courte_description" => $courte_description,
-              "contenu" => $contenu
+              "contenu" => $content
             ));
 
             echo "<p>Plat du jour créé avec succès !</p><br/>";
@@ -45,11 +44,10 @@
             }
           }
         ?>
-      </p>
     </section>
     <?php require "../../inc/footer.php"; ?>
     </div>
-    <script src="../../js/jquery-3.2.1.js"></script>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
     <script src="../../js/script.js"></script>
     <script>setTimeout(function(){ location.href='plat.php'; }, 2000);</script>
     <script defer src="../../js/fontawesome-all.min.js"></script>

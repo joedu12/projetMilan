@@ -31,7 +31,7 @@
             $req->execute(array(
               "titre" => $titre, 
               "courte_description" => $courte_description,
-              "contenu" => $contenu,
+              "contenu" => $content,
               "id" => $id
             ));
 
@@ -50,7 +50,7 @@
             $_GET["id"] = $id;
             $data["titre"] = $titre;
             $data["courte_description"] = $courte_description;
-            $data["contenu"] = $contenu;
+            $data["content"] = $content;
           }
 
           if(!empty($_GET["id"])) {
@@ -69,8 +69,8 @@
         <label for="courte_description">Courte description : </label>
         <textarea id="courte_description" name="courte_description" style="height:100px;" rows="3"><?= htmlspecialchars($data["courte_description"]); ?></textarea>
         <br/>
-        <label for="contenu">Contenu : </label>
-        <textarea d="contenu" id="contenu" name="contenu" style="height:150px;" rows="3"><?= htmlspecialchars($data["contenu"]); ?></textarea>
+        <label for="content">Contenu : </label>
+        <textarea id="content" name="content" style="height:150px;" rows="3"><?= htmlspecialchars($data["content"]); ?></textarea>
         <br/>
         <label>Image d'entête (laisser vide pour conserver l'existante) :</label>
         <input type="file" style="border:none" name="image"/>
@@ -84,7 +84,7 @@
     </section>
     <?php require "../../inc/footer.php"; ?>
     </div>
-    <script src="../../js/jquery-3.2.1.js"></script>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
     <script src="../../js/script.js"></script>
     <script defer src="../../js/fontawesome-all.min.js"></script>
   </body>

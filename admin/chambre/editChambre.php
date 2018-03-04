@@ -21,18 +21,20 @@
 
             $req = $conn->prepare('UPDATE Chambre SET
               nom = :nom, 
-              description = :description, 
-              surface = :surface, 
+              description = :description,
+              surface = :surface,
               tarif = :tarif,
-              capacite = :capacite
+              capacite = :capacite,
+              equipement = :equipement
               WHERE id_chambre = :id;');
 
             $req->execute(array(
               "nom" => $nom, 
-              "description" => $description, 
+              "description" => $description,
               "surface" => $surface, 
               "tarif" => $tarif,
               "capacite" => $capacite,
+              "equipement" => $equipement,
               "id" => $id
             ));
 
@@ -54,6 +56,7 @@
             $data["surface"] = $surface;
             $data["tarif"] = $tarif;
             $data["capacite"] = $capacite;
+            $data["equipement"] = $equipement;
           }
 
           if(!empty($_GET["id"])) {
@@ -71,6 +74,9 @@
         <br/>
         <label for="description">Description : </label>
         <textarea id="description" name="description" style="height:100px;" rows="3"><?= htmlspecialchars($data["description"]); ?></textarea>
+        <br/>
+        <label for="equipement">Équipement : </label>
+        <textarea id="equipement" name="equipement" style="height:100px;" rows="3"><?= htmlspecialchars($data["equipement"]); ?></textarea>
         <br/>
         <label for="capacite">Capacite :</label>
         <input type="number" id="capacite" name="capacite" value="<?= htmlspecialchars($data["capacite"]); ?>"/>
@@ -93,7 +99,7 @@
     </section>
     <?php require "../../inc/footer.php"; ?>
     </div>
-    <script src="../../js/jquery-3.2.1.js"></script>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
     <script src="../../js/script.js"></script>
     <script defer src="../../js/fontawesome-all.min.js"></script>
   </body>

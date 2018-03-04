@@ -49,10 +49,13 @@
         <input type="number" id="surface" name="surface"/>
         <br/>
         <label for="tarif">Tarif : </label>
-        <input d="tarif" id="tarif" name="tarif"/>
+        <input type="number" id="tarif" name="tarif"/>
         <br/>
         <label for="description">Description : </label>
-        <textarea d= "description" id="description" name="description"></textarea>
+        <textarea id="description" name="description"></textarea>
+        <br/>
+        <label for="equipement">Équipement : </label>
+        <textarea id="equipement" name="equipement"></textarea>
         <br/>
         <label>Image : </label>
         <input type="file" style="border:none" name="image"/>
@@ -65,7 +68,7 @@
     </section>
     <?php require "../../inc/footer.php"; ?>
     </div>
-    <script src="../../js/jquery-3.2.1.js"></script>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
     <script src="../../js/script.js"></script>
     <script defer src="../../js/fontawesome-all.min.js"></script>
   </body>

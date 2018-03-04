@@ -11,18 +11,18 @@
     <?php require "../admMenu.php"; ?>
   <div id="contenu">
     <section>
-      <p>
         <?php
           require "../../inc/config.php";
           try {
             extract($_POST);
 
-            $req = $conn->prepare('INSERT INTO Chambre (nom, description, surface, tarif, capacite)
-            VALUES (:nom, :description, :surface, :tarif, :capacite)');
+            $req = $conn->prepare('INSERT INTO Chambre (nom, description, surface, tarif, capacite, equipement)
+            VALUES (:nom, :description, :surface, :tarif, :capacite, :equipement)');
 
             $req->execute(array(
               "nom" => $nom, 
-              "description" => $description, 
+              "description" => $description,
+              "equipement" => $equipement,
               "surface" => $surface, 
               "tarif" => $tarif, 
               "capacite" => $capacite
@@ -47,11 +47,10 @@
             }
           }
         ?>
-      </p>
     </section>
     <?php require "../../inc/footer.php"; ?>
     </div>
-    <script src="../../js/jquery-3.2.1.js"></script>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
     <script src="../../js/script.js"></script>
     <script>setTimeout(function(){ location.href='chambre.php'; }, 2000);</script>
     <script defer src="../../js/fontawesome-all.min.js"></script>

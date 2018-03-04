@@ -31,7 +31,7 @@
     $result->execute([$_GET["id"]]);
     
     $html  = '<article>';
-    $html = '<h1>Plat du jour</h1>';
+    $html .= '<h1>Plat du jour</h1>';
       $html  .= '<header>';
         $html .= '<img src="img/blog/' . $article['id_blog'] . '.jpg" alt="' . $article['titre'] . '"/>';
         $html .= '<h2>' . $article['titre'] . '</h2>';

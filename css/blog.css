@@ -14,7 +14,7 @@
 }
 
 div.numero-page {
-	  text-align:center;
+	text-align:center;
 }
 
 /* ------ Début visuel article  ------ */
@@ -34,29 +34,29 @@ div.numero-page {
 }
 
 .commentaire p {
-  	margin:0px;
+	margin:0px;
 }
 
 .commentaire .pseudo {
-  	margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 .commentaire span {
-  	color:gray;
-  	font-style: italic;
+	color:gray;
+	font-style: italic;
 }
 
 .commentaire time {
-  	color:gray;
-  	float:right;
+	color:gray;
+	float:right;
 }
 
 /* ------- Formulaire commentaire du blog ------------*/
 
 .blog >  input, .blog > textarea, .blog > select {
-       margin: 10px 0px;
-    	font-size: 15px;
-    	width: 50%;
+	margin: 10px 0px;
+	font-size: 15px;
+	width: 50%;
 }
 /* ------ Fin visuel article  ------ */
 

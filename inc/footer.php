@@ -9,7 +9,7 @@
 
         <li class="flex-item">
             <h4>HORAIRES D’OUVERTURE</h4>
-            <p>Le restaurant de l'Auberge du Barrez, le Comptoir du Barrez est ouvert du mardi au dimanche</p><br>
+            <p>Le restaurant de Le château de Milan est ouvert du mardi au dimanche</p><br>
             <p>Déjeuner 12:00 à 14:30</p>
             <p>Dîner 19:00 à 23:00</p>
         </li>

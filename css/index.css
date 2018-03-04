@@ -41,12 +41,19 @@
 	padding-top: 3px;
 	font-family: "Ananda Black";
 	color: #ec2929;
+    margin-left: 12px;
+    margin-top: 12px;
     
 }
 
 #description .flex-container{
     justify-content: left;
     min-width: 300px;
+}
+
+#description p{
+    margin-right: 12px;
+    margin-left: 12px;
 }
 
 #description .flex-item{
@@ -69,4 +76,8 @@
 #carte {
 	height: 400px;
 	width: 100%;
+}
+
+.gm-style-pbt {
+    text-align: center;
 }

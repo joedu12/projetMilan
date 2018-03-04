@@ -50,7 +50,7 @@
             $_GET["id"] = $id;
             $data["titre"] = $titre;
             $data["courte_description"] = $courte_description;
-            $data["content"] = $content;
+            $data["contenu"] = $content;
           }
 
           if(!empty($_GET["id"])) {
@@ -70,7 +70,7 @@
         <textarea id="courte_description" name="courte_description" style="height:100px;" rows="3"><?= htmlspecialchars($data["courte_description"]); ?></textarea>
         <br/>
         <label for="content">Contenu : </label>
-        <textarea id="content" name="content" style="height:150px;" rows="3"><?= htmlspecialchars($data["content"]); ?></textarea>
+        <textarea id="content" name="content" style="height:150px;" rows="3"><?= htmlspecialchars($data["contenu"]); ?></textarea>
         <br/>
         <label>Image d'entête (laisser vide pour conserver l'existante) :</label>
         <input type="file" style="border:none" name="image"/>

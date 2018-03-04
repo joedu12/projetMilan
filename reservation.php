@@ -16,6 +16,8 @@
         <?php require "php/affichageRequete.php"; ?>
         <?php require "php/formResa.php"; ?>
         <?php require "php/enregistreResa.php"; ?>
+        <?php require "php/mailResa.php";?>
+        <?php require "php/mailClient.php";?>
 
     	<?php require "inc/footer.php"; ?>
       </div>

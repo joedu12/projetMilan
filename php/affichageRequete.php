@@ -49,8 +49,7 @@ require "inc/config.php";
       $datetime2 = new DateTime($_GET["dateDepart"]);
       $interval = $datetime1->diff($datetime2);
       $tarifs = ($interval->format('%a')) * $data['tarif'];
-  
-          
+        
       $html .= '<p> Pour cette réservation de '.$interval->format('%a').' jours le prix sera de <strong>' .  sprintf("%.2f", $tarifs) . ' €</strong></p>';
 
       $html .= '</article>';

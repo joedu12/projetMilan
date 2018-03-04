@@ -36,7 +36,7 @@
 ?>
 
     <h1>Formulaire de réservation : </h1>
-    <form class= "blog" action="reservation.php" action="php/mailResa.php" action="php/mailClient.php"  accept-charset="UTF-8" method="POST">
+    <form class= "blog" action="reservation.php"  accept-charset="UTF-8" method="POST">
       <label for="nom">Nom</label>
       <input type="text" id="nom" name="nom" required>
       <label for="prenom">Prénom</label>
@@ -56,6 +56,7 @@
       <label for="personne">Personnes</label>
       <input type="number" name="personne" id="personne" value="<?= htmlspecialchars($_GET["personne"]) ?>" required>
       <input type="hidden" value="<?= htmlspecialchars($_GET["id"]) ?>" name="id_chambre">
+      <input type="hidden" value="<?= htmlspecialchars($data['nom']) ?>" name="nomChambre">
       <div class="boutons">
         <button type="reset">Annuler</button>
         <button type="submit">Réserver</button>

@@ -32,6 +32,7 @@ require "inc/config.php";
       "dateDepart" => $dateDepart,
       "dateArrivee" => $dateArrivee
     ));
+  
 
     while ($data = $req->fetch()) {
       $html = '<article>';
@@ -42,11 +43,20 @@ require "inc/config.php";
       $html .= '<p>' . $data['description'] . '</p>';
       $html .= '<p>' . $data['capacite'] . ' personnes</p>';
       $html .= '<p>' . $data['surface'] . ' m²</p>';
-      $html .= '<p>' . $data['tarif'] . ' €</p>';
+      $html .= '<p>' . $data['tarif'] . ' €/jour</p>';
+      
+      $datetime1 = new DateTime($_GET["dateArrivee"]);
+      $datetime2 = new DateTime($_GET["dateDepart"]);
+      $interval = $datetime1->diff($datetime2);
+      $tarifs = ($interval->format('%a')) * $data['tarif'];
+  
+          
+      $html .= '<p> Pour cette réservation de '.$interval->format('%a').' jours le prix sera de <strong>' .  sprintf("%.2f", $tarifs) . ' €</strong></p>';
+
       $html .= '</article>';
       echo $html;
     }
-
+ 
     echo '</section>';
   }
 ?>

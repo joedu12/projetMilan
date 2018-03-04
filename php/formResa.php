@@ -18,6 +18,15 @@
         $html .= '<p>' . $data['capacite'] . ' personnes</p>';
         $html .= '<p>' . $data['surface'] . ' m²</p>';
     $html .= '<p>' . $data['tarif'] . ' €</p>';
+      
+      $datetime1 = new DateTime($_GET["dateArrivee"]);
+      $datetime2 = new DateTime($_GET["dateDepart"]);
+      $interval = $datetime1->diff($datetime2);
+      $tarifs = ($interval->format('%a')) * $data['tarif'];
+  
+          
+      $html .= '<p> Pour cette réservation de '.$interval->format('%a').' jours le prix sera de <strong>' .  sprintf("%.2f", $tarifs) . ' €</strong></p>';
+
     $html .= '<h2>Résumé des équipements</h2> ';
     $html .= '<hr>';
     $html .= '<div class = "column">'. $data['equipement'] . '</div>';
